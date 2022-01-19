@@ -1,1 +1,11 @@
+title: Sanjyot Agureddy # your name (or website title) here
+logo: "/profile.png?raw=true" # your photo (or logo) here
+description: > # your text below (remove <br> elements if you don't need line breaks)
+ Senior DotNet Developer
+  <br><br>
+  <a href="mailto:sanjyot.agureddy4@gmail.com">sanjyot.agureddy4@gmail.com </a>
+  <br>
+  <a href="https://www.linkedin.com/in/sanjyotagureddy/">LinkedIn Profile</a>
+  <br>
+  <a href="https://www.gihub.com/sanjyotagureddy/">Gihub</a>
 theme: jekyll-theme-minimal
