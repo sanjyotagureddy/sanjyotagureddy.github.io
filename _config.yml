@@ -5,7 +5,7 @@ description: > # your text below (remove <br> elements if you don't need line br
   <br><br>
   <img src="/Email.png" width="14"/> <a href="mailto:sanjyot.agureddy4@gmail.com" padding-left: 5px;>sanjyot.agureddy4@gmail.com </a>
   <br>
-  <img src="/LinkedIn.png" width="14"/><a href="https://www.linkedin.com/in/sanjyotagureddy/" padding-left: 5px;>LinkedIn Profile</a>
+  <img src="/LinkedIn.png" width="14"/> <a href="https://www.linkedin.com/in/sanjyotagureddy/" padding-left: 5px;>LinkedIn Profile</a>
   <br>
   <img src="/GitHub.png" width="14"/> <a href="https://www.github.com/sanjyotagureddy/" padding-left: 5px;>GitHub</a>
 theme: jekyll-theme-minimal
