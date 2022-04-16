@@ -2,15 +2,15 @@
 //  document.onload = getAllrepos()
 
 async function getAllrepos(){
-    const repoList = ['aspnetrun-microservices','dotnetcore-payloadlogging','dotnetcore-data-ef-cqrs','dotnetcore-data-ado-generic','dotnetcore-data-ef','aggarwalsushant/exo-tools','dotnetcore-data-ef-uow'];
+    const repoList = ['aspnetrun-microservices','dotnetcore-payloadlogging','dotnetcore-data-ef-cqrs','dotnetcore-data-ado-generic','dotnetcore-data-ef','sanjyotagureddy.github.io','dotnetcore-data-ef-uow'];
     repoList.reverse().forEach(async (repo) => {
-         await fetchAspnetrunRepo(repo)
+         await fetchAndCreateRepo(repo)
     });
-    // await fetchAspnetrunRepo('aspnetrun-microservices')
+    await fetchAndCreateRepo('exo-tools','aggarwalsushant')
 }
 
-async function fetchAspnetrunRepo(repo){
-    var data = await fetchRepo(repo);
+async function fetchAndCreateRepo(repo, author){
+    var data = await fetchRepo(repo, author);
     var udate = document.getElementById('aspnetrun-span');
     console.log(data);
     udate.textContent = `Last updated on - ${getDate(data.pushed_at)}`;
@@ -117,8 +117,8 @@ function getTags(tags){
     return tagsList;
 }
 
-async function fetchRepo(repoName){    
-    const url = `https://api.github.com/repos/sanjyotagureddy/${repoName}`
+async function fetchRepo(repoName, author = 'sanjyotagureddy'){    
+    const url = `https://api.github.com/repos/${author}/${repoName}`
     const response = await fetch(url) 
     const repo = response.json();
     return repo;    
