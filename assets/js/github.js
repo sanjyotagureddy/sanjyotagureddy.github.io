@@ -2,7 +2,7 @@
 //  document.onload = getAllrepos()
 
 async function getAllrepos(){
-    const repoList = ['aspnetrun-microservices','dotnetcore-payloadlogging','dotnetcore-data-ef-cqrs','dotnetcore-data-ado-generic','dotnetcore-data-ef','dotnetcore-data-ef-uow'];
+    const repoList = ['aspnetrun-microservices','dotnetcore-payloadlogging','dotnetcore-data-ef-cqrs','dotnetcore-data-ado-generic','dotnetcore-data-ef','aggarwalsushant/exo-tools','dotnetcore-data-ef-uow'];
     repoList.reverse().forEach(async (repo) => {
          await fetchAspnetrunRepo(repo)
     });
