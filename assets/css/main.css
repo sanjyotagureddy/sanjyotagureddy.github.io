@@ -2150,7 +2150,7 @@ input, select, textarea {
 			height: 1.7rem;
 			line-height: 1.7rem;
 			padding: 0 0.5rem;
-			border-radius: 25%;
+			border-radius: 1rem;
 		}
 
 		input[type="submit"].large,
@@ -2209,6 +2209,18 @@ input, select, textarea {
 		background-color: transparent;
 		box-shadow: inset 0 0 0 2px #212931;
 		color: #212931 !important;
+	}
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
+	.button.small {
+		background-color: #909aa3;
+		box-shadow: inset 0 0 0 2px #909aa3;
+		color: #ffffff !important;
+		text-transform: lowercase;
+		font-weight: 100;
 	}
 
 		input[type="submit"]:hover,
@@ -2849,7 +2861,7 @@ input, select, textarea {
 
 	ul {
 		list-style: disc;
-		margin: 0 0 2rem 0;
+		margin: 0 0 0rem 0;
 		padding-left: 1rem;
 	}
 

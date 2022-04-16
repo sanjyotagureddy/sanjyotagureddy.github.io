@@ -29,24 +29,40 @@ async function fetchAspnetrunRepo(repo){
     article.append(p);
 
     // add description
-    const labelsList = document.createElement('ul');
-    labelsList.classList.add('actions','special');
+    // const labelsList = document.createElement('ul');
+    // labelsList.classList.add('actions','special');
 
-    const l1 = document.createElement('li');
-    const label = document.createElement('a');
-    label.classList.add('button','small')
-    label.textContent = 'C#23';
-    l1.append(label);
+    // const l1 = document.createElement('li');
+    // const label = document.createElement('a');
+    // label.classList.add('button','small')
+    // label.textContent = 'C#23';
+    // l1.append(label);
 
-    const l2 = document.createElement('li');
-    const label1 = document.createElement('a');
-    label1.classList.add('button','small')
-    label1.textContent = 'C#11';
-    l2.append(label1);
+    // const l2 = document.createElement('li');
+    // const label1 = document.createElement('a');
+    // label1.classList.add('button','small')
+    // label1.textContent = 'C#11';
+    // l2.append(label1);
 
-    labelsList.append(l1)
-    labelsList.append(l2)
-    article.append(labelsList);
+    // labelsList.append(l1)
+    // labelsList.append(l2)
+    // article.append(labelsList);
+
+    const tags = data.topics;
+
+    if(tags !== null){
+        if(tags.length <=4){
+            const tagsItems = getTags(tags);
+            article.append(tagsItems);
+        } else {
+            const chunkedTags = chunkArray(tags, 4);
+            console.log(chunkedTags)
+            chunkedTags.forEach(ctags=>{
+                const tagsItems = getTags(ctags);
+                article.append(tagsItems);
+            });
+        }
+    }
 
     // add last updated date
     const span = document.createElement('span')
@@ -85,6 +101,21 @@ async function fetchAspnetrunRepo(repo){
     section.prepend(article);
 }
 
+function getTags(tags){
+
+    const tagsList = document.createElement('ul');
+    tagsList.classList.add('actions','special');
+    tags.forEach(tag =>{
+
+        const l2 = document.createElement('li');
+        const label1 = document.createElement('a');
+        label1.classList.add('button','small')
+        label1.textContent = tag;
+        l2.append(label1);
+        tagsList.append(l2);
+    })
+    return tagsList;
+}
 
 async function fetchRepo(repoName){    
     const url = `https://api.github.com/repos/sanjyotagureddy/${repoName}`
@@ -105,3 +136,12 @@ function getDate(date){
     month = monthArr[month];
     return month+" "+date+", "+year;
 }
+
+function chunkArray(array, size) {
+    let result = []
+    for (let i = 0; i < array.length; i += size) {
+      let chunk = array.slice(i, i + size)
+      result.push(chunk)
+    }
+    return result
+  }
