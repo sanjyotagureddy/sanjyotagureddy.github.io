@@ -87,7 +87,8 @@ async function fetchAspnetrunRepo(repo){
 
 
 async function fetchRepo(repoName){    
-    const response = await fetch(`https:api.github.com/repos/sanjyotagureddy/${repoName}`) 
+    const url = `https://api.github.com/repos/sanjyotagureddy/${repoName}`
+    const response = await fetch(url) 
     const repo = response.json();
     return repo;    
 }
