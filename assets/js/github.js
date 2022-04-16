@@ -1,25 +1,32 @@
+const cacheTime = 100000;
+const cache = {}
+let cacheTimer = 0
 
-//  document.onload = getAllrepos()
+async function getAllRepos() {
 
-async function getAllrepos() {
-    const repoList = ['aspnetrun-microservices', 'dotnetcore-payloadlogging', 'dotnetcore-data-ef-cqrs', 'dotnetcore-data-ado-generic', 'dotnetcore-data-ef', 'sanjyotagureddy.github.io', 'dotnetcore-data-ef-uow'];
-    repoList.reverse().forEach(async (repo) => {
-        await fetchAndCreateRepo(repo)
-    });
-    await fetchAndCreateRepo('exo-tools', 'aggarwalsushant')
-
-    const info = document.createElement('p');
-    info.textContent = 'List of projects that I have created.'
-    const section = document.getElementById('header-section')
-    section.append(info);
+    const repoList = {
+        "aspnetrun-microservices": "sanjyotagureddy", 
+        "dotnetcore-payloadlogging": "sanjyotagureddy", 
+        "dotnetcore-data-ef-cqrs": "sanjyotagureddy", 
+        "dotnetcore-data-ado-generic": "sanjyotagureddy", 
+        "dotnetcore-data-ef": "sanjyotagureddy", 
+        "sanjyotagureddy.github.io": "sanjyotagureddy", 
+        "dotnetcore-data-ef-uow": "sanjyotagureddy",
+        "exo-tools": "aggarwalsushant"
+    }
+    for (const [repoName, author] of Object.entries(repoList).reverse()){
+        await fetchAndCreateRepo(repoName, author)
+    }
 }
 
 async function fetchAndCreateRepo(repo, author) {
-    var data = await fetchRepo(repo, author);
+    var data = await fetchWithCache(repo, author, cacheTime);
 
     const article = document.createElement('article');
+    article.id = 'article-id';
     const head = document.createElement('header');
     const h2 = document.createElement('h3');
+    h2.style="text-transform: lowercase"
     h2.textContent = repo;
     head.append(h2);
     article.append(head);
@@ -35,12 +42,10 @@ async function fetchAndCreateRepo(repo, author) {
     if (tags !== null) {
 
         const chunkedTags = chunkArray(tags, 4);
-        console.log(chunkedTags)
         chunkedTags.forEach(ctags => {
             const tagsItems = getTags(ctags);
             article.append(tagsItems);
         });
-
     }
 
     // add last updated date
@@ -70,7 +75,7 @@ function getButtons(data) {
     buttonList.classList.add('actions', 'special');
 
     for (const [key, value] of Object.entries(dict)) {
-        console.log(key, value);
+        //console.log(key, value);
 
         //git url button
         const githubBtn = document.createElement('li');
@@ -94,6 +99,7 @@ function getTags(tags) {
         const label1 = document.createElement('a');
         label1.classList.add('button', 'small')
         label1.textContent = tag;
+        label1.style="font-weight:100"
         l2.append(label1);
         tagsList.append(l2);
     })
@@ -107,7 +113,36 @@ async function fetchRepo(repoName, author = 'sanjyotagureddy') {
     return repo;
 }
 
+const getCacheTimer = time => {
+    const now = new Date().getTime()
+    if (cacheTimer < now + time) {
+        cacheTimer = now + time
+    }
 
+    return cacheTimer;
+}
+
+const fetchWithCache = async (repo, author, time) => {
+    const now = new Date().getTime()
+    if (!cache[repo] || cache[repo].cacheTimer < now) {
+        cache[repo] = await fetchRepo(repo, author)
+        cache[repo].cacheTimer = getCacheTimer(time);
+    }
+    console.log(cache);
+    return cache[repo];
+}
+
+function clearRepos(){
+    let child
+    while (child !== null) {
+        child = document.getElementById("article-id");
+        if (child !== null) {
+            child.parentNode.removeChild(child);
+        }
+    }
+    const button = document.getElementById("project-button");
+    button.textContent = 'Click here to load projects'
+}
 
 
 function getDate(date) {
