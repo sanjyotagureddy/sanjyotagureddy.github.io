@@ -2,6 +2,10 @@
 //  document.onload = getAllrepos()
 
 async function getAllrepos(){
+    
+    const info = document.createElement('p');
+    info.textContent = 'List of projects that I have created.'
+    
     const repoList = ['aspnetrun-microservices','dotnetcore-payloadlogging','dotnetcore-data-ef-cqrs','dotnetcore-data-ado-generic','dotnetcore-data-ef','sanjyotagureddy.github.io','dotnetcore-data-ef-uow'];
     repoList.reverse().forEach(async (repo) => {
          await fetchAndCreateRepo(repo)
@@ -14,7 +18,7 @@ async function fetchAndCreateRepo(repo, author){
     var udate = document.getElementById('aspnetrun-span');
     console.log(data);
     udate.textContent = `Last updated on - ${getDate(data.pushed_at)}`;
-
+    
     const article = document.createElement('article');
     const head = document.createElement('header');
     const h2 = document.createElement('h3');
@@ -27,26 +31,6 @@ async function fetchAndCreateRepo(repo, author){
     p.textContent = data.description;
     p.style='height:105px'
     article.append(p);
-
-    // add description
-    // const labelsList = document.createElement('ul');
-    // labelsList.classList.add('actions','special');
-
-    // const l1 = document.createElement('li');
-    // const label = document.createElement('a');
-    // label.classList.add('button','small')
-    // label.textContent = 'C#23';
-    // l1.append(label);
-
-    // const l2 = document.createElement('li');
-    // const label1 = document.createElement('a');
-    // label1.classList.add('button','small')
-    // label1.textContent = 'C#11';
-    // l2.append(label1);
-
-    // labelsList.append(l1)
-    // labelsList.append(l2)
-    // article.append(labelsList);
 
     const tags = data.topics;
 
