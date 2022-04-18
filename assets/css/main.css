@@ -3087,7 +3087,7 @@ header>h4+p {
 }
 
 header.major {
-	margin: 0 0 4rem 0;
+	margin: 0 0 3rem 0;
 	text-align: center;
 }
 
@@ -3102,7 +3102,7 @@ header.major>p {
 
 header.major>.date {
 	font-size: 1rem;
-	margin: 0 0 4rem 0;
+	margin: 0 0 2rem 0;
 }
 
 header.major>.date:before,
@@ -3954,7 +3954,7 @@ body.is-preload #intro:not(.hidden)+#header+#nav {
 }
 
 #main>.post {
-	padding: 8rem 8rem 6rem 8rem;
+	padding: 5rem 7rem 0.5rem 7rem;
 }
 
 #main>.post header.major>.date {

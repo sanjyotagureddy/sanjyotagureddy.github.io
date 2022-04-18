@@ -19,19 +19,19 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">Work Experience</a>
+						<a href="index.html" class="logo">Github Overview</a>
 					</header>
 
 				<!-- Nav -->
 				<nav id="nav">
 					<ul class="links">
 						<li><a href="index.html">Portfolio</a></li>
-						<li class="active"><a href="work.html">Work Experience</a></li>
-						<li><a href="github.html" class="icon brands fa-github"> Github Overview</a></li>
+						<li><a href="work.html">Work Experience</a></li>
+						<li class="active"><a href="github.html" class="icon brands fa-github"> Github Overview</a></li>
 					</ul>
 					<ul class="icons">
 						<li><a href="https://www.linkedin.com/in/sanjyotagureddy" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://www.github.com/sanjyotagureddy" class="icon brands fa-github"><span class="label"> GitHub</span></a></li>
+						<li><a href="https://www.github.com/sanjyotagureddy" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 						<li><a href="https://twitter.com/sanjyotagureddy" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 					</ul>
 				</nav>
@@ -40,18 +40,11 @@
 					<div id="main">
 
 						<!-- Post -->
-							<section class="post">
+							<section class="post" style="padding: 5rem 0rem;">
 								<header class="major">
 									<span id="date"  class="date"></span>
-									<h1>This is a<br />
-									Generic Page</h1>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
 								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
+								<div id="github-div" class="image main"></div>
 							</section>
 
 					</div>
@@ -94,6 +87,7 @@
 
 		<!-- Scripts -->
 			<script src="/assets/js/date.js"></script>
+			
 			<script src="/assets/js/jquery.min.js"></script>
 			<script src="/assets/js/jquery.scrollex.min.js"></script>
 			<script src="/assets/js/jquery.scrolly.min.js"></script>
@@ -101,6 +95,16 @@
 			<script src="/assets/js/breakpoints.min.js"></script>
 			<script src="/assets/js/util.js"></script>
 			<script src="/assets/js/main.js"></script>
-			
+			<script>
+				$("#github-div")
+					.html('<object id="obj-git" data="https://octoprofile.vercel.app/user?id=sanjyotagureddy"/>')
+					;
+			</script>
+			<style>
+				#obj-git{
+					width: 100%;
+					height: 2000px;
+				}
+			</style>			
 	</body>
 </html>
