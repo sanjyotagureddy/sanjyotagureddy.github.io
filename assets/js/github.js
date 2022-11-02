@@ -6,6 +6,7 @@ async function getAllRepos() {
 
     const repoList = {
         "aspnetrun-microservices": "sanjyotagureddy", 
+        "dotnetcore-monitoring": "sanjyotagureddy", 
         "dotnetcore-payloadlogging": "sanjyotagureddy", 
         "dotnetcore-data-ef-cqrs": "sanjyotagureddy", 
         "dotnetcore-data-ado-generic": "sanjyotagureddy", 
