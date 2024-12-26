@@ -1,0 +1,81 @@
+/* Floating Theme Toggle Button */
+#theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3b5998;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#theme-toggle:hover {
+  background-color: #2c3e50;
+  transform: scale(1.1);
+}
+
+#theme-toggle:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  white-space: nowrap;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+#theme-toggle::after {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Email Button Styles */
+.download-cv {
+  position: fixed;
+  bottom: 20px;
+  right: 100px;
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #3b5998;
+  color: white;
+  text-decoration: dotted;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  border-radius: 50px;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+.download-cv i {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+.download-cv:hover {
+  background-color: #2c3e50;
+  transform: scale(1.1);
+}
+
+.download-cv:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 89, 152, 0.5);
+}

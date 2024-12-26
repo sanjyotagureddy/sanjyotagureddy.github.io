@@ -1,0 +1,51 @@
+/* Social Media Buttons Styles */
+.social-media-buttons {
+  position: fixed;
+  bottom: 20px; /* Adjust the distance from the bottom */
+  left: 20px; /* Adjust the distance from the left */
+  display: flex;
+  flex-direction: column; /* Stack the buttons vertically */
+  gap: 10px; /* Space between buttons */
+  z-index: 1000; /* Ensure buttons appear on top */
+}
+
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #333; /* Dark background */
+  color: white;
+  border-radius: 50%; /* Make the buttons circular */
+  font-size: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-button:hover {
+  background-color: #ffcc00; /* Highlight color on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.social-button:focus {
+  outline: none;
+}
+
+.linkedin {
+  background-color: #0077b5; /* LinkedIn blue */
+}
+
+.twitter {
+  background-color: #1da1f2; /* Twitter blue */
+}
+
+.facebook {
+  background-color: #1877f2; /* Facebook blue */
+}
+
+.github {
+  background-color: #333; /* GitHub black */
+}
+
+/* Add more custom styles for other social platforms here */

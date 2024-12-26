@@ -1,0 +1,29 @@
+/* Email Button Styles */
+.email-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #3b5998;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.email-button i {
+  margin-right: 10px;
+  font-size: 1.8rem;
+}
+
+.email-button:hover {
+  background-color: #2d4373;
+  transform: scale(1.05);
+}
+
+.email-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 89, 152, 0.5);
+}

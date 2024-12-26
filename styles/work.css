@@ -1,0 +1,394 @@
+/* Apply scrolling to all divs in the app */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-y: auto;
+  min-height: 100vh; /* Ensure the body takes up full height */
+}
+/* Modal Background */
+.custom-modal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  border-radius: 15px; /* More rounded corners */
+  z-index: 9999;
+  left: 0;
+  top: 60px; /* Adjust this value based on the height of your top navigation bar */
+  width: 100%;
+  height: 1000;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Increased shadow effect */
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden; /* Prevent scrolling on the modal background */
+}
+
+/* Modal Content */
+.custom-modal-content {
+  background-color: #ffffff;
+  margin: 7% auto;
+  border-radius: 15px;
+  width: 125%;
+  height: 70%;
+  max-width: 1250px;
+  padding: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: #333;
+  font-family: "Roboto", sans-serif;
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+  max-height: 65vh;
+}
+
+/* Close Button */
+.custom-close-btn {
+  font-size: 40px; /* Larger close button */
+  color: #923e3e;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  cursor: pointer;
+  border-color: white;
+  border-width: 1cm;
+  transition: color 0.3s, transform 0.3s; /* Add transition for transform */
+}
+
+.custom-close-btn:hover {
+  color: #ff9f55; /* Highlight color when hovering */
+  transform: scale(1.2); /* Expand button on hover */
+}
+
+/* Modal Heading */
+.modal-company-name {
+  font-size: 32px; /* Larger font for company name */
+  font-weight: 700;
+  margin-bottom: 20px; /* Increased space */
+  color: #333;
+}
+
+/* Modal Subheadings */
+.custom-modal-content h4 {
+  font-size: 24px; /* Larger subheading */
+  font-weight: 500;
+  margin-top: 25px; /* More spacing */
+  color: #333;
+}
+
+/* Modal Paragraph */
+.custom-modal-content p {
+  font-size: 18px; /* Larger font for body text */
+  line-height: 1.8;
+  margin-top: 15px;
+  color: #333;
+}
+
+/* Modal List */
+.custom-modal-content ul {
+  margin-top: 15px;
+  padding-left: 30px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .custom-modal-content {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .modal-company-name {
+    font-size: 28px;
+  }
+
+  .custom-modal-content h4 {
+    font-size: 22px;
+  }
+
+  .custom-modal-content p {
+    font-size: 16px;
+  }
+}
+
+/* Timeline Card */
+.custom-timeline-card {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Slightly translucent white background */
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgb(255 255 255 / 19%);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  color: #000; /* Black text color */
+  max-width: 1500px;
+  margin: auto;
+}
+
+.custom-timeline-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Timeline Card Header */
+.custom-timeline-card .timeline-header {
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.custom-timeline-card .timeline-header h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.custom-timeline-card .year {
+  color: white;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  background: linear-gradient(
+    to right,
+    #ef5350,
+    #f48fb1,
+    #7e57c2,
+    #2196f3,
+    #26c6da,
+    #43a047,
+    #eeff41,
+    #f9a825,
+    #ff5722
+  );
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.custom-timeline-card .year:hover {
+  transform: scale(1.05); /* Slightly enlarge the year on hover */
+}
+
+/* Timeline Item */
+.custom-timeline-item {
+  margin-bottom: 20px;
+}
+
+/* Timeline Card */
+.custom-timeline-card {
+  background: rgba(29, 25, 25, 0.5); /* Slightly translucent white background */
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* More prominent shadow for depth */
+  margin-bottom: 30px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  color: #000; /* Black text color */
+}
+
+.custom-timeline-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Timeline Card Header */
+.custom-timeline-card .custom-timeline-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Year on the left */
+.custom-timeline-card .custom-timeline-header .custom-year {
+  font-size: 28px; /* Larger year */
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  left: 15px; /* Align to the left side */
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #888888
+  ); /* Black and gray gradient */
+  -webkit-background-clip: text; /* Clips the background to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text color transparent to show the gradient */
+}
+
+.custom-timeline-card .custom-timeline-header .custom-year-active {
+  font-size: 15px; /* Larger year */
+  font-weight: bold;
+  margin-top: 20px;
+  color: white;
+  position: absolute;
+  right: 110px; /* Align to the left side */
+  background: linear-gradient(
+    to left,
+    #ffffff,
+    #fcf8f8
+  ); /* Black and gray gradient */
+  -webkit-background-clip: text; /* Clips the background to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text color transparent to show the gradient */
+}
+
+/* Company name in the center */
+.custom-timeline-card .custom-timeline-header .custom-company-name {
+  font-size: 38px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  flex-grow: 1; /* Ensure the name stays centered */
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #e2e2e2
+  ); /* Black and gray gradient */
+  -webkit-background-clip: text; /* Clips the background to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text color transparent to show the gradient */
+  text-shadow: 4px 4px 10px rgba(44, 102, 219, 0.3); /* Adding shadow */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .custom-timeline-card .custom-timeline-header .custom-year {
+    font-size: 36px; /* Slightly smaller for smaller screens */
+  }
+
+  .custom-timeline-card .custom-timeline-header .custom-company-name {
+    font-size: 38px; /* Slightly smaller company name */
+  }
+}
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .custom-timeline-card {
+    padding: 20px;
+  }
+
+  .custom-timeline-card .timeline-header h3 {
+    font-size: 20px;
+  }
+
+  .custom-timeline-card .year {
+    font-size: 14px;
+  }
+
+  .custom-timeline-card .timeline-content h4 {
+    font-size: 16px;
+  }
+}
+
+/* List within the timeline content */
+.custom-timeline-card .timeline-content ul {
+  padding-left: 25px;
+}
+
+.custom-timeline-card .timeline-content ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.custom-timeline-card .timeline-content h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Modal and Timeline Card Hover Effect */
+.custom-timeline-card .year:hover {
+  background-color: #ff7f2a;
+  transform: scale(1.1);
+}
+
+/* Smooth transition to modal appearance */
+.custom-modal-content {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Keyframes for fadeIn effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.custom-timeline-card .timeline-header h3 {
+  font-size: 40px;
+}
+
+/* Company Logo Styles */
+.company-logo {
+  width: 100px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 100px; /* Space between the company name and the logo */
+  z-index: 1;
+  vertical-align: middle; /* Align the logo with the middle of the text */
+}
+
+/* Ensure timeline headers display flex to align items horizontally */
+.custom-timeline-header {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+}
+
+/* Additional styles for the rest of the content */
+.custom-timeline-item {
+  margin-bottom: 20px; /* Space between timeline items */
+}
+
+.custom-timeline-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.custom-timeline-header span,
+.custom-timeline-header h3 {
+  margin-right: 10px; /* Space between elements */
+}
+
+.custom-modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.custom-close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.custom-close-btn:hover,
+.custom-close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.custom-modal h3 {
+  margin-top: 0;
+}
+
+.custom-modal ul {
+  padding-left: 20px;
+}

@@ -1,0 +1,44 @@
+/* Footer Styles */
+.footer {
+  background-color: #333; /* Dark background similar to navbar */
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0; /* Remove margin from <p> */
+  padding: 0; /* Optionally, remove padding if needed */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between the items */
+}
+
+.footer-links li {
+  margin: 0;
+}
+
+.footer-links a {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffcc00; /* Highlight on hover */
+}
+
+.footer-links a:focus {
+  outline: none;
+}
