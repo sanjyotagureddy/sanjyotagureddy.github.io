@@ -1,288 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Website</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      rel="stylesheet"
-    />
-  
 
-    <link rel="stylesheet" href="styles/global.css" />
-    <link rel="stylesheet" href="styles/navbar.css" />
-    <link rel="stylesheet" href="styles/parallax.css" />
-    <link rel="stylesheet" href="styles/email-button.css" />
-    <link rel="stylesheet" href="styles/theme-toggle.css" />
-    <link rel="stylesheet" href="styles/scrollbar.css" />
-    <link rel="stylesheet" href="styles/animations.css" />
-    <link rel="stylesheet" href="styles/footer.css" />
-    <link rel="stylesheet" href="styles/social-media.css" />
-    <link rel="stylesheet" href="styles/work.css" />
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#intro">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#github">Github</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanjyot Agureddy</title>
+  <link rel="icon" href="images/developer.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
 
-    <!-- Sections -->
-    <div class="parallax-section intro" id="intro">
-      <div class="content">
-        <h2>Welcome to My Portfolio</h2>
-        <p>Explore my work and experience!</p>
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/navbar.css" />
+  <link rel="stylesheet" href="styles/parallax.css" />
+  <link rel="stylesheet" href="styles/email-button.css" />
+  <link rel="stylesheet" href="styles/theme-toggle.css" />
+  <link rel="stylesheet" href="styles/scrollbar.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+  <link rel="stylesheet" href="styles/social-media.css" />
+  <link rel="stylesheet" href="styles/work.css" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#intro">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#github">Github</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sections -->
+  <div class="parallax-section intro" id="intro">
+    <div class="content">
+      <h2>Welcome to My Portfolio</h2>
+      <p>Explore my work and experience!</p>
+    </div>
+  </div>
+
+  <div class="parallax-section about" id="about">
+    <div class="content">
+      <h2>About Me</h2>
+      <p>Details about myself...</p>
+    </div>
+  </div>
+
+  <div class="parallax-section work" id="work">
+    <div class="content">
+      <h2>Work</h2>
+      <br />
+      <br />
+      <!-- JP Morgan Chase & Co. -->
+      <div class="custom-timeline-item">
+        <div class="custom-timeline-card">
+          <div class="custom-timeline-header" data-card="1">
+            <span class="custom-year">2022</span>
+            <span class="custom-year-active">Present</span>
+            <span class="custom-company-name">JP Morgan Chase & Co.</span>
+            <img src="images/jpmorgan.png" alt="JP Morgan Logo" class="company-logo"
+              style="filter: invert(1) brightness(2)" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for JP Morgan Chase & Co. -->
+      <div id="modal-1" class="custom-modal">
+        <div class="custom-modal-content">
+          <span class="custom-close-btn">&times;</span>
+          <h3 class="modal-company-name">JP Morgan Chase & Co.</h3>
+          <h4>Senior Software Engineer</h4>
+          <p>
+            As a Senior Software Engineer at JP Morgan Chase & Co., I worked
+            on developing scalable microservices solutions to support various
+            financial services applications.
+          </p>
+          <h4>Responsibilities</h4>
+          <ul>
+            <li>
+              Developed microservices using .NET Core to provide backend
+              functionality for financial applications.
+            </li>
+            <li>
+              Collaborated with cross-functional teams to design and implement
+              RESTful APIs.
+            </li>
+            <li>
+              Worked with Azure Cloud Services for deploying and scaling
+              applications.
+            </li>
+            <li>
+              Maintained high availability and performance of services through
+              regular monitoring and optimization.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- NICE Interactive Solutions Pvt Ltd -->
+      <div class="custom-timeline-item">
+        <div class="custom-timeline-card">
+          <div class="custom-timeline-header" data-card="2">
+            <span class="custom-year">2021</span>
+            <span class="custom-company-name">NICE Interactive Solutions Pvt Ltd</span>
+            <img src="images/nice.svg" alt="NICE Logo" class="company-logo" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for NICE Interactive Solutions Pvt Ltd -->
+      <div id="modal-2" class="custom-modal">
+        <div class="custom-modal-content">
+          <span class="custom-close-btn">&times;</span>
+          <h3 class="modal-company-name">
+            NICE Interactive Solutions Pvt Ltd
+          </h3>
+          <h4>Tech Lead Software Engineer</h4>
+          <p>
+            As a Tech Lead Software Engineer at NICE Interactive Solutions, I
+            led a team of developers to design and implement high-performance
+            solutions for customer interaction systems.
+          </p>
+          <h4>Responsibilities</h4>
+          <ul>
+            <li>
+              Led a team of 5 engineers in designing scalable and efficient
+              software solutions for client interactions.
+            </li>
+            <li>
+              Architected and developed RESTful APIs to enable integration
+              with third-party systems.
+            </li>
+            <li>
+              Implemented continuous integration and deployment (CI/CD)
+              pipelines for streamlined code delivery.
+            </li>
+            <li>
+              Mentored junior engineers and conducted code reviews to maintain
+              high-quality standards.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Pitney Bowes -->
+      <div class="custom-timeline-item">
+        <div class="custom-timeline-card">
+          <div class="custom-timeline-header" data-card="3">
+            <span class="custom-year">2020</span>
+            <span class="custom-company-name">Pitney Bowes</span>
+            <img src="images/pitneybowes.png" alt="Pitney Bowes Logo" class="company-logo"
+              style="width: 150px; margin: 0px" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Pitney Bowes -->
+      <div id="modal-3" class="custom-modal">
+        <div class="custom-modal-content">
+          <span class="custom-close-btn">&times;</span>
+          <h3 class="modal-company-name">Pitney Bowes</h3>
+          <h4>Senior Software Engineer</h4>
+          <p>
+            As a Senior Software Engineer at Pitney Bowes, I was responsible
+            for building and maintaining scalable applications for logistics
+            and shipping solutions.
+          </p>
+          <h4>Responsibilities</h4>
+          <ul>
+            <li>
+              Developed scalable and reliable systems to handle logistics
+              operations using .NET and SQL Server.
+            </li>
+            <li>
+              Collaborated with product managers to define software
+              requirements and ensure timely delivery.
+            </li>
+            <li>
+              Participated in performance tuning and optimization of services
+              to handle large data volumes efficiently.
+            </li>
+            <li>
+              Provided support for deployment and production troubleshooting
+              to ensure service uptime.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- FIS Global -->
+      <div class="custom-timeline-item">
+        <div class="custom-timeline-card">
+          <div class="custom-timeline-header" data-card="4">
+            <span class="custom-year">2019</span>
+            <span class="custom-company-name">FIS Global</span>
+            <img src="images/FIS.svg" alt="FIS Global Logo" class="company-logo" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for FIS Global -->
+      <div id="modal-4" class="custom-modal">
+        <div class="custom-modal-content">
+          <span class="custom-close-btn">&times;</span>
+          <h3 class="modal-company-name">FIS Global</h3>
+          <h4>Technical Consultant</h4>
+          <p>
+            As a Technical Consultant at FIS Global, I worked closely with
+            clients to customize and implement financial software solutions
+            that met their business needs.
+          </p>
+          <h4>Responsibilities</h4>
+          <ul>
+            <li>
+              Implemented financial software solutions by customizing and
+              configuring applications to meet customer requirements.
+            </li>
+            <li>
+              Provided technical guidance and support to clients during the
+              integration of the software into their systems.
+            </li>
+            <li>
+              Created and maintained technical documentation for internal and
+              external stakeholders.
+            </li>
+            <li>
+              Collaborated with development teams to ensure software met
+              client specifications and deadlines.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Zensar Technologies -->
+      <div class="custom-timeline-item">
+        <div class="custom-timeline-card">
+          <div class="custom-timeline-header" data-card="5">
+            <span class="custom-year">2015</span>
+            <span class="custom-company-name">Zensar Technologies</span>
+            <img src="images/Zensar.png" alt="Zensar Technologies Logo" class="company-logo"
+              style="filter: invert(1) brightness(2)" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Zensar Technologies -->
+      <div id="modal-5" class="custom-modal">
+        <div class="custom-modal-content">
+          <span class="custom-close-btn">&times;</span>
+          <h3 class="modal-company-name">Zensar Technologies</h3>
+          <h4>Software Engineer</h4>
+          <p>
+            At Zensar Technologies, I started my career as a Software
+            Engineer, developing software solutions for clients in diverse
+            industries such as retail and manufacturing.
+          </p>
+          <h4>Responsibilities</h4>
+          <ul>
+            <li>
+              Designed and developed software applications using .NET
+              Framework to meet business requirements.
+            </li>
+            <li>
+              Conducted unit and integration testing to ensure software
+              reliability and performance.
+            </li>
+            <li>
+              Collaborated with senior developers and project managers to
+              design and implement solutions.
+            </li>
+            <li>
+              Provided maintenance and support for deployed applications and
+              systems.
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
+  </div>
 
-    <div class="parallax-section about" id="about">
-      <div class="content">
-        <h2>About Me</h2>
-        <p>Details about myself...</p>
-      </div>
-    </div>
-
-    <div class="parallax-section work" id="work">
-      <div class="content">
-        <h2>Work</h2>
-        
-        <!-- JP Morgan Chase & Co. -->
-        <div class="custom-timeline-item">
-          <div class="custom-timeline-card">
-            <div class="custom-timeline-header" data-card="1">
-              <span class="custom-year">2022</span>
-              <span class="custom-year-active">Present</span>
-              <span class="custom-company-name">JP Morgan Chase & Co.</span>
-              <img src="images/jpmorgan.png" alt="JP Morgan Logo" class="company-logo">
-            </div>
-          </div>
-        </div>
-    
-        <!-- Modal for JP Morgan Chase & Co. -->
-        <div id="modal-1" class="custom-modal">
-          <div class="custom-modal-content">
-            <span class="custom-close-btn">&times;</span>
-            <h3 class="modal-company-name">JP Morgan Chase & Co.</h3>
-            <h4>Senior Software Engineer</h4>
-            <p>As a Senior Software Engineer at JP Morgan Chase & Co., I worked on developing scalable microservices solutions to support various financial services applications.</p>
-            <h4>Responsibilities</h4>
-            <ul>
-              <li>Developed microservices using .NET Core to provide backend functionality for financial applications.</li>
-              <li>Collaborated with cross-functional teams to design and implement RESTful APIs.</li>
-              <li>Worked with Azure Cloud Services for deploying and scaling applications.</li>
-              <li>Maintained high availability and performance of services through regular monitoring and optimization.</li>
-            </ul>
-          </div>
-        </div>
-    
-        <!-- NICE Interactive Solutions Pvt Ltd -->
-        <div class="custom-timeline-item">
-          <div class="custom-timeline-card">
-            <div class="custom-timeline-header" data-card="2">
-              <span class="custom-year">2021</span>
-              <span class="custom-company-name">NICE Interactive Solutions Pvt Ltd</span>
-              <img src="images/nice.svg" alt="NICE Logo" class="company-logo">
-            </div>
-          </div>
-        </div>
-    
-        <!-- Modal for NICE Interactive Solutions Pvt Ltd -->
-        <div id="modal-2" class="custom-modal">
-          <div class="custom-modal-content">
-            <span class="custom-close-btn">&times;</span>
-            <h3 class="modal-company-name">NICE Interactive Solutions Pvt Ltd</h3>
-            <h4>Tech Lead Software Engineer</h4>
-            <p>As a Tech Lead Software Engineer at NICE Interactive Solutions, I led a team of developers to design and implement high-performance solutions for customer interaction systems.</p>
-            <h4>Responsibilities</h4>
-            <ul>
-              <li>Led a team of 5 engineers in designing scalable and efficient software solutions for client interactions.</li>
-              <li>Architected and developed RESTful APIs to enable integration with third-party systems.</li>
-              <li>Implemented continuous integration and deployment (CI/CD) pipelines for streamlined code delivery.</li>
-              <li>Mentored junior engineers and conducted code reviews to maintain high-quality standards.</li>
-            </ul>
-          </div>
-        </div>
-    
-        <!-- Pitney Bowes -->
-        <div class="custom-timeline-item">
-          <div class="custom-timeline-card">
-            <div class="custom-timeline-header" data-card="3">
-              <span class="custom-year">2020</span>
-              <span class="custom-company-name">Pitney Bowes</span>
-              <img src="images/pitneybowes.png" alt="Pitney Bowes Logo" class="company-logo" style="">
-            </div>
-          </div>
-        </div>
-    
-        <!-- Modal for Pitney Bowes -->
-        <div id="modal-3" class="custom-modal">
-          <div class="custom-modal-content">
-            <span class="custom-close-btn">&times;</span>
-            <h3 class="modal-company-name">Pitney Bowes</h3>
-            <h4>Senior Software Engineer</h4>
-            <p>As a Senior Software Engineer at Pitney Bowes, I was responsible for building and maintaining scalable applications for logistics and shipping solutions.</p>
-            <h4>Responsibilities</h4>
-            <ul>
-              <li>Developed scalable and reliable systems to handle logistics operations using .NET and SQL Server.</li>
-              <li>Collaborated with product managers to define software requirements and ensure timely delivery.</li>
-              <li>Participated in performance tuning and optimization of services to handle large data volumes efficiently.</li>
-              <li>Provided support for deployment and production troubleshooting to ensure service uptime.</li>
-            </ul>
-          </div>
-        </div>
-    
-        <!-- FIS Global -->
-        <div class="custom-timeline-item">
-          <div class="custom-timeline-card">
-            <div class="custom-timeline-header" data-card="4">
-              <span class="custom-year">2019</span>
-              <span class="custom-company-name">FIS Global</span>
-              <img src="images/FIS.svg" alt="FIS Global Logo" class="company-logo">
-            </div>
-          </div>
-        </div>
-    
-        <!-- Modal for FIS Global -->
-        <div id="modal-4" class="custom-modal">
-          <div class="custom-modal-content">
-            <span class="custom-close-btn">&times;</span>
-            <h3 class="modal-company-name">FIS Global</h3>
-            <h4>Technical Consultant</h4>
-            <p>As a Technical Consultant at FIS Global, I worked closely with clients to customize and implement financial software solutions that met their business needs.</p>
-            <h4>Responsibilities</h4>
-            <ul>
-              <li>Implemented financial software solutions by customizing and configuring applications to meet customer requirements.</li>
-              <li>Provided technical guidance and support to clients during the integration of the software into their systems.</li>
-              <li>Created and maintained technical documentation for internal and external stakeholders.</li>
-              <li>Collaborated with development teams to ensure software met client specifications and deadlines.</li>
-            </ul>
-          </div>
-        </div>
-    
-        <!-- Zensar Technologies -->
-        <div class="custom-timeline-item">
-          <div class="custom-timeline-card">
-            <div class="custom-timeline-header" data-card="5">
-              <span class="custom-year">2015</span>
-              <span class="custom-company-name">Zensar Technologies</span>
-              <img src="images/Zensar.png" alt="Zensar Technologies Logo" class="company-logo" style="filter: invert(1) brightness(2);">
-            </div>
-          </div>
-        </div>
-    
-        <!-- Modal for Zensar Technologies -->
-        <div id="modal-5" class="custom-modal">
-          <div class="custom-modal-content">
-            <span class="custom-close-btn">&times;</span>
-            <h3 class="modal-company-name">Zensar Technologies</h3>
-            <h4>Software Engineer</h4>
-            <p>At Zensar Technologies, I started my career as a Software Engineer, developing software solutions for clients in diverse industries such as retail and manufacturing.</p>
-            <h4>Responsibilities</h4>
-            <ul>
-              <li>Designed and developed software applications using .NET Framework to meet business requirements.</li>
-              <li>Conducted unit and integration testing to ensure software reliability and performance.</li>
-              <li>Collaborated with senior developers and project managers to design and implement solutions.</li>
-              <li>Provided maintenance and support for deployed applications and systems.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-
-    <div class="parallax-section github" id="github">
-      <div class="content">
-        <p><br/>
-          Github</p>
-      </div>
-      <div class="github-raised">
-        <iframe
-          src="https://octoprofile.vercel.app/user?id=sanjyotagureddy"
-          frameborder="0"
-          width="100%"
-          height="100%"
-          title="GitHub Profile"
-        ></iframe>
-      </div>
-    </div>
-    
-    <div class="parallax-section education" id="education">
-      <div class="content">
-        <h2>Education</h2>
-        <p>My academic journey...</p>
-      </div>
-    </div>
-    
-    
-    <div class="parallax-section contact" id="contact">
-      <div class="content">
-        <h2>Contact Me</h2>
-        <!-- Email Button with Icon -->
-        <br><br>
-        <a href="mailto:sanjyot.agureddy4@gmail.com" class="email-button">
-          <i class="fas fa-envelope"></i> Email Me
-        </a>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="nav-links">
-      <p style="margin: 10px; text-align: center">
-        &copy; 2024 Sanjyot Agureddy. All Rights Reserved.
+  <div class="parallax-section github" id="github">
+    <div class="content">
+      <p>
+        <br />
+        Github
       </p>
-    </footer>
-    <!-- Theme Toggle Button -->
-    <button id="theme-toggle" class="theme-toggle">🌙</button>
-
-    <!-- New Download CV Button -->
-<a href="docs/resume.pdf" download id="download-cv" class="download-cv" data-tooltip="Download CV">
-  <i class="fas fa-download"></i>
-  <span>Download CV</span>
-</a>
-
-    
-    <!-- Social Media Buttons Section -->
-    <div class="social-media-buttons">
-      <a
-        href="https://github.com/sanjyotagureddy"
-        target="_blank"
-        class="social-button github"
-        ><i class="fab fa-github"></i
-      ></a>
-      <a
-        href="https://www.linkedin.com/in/sanjyotagureddy"
-        target="_blank"
-        class="social-button linkedin"
-        ><i class="fab fa-linkedin"></i
-      ></a>
-      <a
-        href="https://twitter.com/sanjyotagureddy"
-        target="_blank"
-        class="social-button twitter"
-        ><i class="fab fa-twitter"></i
-      ></a>
-      <a
-        href="https://www.facebook.com/sanjyotagureddy"
-        target="_blank"
-        class="social-button facebook"
-        ><i class="fab fa-facebook"></i
-      ></a>
     </div>
+    <div class="github-raised">
+      <iframe src="https://octoprofile.vercel.app/user?id=sanjyotagureddy" frameborder="0" width="100%" height="100%"
+        title="GitHub Profile"></iframe>
+    </div>
+  </div>
 
-    <!-- JavaScript -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
-    <script src="timeline.js"></script>
-  </body>
+  <div class="parallax-section education" id="education">
+    <div class="content">
+      <h2>Education</h2>
+      <p>My academic journey...</p>
+    </div>
+  </div>
+
+  <div class="parallax-section contact" id="contact">
+    <div class="content">
+      <h2>Contact Me</h2>
+      <!-- Email Button with Icon -->
+      <br /><br />
+      <a href="mailto:sanjyot.agureddy4@gmail.com" class="email-button">
+        <i class="fas fa-envelope"></i> Email Me
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="nav-links">
+    <p style="margin: 10px; text-align: center">
+      &copy; 2024 Sanjyot Agureddy. All Rights Reserved.
+    </p>
+  </footer>
+  <!-- Theme Toggle Button -->
+  <button id="theme-toggle" class="theme-toggle">🌙</button>
+
+  <!-- New Download CV Button -->
+  <a href="docs/resume.pdf" download id="download-cv" class="download-cv" data-tooltip="Download CV">
+    <i class="fas fa-download"></i>
+    <span>Download CV</span>
+  </a>
+
+  <!-- Social Media Buttons Section -->
+  <div class="social-media-buttons">
+    <a href="https://github.com/sanjyotagureddy" target="_blank" class="social-button github"><i
+        class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/sanjyotagureddy" target="_blank" class="social-button linkedin"><i
+        class="fab fa-linkedin"></i></a>
+    <a href="https://twitter.com/sanjyotagureddy" target="_blank" class="social-button twitter"><i
+        class="fab fa-twitter"></i></a>
+    <a href="https://www.facebook.com/sanjyotagureddy" target="_blank" class="social-button facebook"><i
+        class="fab fa-facebook"></i></a>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script src="timeline.js"></script>
+</body>
+
 </html>
