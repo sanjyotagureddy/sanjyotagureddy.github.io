@@ -1,0 +1,57 @@
+SANJYOT AGUREDDY
+Solution Architect | Cloud-Native Distributed Systems | .NET | AWS | AI-Driven Engineering
++91 7875633727  •  sanjyot.agureddy4@gmail.com  •  linkedin.com/in/sanjyotagureddy  •  github.com/sanjyotagureddy  •  Pune, India
+SUMMARY
+Solution Architect (individual-contributor track) with 11+ years in cloud-native, event-driven platform engineering, transitioned into the architect role at JPMorgan Chase after 2.5 years leading technical design as a Technical Lead. Sets architectural direction and technical standards used by 10-30 engineers across multiple teams, informally mentors’ engineers on design and architecture reviews, and regularly presents technology roadmap and modernization decisions to VP/Director-level leadership and architecture review boards. Track record spans .NET, AWS, and Kafka platform design for fintech transaction processing, monolith-to-microservices modernization, and introducing AI-driven engineering practices — LLM workflows, multi-model orchestration, intelligent automation. AWS certified (Solutions Architect, Developer, SysOps Administrator), with foundational Azure certifications.
+CORE COMPETENCIES
+•	Architecture Governance & Standards	•	Cross-Team Technical Leadership
+•	Technology Roadmap & Modernization Strategy	•	Stakeholder & Executive Communication
+•	Event-Driven & Distributed Systems Design	•	AI-Driven Engineering Enablement
+•	Cloud-Native Platform Engineering	•	Financial Services Compliance & Security
+
+TECHNICAL SKILLS
+Architecture: Solution Architecture, Microservices, Event-Driven Architecture, Distributed Systems, Domain-Driven Design, API Design & Integration, System Modernization, High Availability & Resiliency, Generative AI, Agentic AI, LLM Workflows, Prompt Engineering, GitHub Copilot
+Engineering: C#, .NET Core/.NET 8, ASP.NET Core, REST APIs, EF Core, Python, MediatR, CQRS, Kafka, RabbitMQ, SQL CDC, SQL Server, PostgreSQL, Redis, Docker
+Cloud & DevOps: AWS (Lambda, S3, DynamoDB, RDS, EC2, API Gateway, Secrets Manager), Azure, GitHub Actions, Jenkins, CI/CD Automation, Structured Logging, Distributed Tracing, Serilog, Sumo Logic
+EXPERIENCE
+JPMorgan Chase  —  Pune, India	07/2022 – Present
+Solution Architect 	01/2025 – Present
+•	Own architecture and technical direction for enterprise modernization programs, setting technical standards used by 10-30 engineers across multiple teams building on the platforms I designed as Technical Lead.
+•	Regularly present architecture decisions and technology roadmap recommendations to VP/Director-level leadership and architecture review boards, supporting alignment on build-vs-buy calls, platform standards, and modernization priorities.
+•	Define secure integration and compliance standards (encryption, IAM policies, access controls) for financial services microservices, and set observability standards (structured logging, distributed tracing) that shortened incident response time.
+•	Informally mentor engineers across teams through design and architecture reviews, helping less-senior engineers reason about tradeoffs in distributed systems design before implementation.
+Technical Lead	07/2022 – 12/2024
+•	Led technical design and delivery of an event-driven platform on Kafka for real-time financial order processing (new, updated, cancelled orders), defining integration patterns, retry strategies, and downstream processing standards now used by teams building on the platform.
+•	Directed design of vendor-specific transformation pipelines that automated downstream financial processing, reducing manual reconciliation effort and operational bottlenecks.
+•	Introduced AI-assisted engineering practices — GitHub Copilot, multi-model orchestration, LLM-driven automation — to improve code review quality and developer productivity; led development of an AI-powered source code documentation platform recognized as 2nd Runner-Up at the JPMorgan Chase Hackathon.
+•	Contributed to enterprise modernization programs, transforming legacy monolithic applications into cloud-native microservices; reduced delivery timelines by 20% through reusable engineering patterns and improved Agile execution.
+Technical Lead Software Engineer | NICE — Pune, India	10/2021 – 06/2022
+•	Designed reusable platform services for resilience, observability, and security across enterprise microservices, including a centralized framework with plug-and-play retry logic, circuit breakers, and exception handling.
+•	Implemented an automated secrets management platform using AWS Secrets Manager and Lambda, eliminating manual credential handling and enabling secure rotation.
+•	Led cross-functional teams of developers, QA, and DevOps across the delivery lifecycle; established coding standards, CI/CD pipelines, and quality gates; mentored engineers through architecture reviews.
+Senior Software Engineer | Pitney Bowes — Pune, India	04/2020 – 10/2021
+•	Owned the Kafka-based synchronization module end-to-end — design, build, and production support — as sole module owner, replacing a legacy Classic ASP monolith with no distributed processing capability with an event-driven architecture that eliminated synchronous processing bottlenecks and enabled real-time data movement between platforms.
+•	Architected event-driven integration connecting legacy systems with microservices, enabling real-time distributed processing and improved interoperability across enterprise workflows.
+•	Led migration of legacy monolithic applications to .NET Core microservices, supporting incremental modernization without disrupting live systems.
+•	Implemented API integration and distributed messaging strategies improving interoperability between legacy platforms, microservices, and third-party systems.
+Technical Consultant | FIS — Pune & Bangkok	02/2019 – 04/2020
+•	Contributed to enterprise banking risk assessment platforms used for portfolio analysis, customer risk evaluation, and loan decisioning across global financial institutions.
+•	Built backend services in .NET and Python to aggregate and process financial data from multiple upstream systems; supported configurable, client-specific risk evaluation modules.
+•	Coordinated with onsite stakeholders in Bangkok and offshore teams on requirement analysis, sprint execution, and delivery alignment.
+•	Implemented centralized logging and monitoring (Sumo Logic, Serilog, log4net), improving production troubleshooting and incident tracking.
+Software Engineer | Zensar Technologies — Pune, India	08/2015 – 02/2019
+•	Delivered backend features and workflow automation for enterprise .NET applications; improved application stability through debugging, performance optimization, and refactoring.
+•	Designed and implemented a custom monitoring and alerting system for production servers, improving production availability by 30% and reducing incident response time.
+•	Participated in Agile delivery — sprint planning, code reviews, defect tracking — and coordinated with QA and business stakeholders on requirements validation.
+RECOGNITION
+2nd Runner-Up, JPMorgan Chase Hackathon '24 (AI-powered source code documentation)  
+•  ADS Quarterly Award, Pitney Bowes '21  
+•  Annual Excellence Award, Zensar '18  
+•  Budding Innovator's Award, Zensar '18
+CERTIFICATIONS
+AWS — Associate: Solutions Architect, Developer, SysOps Administrator
+AWS — Foundational: Cloud Practitioner
+Azure — Foundational: AZ-900 (Azure Fundamentals), DP-900 (Data Fundamentals), AI-900 (AI Fundamentals), SC-900 (Security, Compliance, and Identity Fundamentals)
+EDUCATION
+MBA, IT and Systems Management  —  SVKM's NMIMS	09/2022 – 06/2024
+B.E., Computer Engineering  —  Pune University	09/2012 – 06/2015

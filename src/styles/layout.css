@@ -1,0 +1,51 @@
+#app {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(var(--container-width), calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.section {
+  padding: clamp(3.6rem, 5vw, 5.2rem) 0;
+}
+
+.section-header {
+  margin-bottom: var(--space-5);
+  max-width: 76ch;
+}
+
+.section-header h2 {
+  font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.4rem);
+  margin-bottom: var(--space-3);
+}
+
+.section-header p {
+  color: var(--text-muted);
+  max-width: 70ch;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.two-col {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.timeline-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: var(--space-7) 0;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}

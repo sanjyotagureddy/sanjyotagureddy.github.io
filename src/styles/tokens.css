@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap");
+
+:root {
+  --bg: #e9edf1;
+  --bg-elevated: #f2f5f8;
+  --surface: rgba(255, 255, 255, 0.56);
+  --surface-strong: rgba(255, 255, 255, 0.72);
+  --text: #1e2933;
+  --text-muted: #5a6876;
+  --primary: #4e6f8a;
+  --primary-strong: #3d5a72;
+  --accent: #5b8b83;
+  --border: rgba(255, 255, 255, 0.55);
+  --glass-stroke: rgba(255, 255, 255, 0.6);
+  --glass-tint: rgba(255, 255, 255, 0.35);
+  --shadow-soft: 0 18px 40px rgba(44, 61, 79, 0.12);
+  --shadow-hover: 0 22px 50px rgba(44, 61, 79, 0.18);
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  --container-width: 1140px;
+  --header-height: 72px;
+
+  --font-heading: "Sora", "Segoe UI", sans-serif;
+  --font-body: "Manrope", "Segoe UI", sans-serif;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0d141d;
+  --bg-elevated: #131d29;
+  --surface: rgba(20, 33, 47, 0.58);
+  --surface-strong: rgba(24, 40, 57, 0.76);
+  --text: #e6edf3;
+  --text-muted: #9fb0bf;
+  --primary: #8ea3b5;
+  --primary-strong: #b3c3d1;
+  --accent: #88b7ad;
+  --border: rgba(151, 173, 191, 0.2);
+  --glass-stroke: rgba(188, 207, 223, 0.24);
+  --glass-tint: rgba(16, 27, 39, 0.45);
+  --shadow-soft: 0 20px 45px rgba(1, 7, 13, 0.5);
+  --shadow-hover: 0 24px 56px rgba(1, 7, 13, 0.6);
+}

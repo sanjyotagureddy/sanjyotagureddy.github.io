@@ -1,0 +1,50 @@
+#about {
+  position: relative;
+}
+
+#about::before {
+  content: "";
+  position: absolute;
+  inset: 10% auto auto 0;
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 45%, transparent) 0%, transparent 70%);
+  filter: blur(12px);
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+#experience {
+  position: relative;
+}
+
+#experience::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 18%;
+  width: 260px;
+  height: 260px;
+  border-radius: 999px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--primary) 32%, transparent) 0%, transparent 72%);
+  filter: blur(16px);
+  opacity: 0.34;
+  pointer-events: none;
+}
+
+#experience .card,
+#projects .card,
+#skills .card {
+  height: 100%;
+}
+
+#recognition .section,
+#education .section {
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-2);
+}
+
+.contact {
+  padding-bottom: var(--space-8);
+}

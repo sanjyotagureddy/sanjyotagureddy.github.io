@@ -1,350 +1,397 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sanjyot Agureddy</title>
-  <link rel="icon" href="images/developer.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap"
-    rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
-
-  <link rel="stylesheet" href="styles/global.css" />
-  <link rel="stylesheet" href="styles/navbar.css" />
-  <link rel="stylesheet" href="styles/parallax.css" />
-  <link rel="stylesheet" href="styles/email-button.css" />
-  <link rel="stylesheet" href="styles/theme-toggle.css" />
-  <link rel="stylesheet" href="styles/scrollbar.css" />
-  <link rel="stylesheet" href="styles/animations.css" />
-  <link rel="stylesheet" href="styles/footer.css" />
-  <link rel="stylesheet" href="styles/social-media.css" />
-  <link rel="stylesheet" href="styles/work.css" />
-</head>
-
-<body>
-  <!-- Navigation -->
-  <nav>
-    <ul class="nav-links">
-      <li><a href="#intro">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#github">Github</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Sections -->
-  <div class="parallax-section intro" id="intro">
-    <div class="content">
-      <h2>Welcome to My Portfolio</h2>
-      <p>Explore my work and experience!</p>
-    </div>
-  </div>
-
-  <div class="parallax-section about" id="about">
-    <div class="content">
-      <h2>About Me</h2>
-      <p>Details about myself...</p>
-    </div>
-  </div>
-
-  <div class="parallax-section work" id="work">
-    <div class="content">
-      <h2>Work</h2>
-      <br />
-      <br />
-      <!-- JP Morgan Chase & Co. -->
-      <div class="custom-timeline-item">
-        <div class="custom-timeline-card">
-          <div class="custom-timeline-header" data-card="1">
-            <span class="custom-year">2022</span>
-            <span class="custom-year-active">Present</span>
-            <span class="custom-company-name">JP Morgan Chase & Co.</span>
-            <img src="images/jpmorgan.png" alt="JP Morgan Logo" class="company-logo"
-              style="filter: invert(1) brightness(2)" />
-          </div>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./images/developer.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sanjyot Agureddy - Solution Architect focused on cloud-native distributed systems, .NET, AWS, and AI-driven engineering."
+    />
+    <title>Sanjyot Agureddy | Solution Architect</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#home">Sanjyot Agureddy</a>
+        <nav aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color mode" title="Toggle color mode">
+          <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+        </button>
       </div>
+    </header>
 
-      <!-- Modal for JP Morgan Chase & Co. -->
-      <div id="modal-1" class="custom-modal">
-        <div class="custom-modal-content">
-          <span class="custom-close-btn">&times;</span>
-          <h3 class="modal-company-name">JP Morgan Chase & Co.</h3>
-          <h4>Senior Software Engineer</h4>
-          <p>
-            As a Senior Software Engineer at JP Morgan Chase & Co., I worked
-            on developing scalable microservices solutions to support various
-            financial services applications.
-          </p>
-          <h4>Responsibilities</h4>
-          <ul>
-            <li>
-              Developed microservices using .NET Core to provide backend
-              functionality for financial applications.
-            </li>
-            <li>
-              Collaborated with cross-functional teams to design and implement
-              RESTful APIs.
-            </li>
-            <li>
-              Worked with Azure Cloud Services for deploying and scaling
-              applications.
-            </li>
-            <li>
-              Maintained high availability and performance of services through
-              regular monitoring and optimization.
-            </li>
+    <main id="main-content">
+      <section id="home" class="hero section">
+        <div class="container hero-shell">
+          <div>
+            <p class="eyebrow reveal">Solution Architect</p>
+            <h1 class="reveal">Designing Resilient Financial Platforms with Cloud, Events, and AI</h1>
+            <p class="tagline reveal">Sanjyot Agureddy | .NET | AWS | Distributed Systems | AI-Driven Engineering</p>
+            <p class="summary reveal">
+              I define architecture direction, modernization standards, and platform patterns that help engineering
+              teams deliver secure, scalable systems with speed and confidence.
+            </p>
+            <div class="hero-actions reveal">
+              <a class="button primary" href="#contact">Contact Me</a>
+              <a class="button ghost" href="./docs/iSanjyotAgureddy_SolutionArchitect.pdf" download>Download Resume</a>
+            </div>
+          </div>
+          <aside class="impact-panel reveal" aria-label="Profile highlights">
+            <p class="panel-title">Executive Snapshot</p>
+            <ul class="impact-list">
+              <li>
+                <strong>11+ years</strong>
+                <span>Platform engineering across fintech systems</span>
+              </li>
+              <li>
+                <strong>10-30 engineers</strong>
+                <span>Architecture standards and technical direction influence</span>
+              </li>
+              <li>
+                <strong>20% faster delivery</strong>
+                <span>Through reusable modernization patterns</span>
+              </li>
+              <li>
+                <strong>Hackathon recognition</strong>
+                <span>2nd Runner-Up for AI documentation platform</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <p class="section-kicker">Profile</p>
+            <h2>About</h2>
+            <p>
+              I work at the intersection of architecture, platform engineering, and delivery execution. At JPMorgan
+              Chase, I progressed from Technical Lead to Solution Architect and now set architecture governance,
+              modernization strategy, and technical standards used by multiple engineering teams.
+            </p>
+          </div>
+          <ul class="chip-list reveal">
+            <li class="chip">Architecture Governance and Standards</li>
+            <li class="chip">Cross-Team Technical Leadership</li>
+            <li class="chip">Technology Roadmap and Modernization Strategy</li>
+            <li class="chip">Event-Driven and Distributed Systems Design</li>
+            <li class="chip">Cloud-Native Platform Engineering</li>
+            <li class="chip">AI-Driven Engineering Enablement</li>
+            <li class="chip">Stakeholder and Executive Communication</li>
+            <li class="chip">Financial Services Compliance and Security</li>
           </ul>
         </div>
-      </div>
+      </section>
 
-      <!-- NICE Interactive Solutions Pvt Ltd -->
-      <div class="custom-timeline-item">
-        <div class="custom-timeline-card">
-          <div class="custom-timeline-header" data-card="2">
-            <span class="custom-year">2021</span>
-            <span class="custom-company-name">NICE Interactive Solutions Pvt Ltd</span>
-            <img src="images/nice.svg" alt="NICE Logo" class="company-logo" />
+      <section id="experience" class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <p class="section-kicker">Career Path</p>
+            <h2>Experience</h2>
+            <p>Architecture, leadership, and delivery impact across fintech platforms.</p>
+          </div>
+          <div class="experience-shell" id="experience-timeline">
+            <aside class="experience-rail reveal" aria-label="Experience companies">
+              <button class="rail-item is-active" type="button" data-exp="jpmc">
+                <img src="./images/jpmorgan.png" alt="JPMorgan Chase logo" class="company-logo" />
+                <span class="rail-text">
+                  <strong>JPMorgan Chase</strong>
+                  <span>07/2022 - Present</span>
+                </span>
+              </button>
+              <button class="rail-item" type="button" data-exp="nice">
+                <img src="./images/nice.svg" alt="NICE logo" class="company-logo" />
+                <span class="rail-text">
+                  <strong>NICE</strong>
+                  <span>10/2021 - 06/2022</span>
+                </span>
+              </button>
+              <button class="rail-item" type="button" data-exp="pitney">
+                <img src="./images/pitneybowes.png" alt="Pitney Bowes logo" class="company-logo" />
+                <span class="rail-text">
+                  <strong>Pitney Bowes</strong>
+                  <span>04/2020 - 10/2021</span>
+                </span>
+              </button>
+              <button class="rail-item" type="button" data-exp="fis">
+                <img src="./images/fis.png" alt="FIS logo" class="company-logo" />
+                <span class="rail-text">
+                  <strong>FIS</strong>
+                  <span>02/2019 - 04/2020</span>
+                </span>
+              </button>
+              <button class="rail-item" type="button" data-exp="zensar">
+                <img src="./images/Zensar.png" alt="Zensar Technologies logo" class="company-logo" />
+                <span class="rail-text">
+                  <strong>Zensar Technologies</strong>
+                  <span>08/2015 - 02/2019</span>
+                </span>
+              </button>
+            </aside>
+
+            <div class="experience-main reveal">
+              <article class="card experience-focus" id="experience-focus">
+                <header class="card-header exp-header">
+                  <div class="exp-brand">
+                    <img src="./images/jpmorgan.png" alt="JPMorgan Chase logo" class="company-logo" id="exp-focus-logo" />
+                    <h3 id="exp-focus-company">JPMorgan Chase</h3>
+                  </div>
+                  <p class="meta" id="exp-focus-period">07/2022 - Present</p>
+                </header>
+                <ul class="role-list" id="exp-focus-roles">
+                  <li>Solution Architect (01/2025 - Present)</li>
+                  <li>Technical Lead (07/2022 - 12/2024)</li>
+                </ul>
+                <ul class="detail-list" id="exp-focus-highlights">
+                  <li>Own architecture direction for modernization programs used by 10-30 engineers.</li>
+                  <li>Present architecture decisions and roadmaps to VP and Director leadership and architecture boards.</li>
+                  <li>Defined secure integration and observability standards for financial microservices.</li>
+                  <li>Led event-driven platform design on Kafka for real-time order processing.</li>
+                </ul>
+              </article>
+
+              <div class="experience-sentinels" aria-hidden="true">
+                <div class="exp-sentinel" data-exp="jpmc"></div>
+                <div class="exp-sentinel" data-exp="nice"></div>
+                <div class="exp-sentinel" data-exp="pitney"></div>
+                <div class="exp-sentinel" data-exp="fis"></div>
+                <div class="exp-sentinel" data-exp="zensar"></div>
+              </div>
+
+              <div class="experience-data" hidden>
+                <article data-exp="jpmc" data-company="JPMorgan Chase" data-period="07/2022 - Present" data-logo="./images/jpmorgan.png">
+                  <ul class="role-list">
+                    <li>Solution Architect (01/2025 - Present)</li>
+                    <li>Technical Lead (07/2022 - 12/2024)</li>
+                  </ul>
+                  <ul class="detail-list">
+                    <li>Own architecture direction for modernization programs used by 10-30 engineers.</li>
+                    <li>Present architecture decisions and roadmaps to VP and Director leadership and architecture boards.</li>
+                    <li>Defined secure integration and observability standards for financial microservices.</li>
+                    <li>Led event-driven platform design on Kafka for real-time order processing.</li>
+                  </ul>
+                </article>
+
+                <article data-exp="nice" data-company="NICE" data-period="10/2021 - 06/2022" data-logo="./images/nice.svg">
+                  <ul class="role-list">
+                    <li>Technical Lead Software Engineer</li>
+                  </ul>
+                  <ul class="detail-list">
+                    <li>Designed reusable resilience, observability, and security services for enterprise microservices.</li>
+                    <li>Implemented automated secrets management using AWS Secrets Manager and Lambda.</li>
+                    <li>Established standards for CI/CD quality gates and architecture reviews.</li>
+                  </ul>
+                </article>
+
+                <article data-exp="pitney" data-company="Pitney Bowes" data-period="04/2020 - 10/2021" data-logo="./images/pitneybowes.png">
+                  <ul class="role-list">
+                    <li>Senior Software Engineer</li>
+                  </ul>
+                  <ul class="detail-list">
+                    <li>Owned a Kafka synchronization module end-to-end as sole module owner.</li>
+                    <li>Replaced synchronous legacy processing with event-driven architecture for real-time data movement.</li>
+                    <li>Led incremental modernization from monolith to .NET Core microservices.</li>
+                  </ul>
+                </article>
+
+                <article data-exp="fis" data-company="FIS" data-period="02/2019 - 04/2020" data-logo="./images/fis.png">
+                  <ul class="role-list">
+                    <li>Technical Consultant</li>
+                  </ul>
+                  <ul class="detail-list">
+                    <li>Built backend services in .NET and Python for banking risk assessment workflows.</li>
+                    <li>Supported configurable client-specific risk modules across global institutions.</li>
+                    <li>Improved production diagnostics via centralized logging and monitoring.</li>
+                  </ul>
+                </article>
+
+                <article data-exp="zensar" data-company="Zensar Technologies" data-period="08/2015 - 02/2019" data-logo="./images/Zensar.png">
+                  <ul class="role-list">
+                    <li>Software Engineer</li>
+                  </ul>
+                  <ul class="detail-list">
+                    <li>Delivered backend capabilities and workflow automation for enterprise .NET applications.</li>
+                    <li>Built monitoring and alerting that improved production availability by 30 percent.</li>
+                    <li>Contributed to Agile delivery through code reviews and stakeholder collaboration.</li>
+                  </ul>
+                </article>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Modal for NICE Interactive Solutions Pvt Ltd -->
-      <div id="modal-2" class="custom-modal">
-        <div class="custom-modal-content">
-          <span class="custom-close-btn">&times;</span>
-          <h3 class="modal-company-name">
-            NICE Interactive Solutions Pvt Ltd
-          </h3>
-          <h4>Tech Lead Software Engineer</h4>
-          <p>
-            As a Tech Lead Software Engineer at NICE Interactive Solutions, I
-            led a team of developers to design and implement high-performance
-            solutions for customer interaction systems.
-          </p>
-          <h4>Responsibilities</h4>
-          <ul>
-            <li>
-              Led a team of 5 engineers in designing scalable and efficient
-              software solutions for client interactions.
-            </li>
-            <li>
-              Architected and developed RESTful APIs to enable integration
-              with third-party systems.
-            </li>
-            <li>
-              Implemented continuous integration and deployment (CI/CD)
-              pipelines for streamlined code delivery.
-            </li>
-            <li>
-              Mentored junior engineers and conducted code reviews to maintain
-              high-quality standards.
-            </li>
-          </ul>
-        </div>
-      </div>
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <p class="section-kicker">Work In Focus</p>
+            <h2>Featured Projects</h2>
+            <p>Selected platform and modernization initiatives.</p>
+          </div>
+          <div class="grid two-col">
+            <article class="card reveal">
+              <h3>Real-Time Financial Orders Platform</h3>
+              <p><strong>Problem:</strong> Financial order events needed low-latency and reliable downstream delivery.</p>
+              <p><strong>Solution:</strong> Designed event-driven integration patterns on Kafka with retries and standards.</p>
+              <p><strong>Impact:</strong> Improved reliability and operational responsiveness for high-volume order flows.</p>
+              <p class="stack">.NET | Kafka | AWS | REST APIs</p>
+            </article>
 
-      <!-- Pitney Bowes -->
-      <div class="custom-timeline-item">
-        <div class="custom-timeline-card">
-          <div class="custom-timeline-header" data-card="3">
-            <span class="custom-year">2020</span>
-            <span class="custom-company-name">Pitney Bowes</span>
-            <img src="images/pitneybowes.png" alt="Pitney Bowes Logo" class="company-logo"
-              style="width: 150px; margin: 0px" />
+            <article class="card reveal">
+              <h3>AI-Powered Source Code Documentation</h3>
+              <p><strong>Problem:</strong> Teams needed faster, consistent internal documentation.</p>
+              <p><strong>Solution:</strong> Built LLM-driven workflows with multi-model orchestration and automation outputs.</p>
+              <p><strong>Impact:</strong> 2nd Runner-Up at JPMorgan Chase Hackathon 2024.</p>
+              <p class="stack">LLM Workflows | Automation | GitHub Copilot</p>
+            </article>
+
+            <article class="card reveal">
+              <h3>Secrets Automation Platform</h3>
+              <p><strong>Problem:</strong> Manual credential handling increased security and operational risk.</p>
+              <p><strong>Solution:</strong> Implemented automated secrets lifecycle with AWS Secrets Manager and Lambda.</p>
+              <p><strong>Impact:</strong> Reduced manual handling and strengthened secure rotation practices.</p>
+              <p class="stack">AWS Secrets Manager | Lambda | CI/CD</p>
+            </article>
+
+            <article class="card reveal">
+              <h3>Monolith to Microservices Modernization</h3>
+              <p><strong>Problem:</strong> Legacy systems constrained resilience and slowed delivery.</p>
+              <p><strong>Solution:</strong> Led incremental modernization using service extraction and messaging patterns.</p>
+              <p><strong>Impact:</strong> Reduced delivery timelines by around 20 percent.</p>
+              <p class="stack">.NET Core | Microservices | Distributed Messaging</p>
+            </article>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Modal for Pitney Bowes -->
-      <div id="modal-3" class="custom-modal">
-        <div class="custom-modal-content">
-          <span class="custom-close-btn">&times;</span>
-          <h3 class="modal-company-name">Pitney Bowes</h3>
-          <h4>Senior Software Engineer</h4>
-          <p>
-            As a Senior Software Engineer at Pitney Bowes, I was responsible
-            for building and maintaining scalable applications for logistics
-            and shipping solutions.
-          </p>
-          <h4>Responsibilities</h4>
-          <ul>
-            <li>
-              Developed scalable and reliable systems to handle logistics
-              operations using .NET and SQL Server.
-            </li>
-            <li>
-              Collaborated with product managers to define software
-              requirements and ensure timely delivery.
-            </li>
-            <li>
-              Participated in performance tuning and optimization of services
-              to handle large data volumes efficiently.
-            </li>
-            <li>
-              Provided support for deployment and production troubleshooting
-              to ensure service uptime.
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- FIS Global -->
-      <div class="custom-timeline-item">
-        <div class="custom-timeline-card">
-          <div class="custom-timeline-header" data-card="4">
-            <span class="custom-year">2019</span>
-            <span class="custom-company-name">FIS Global</span>
-            <img src="images/FIS.svg" alt="FIS Global Logo" class="company-logo" />
+      <section id="skills" class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <p class="section-kicker">Capabilities</p>
+            <h2>Skills</h2>
+            <p>Architecture depth, engineering execution, and AI-enabled practices.</p>
+          </div>
+          <div class="grid two-col">
+            <article class="card reveal">
+              <h3>Architecture</h3>
+              <ul class="detail-list compact">
+                <li>Solution Architecture</li>
+                <li>Microservices</li>
+                <li>Event-Driven Architecture</li>
+                <li>Distributed Systems</li>
+                <li>Domain-Driven Design</li>
+              </ul>
+            </article>
+            <article class="card reveal">
+              <h3>Engineering</h3>
+              <ul class="detail-list compact">
+                <li>C#</li>
+                <li>.NET Core and .NET 8</li>
+                <li>ASP.NET Core</li>
+                <li>Kafka and RabbitMQ</li>
+                <li>SQL Server and PostgreSQL</li>
+              </ul>
+            </article>
+            <article class="card reveal">
+              <h3>Cloud and DevOps</h3>
+              <ul class="detail-list compact">
+                <li>AWS and Azure</li>
+                <li>GitHub Actions and Jenkins</li>
+                <li>CI/CD Automation</li>
+                <li>Structured Logging and Distributed Tracing</li>
+              </ul>
+            </article>
+            <article class="card reveal">
+              <h3>AI Engineering</h3>
+              <ul class="detail-list compact">
+                <li>Generative AI and Agentic AI</li>
+                <li>LLM Workflows</li>
+                <li>Prompt Engineering</li>
+                <li>GitHub Copilot</li>
+              </ul>
+            </article>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Modal for FIS Global -->
-      <div id="modal-4" class="custom-modal">
-        <div class="custom-modal-content">
-          <span class="custom-close-btn">&times;</span>
-          <h3 class="modal-company-name">FIS Global</h3>
-          <h4>Technical Consultant</h4>
-          <p>
-            As a Technical Consultant at FIS Global, I worked closely with
-            clients to customize and implement financial software solutions
-            that met their business needs.
-          </p>
-          <h4>Responsibilities</h4>
-          <ul>
-            <li>
-              Implemented financial software solutions by customizing and
-              configuring applications to meet customer requirements.
-            </li>
-            <li>
-              Provided technical guidance and support to clients during the
-              integration of the software into their systems.
-            </li>
-            <li>
-              Created and maintained technical documentation for internal and
-              external stakeholders.
-            </li>
-            <li>
-              Collaborated with development teams to ensure software met
-              client specifications and deadlines.
-            </li>
+      <section id="recognition" class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <p class="section-kicker">Recognition</p>
+            <h2>Awards</h2>
+          </div>
+          <ul class="info-list reveal">
+            <li>2nd Runner-Up, JPMorgan Chase Hackathon 2024</li>
+            <li>ADS Quarterly Award, Pitney Bowes 2021</li>
+            <li>Annual Excellence Award, Zensar 2018</li>
+            <li>Budding Innovator's Award, Zensar 2018</li>
           </ul>
         </div>
-      </div>
+      </section>
 
-      <!-- Zensar Technologies -->
-      <div class="custom-timeline-item">
-        <div class="custom-timeline-card">
-          <div class="custom-timeline-header" data-card="5">
-            <span class="custom-year">2015</span>
-            <span class="custom-company-name">Zensar Technologies</span>
-            <img src="images/Zensar.png" alt="Zensar Technologies Logo" class="company-logo"
-              style="filter: invert(1) brightness(2)" />
+      <section id="education" class="section">
+        <div class="container grid two-col">
+          <article class="card reveal">
+            <h3>Education</h3>
+            <ul class="info-list">
+              <li>MBA, IT and Systems Management - SVKM's NMIMS (2022 - 2024)</li>
+              <li>B.E., Computer Engineering - Pune University (2012 - 2015)</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Certifications</h3>
+            <ul class="info-list">
+              <li>AWS Associate: Solutions Architect, Developer, SysOps Administrator</li>
+              <li>AWS Foundational: Cloud Practitioner</li>
+              <li>Azure Foundational: AZ-900, DP-900, AI-900, SC-900</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div class="container">
+          <div class="section-header reveal">
+            <p class="section-kicker">Get In Touch</p>
+            <h2>Contact</h2>
+            <p>Let us connect on architecture, modernization, and platform engineering opportunities.</p>
+          </div>
+          <div class="contact-grid reveal">
+            <a class="contact-link" href="mailto:sanjyot.agureddy4@gmail.com">
+              <span class="contact-label">Email</span>
+              <span class="contact-value">sanjyot.agureddy4@gmail.com</span>
+            </a>
+            <a class="contact-link" href="https://www.linkedin.com/in/sanjyotagureddy" target="_blank" rel="noreferrer">
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">linkedin.com/in/sanjyotagureddy</span>
+            </a>
+            <a class="contact-link" href="https://github.com/sanjyotagureddy" target="_blank" rel="noreferrer">
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">github.com/sanjyotagureddy</span>
+            </a>
+            <p class="contact-location">Pune, India</p>
           </div>
         </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>2026 Sanjyot Agureddy. All rights reserved.</p>
       </div>
+    </footer>
 
-      <!-- Modal for Zensar Technologies -->
-      <div id="modal-5" class="custom-modal">
-        <div class="custom-modal-content">
-          <span class="custom-close-btn">&times;</span>
-          <h3 class="modal-company-name">Zensar Technologies</h3>
-          <h4>Software Engineer</h4>
-          <p>
-            At Zensar Technologies, I started my career as a Software
-            Engineer, developing software solutions for clients in diverse
-            industries such as retail and manufacturing.
-          </p>
-          <h4>Responsibilities</h4>
-          <ul>
-            <li>
-              Designed and developed software applications using .NET
-              Framework to meet business requirements.
-            </li>
-            <li>
-              Conducted unit and integration testing to ensure software
-              reliability and performance.
-            </li>
-            <li>
-              Collaborated with senior developers and project managers to
-              design and implement solutions.
-            </li>
-            <li>
-              Provided maintenance and support for deployed applications and
-              systems.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="parallax-section github" id="github">
-    <div class="content">
-      <p>
-        <br />
-        Github
-      </p>
-    </div>
-    <div class="github-raised">
-      <iframe src="https://octoprofile.vercel.app/user?id=sanjyotagureddy" frameborder="0" width="100%" height="100%"
-        title="GitHub Profile"></iframe>
-    </div>
-  </div>
-
-  <div class="parallax-section education" id="education">
-    <div class="content">
-      <h2>Education</h2>
-      <p>My academic journey...</p>
-    </div>
-  </div>
-
-  <div class="parallax-section contact" id="contact">
-    <div class="content">
-      <h2>Contact Me</h2>
-      <!-- Email Button with Icon -->
-      <br /><br />
-      <a href="mailto:sanjyot.agureddy4@gmail.com" class="email-button">
-        <i class="fas fa-envelope"></i> Email Me
-      </a>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="nav-links">
-    <p style="margin: 10px; text-align: center">
-      &copy; 2024 Sanjyot Agureddy. All Rights Reserved.
-    </p>
-  </footer>
-  <!-- Theme Toggle Button -->
-  <button id="theme-toggle" class="theme-toggle">🌙</button>
-
-  <!-- New Download CV Button -->
-  <a href="docs/resume.pdf" download id="download-cv" class="download-cv" data-tooltip="Download CV">
-    <i class="fas fa-download"></i>
-    <span>Download CV</span>
-  </a>
-
-  <!-- Social Media Buttons Section -->
-  <div class="social-media-buttons">
-    <a href="https://github.com/sanjyotagureddy" target="_blank" class="social-button github"><i
-        class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/sanjyotagureddy" target="_blank" class="social-button linkedin"><i
-        class="fab fa-linkedin"></i></a>
-    <a href="https://twitter.com/sanjyotagureddy" target="_blank" class="social-button twitter"><i
-        class="fab fa-twitter"></i></a>
-    <a href="https://www.facebook.com/sanjyotagureddy" target="_blank" class="social-button facebook"><i
-        class="fab fa-facebook"></i></a>
-  </div>
-
-  <!-- JavaScript -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
-  <script src="timeline.js"></script>
-</body>
-
+    <script type="module" src="./src/main.js"></script>
+  </body>
 </html>
