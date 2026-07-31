@@ -2,12 +2,79 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="./images/developer.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="Sanjyot Agureddy - Solution Architect focused on cloud-native distributed systems, .NET, AWS, and AI-driven engineering."
     />
+    <meta property="og:title" content="Sanjyot Agureddy | Solution Architect" />
+    <meta
+      property="og:description"
+      content="Solution Architect with 11+ years building cloud-native distributed systems using .NET, AWS, and AI-driven engineering practices."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sanjyotagureddy.github.io/" />
+    <meta property="og:image" content="https://sanjyotagureddy.github.io/images/developer.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sanjyot Agureddy | Solution Architect" />
+    <meta
+      name="twitter:description"
+      content="Cloud-native distributed systems, .NET, AWS, and AI-driven engineering."
+    />
+    <meta name="twitter:image" content="https://sanjyotagureddy.github.io/images/developer.png" />
+    <link rel="icon" type="image/png" href="./images/developer.png" />
+    <link rel="apple-touch-icon" href="./images/developer.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+    />
+    <script>
+      (function () {
+        try {
+          const storageKey = "portfolio-theme";
+          const saved = localStorage.getItem(storageKey);
+          const theme =
+            saved === "light" || saved === "dark"
+              ? saved
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="./src/styles/tokens.css" />
+    <link rel="stylesheet" href="./src/styles/base.css" />
+    <link rel="stylesheet" href="./src/styles/layout.css" />
+    <link rel="stylesheet" href="./src/styles/components.css" />
+    <link rel="stylesheet" href="./src/styles/sections.css" />
+    <link rel="stylesheet" href="./src/styles/utilities.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sanjyot Agureddy",
+        "jobTitle": "Solution Architect",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "JPMorgan Chase"
+        },
+        "url": "https://sanjyotagureddy.github.io/",
+        "sameAs": [
+          "https://www.linkedin.com/in/sanjyotagureddy",
+          "https://github.com/sanjyotagureddy"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Pune",
+          "addressCountry": "IN"
+        }
+      }
+    </script>
     <title>Sanjyot Agureddy | Solution Architect</title>
   </head>
   <body>
@@ -32,14 +99,17 @@
 
     <main id="main-content">
       <section id="home" class="hero section">
+        <span class="doodle-peek doodle-loop doodle-home-right" aria-hidden="true" data-drift="0.1"></span>
+        <span class="doodle-peek doodle-pill doodle-home-left" aria-hidden="true" data-drift="0.12"></span>
         <div class="container hero-shell">
           <div>
             <p class="eyebrow reveal">Solution Architect</p>
             <h1 class="reveal">Designing Resilient Financial Platforms with Cloud, Events, and AI</h1>
             <p class="tagline reveal">Sanjyot Agureddy | .NET | AWS | Distributed Systems | AI-Driven Engineering</p>
             <p class="summary reveal">
-              I define architecture direction, modernization standards, and platform patterns that help engineering
-              teams deliver secure, scalable systems with speed and confidence.
+              Solution Architect with 11+ years in fintech platform engineering. I set architecture direction,
+              modernization standards, and delivery patterns used by 10-30 engineers to build secure,
+              cloud-native systems with faster time-to-value.
             </p>
             <div class="hero-actions reveal">
               <a class="button primary" href="#contact">Contact Me</a>
@@ -71,14 +141,16 @@
       </section>
 
       <section id="about" class="section">
+        <span class="doodle-peek doodle-orbit doodle-about-left" aria-hidden="true" data-drift="0.08"></span>
         <div class="container">
           <div class="section-header reveal">
             <p class="section-kicker">Profile</p>
             <h2>About</h2>
             <p>
-              I work at the intersection of architecture, platform engineering, and delivery execution. At JPMorgan
-              Chase, I progressed from Technical Lead to Solution Architect and now set architecture governance,
-              modernization strategy, and technical standards used by multiple engineering teams.
+              I work at the intersection of architecture governance, platform engineering, and execution strategy.
+              At JPMorgan Chase, I progressed from Technical Lead to Solution Architect, and now drive
+              modernization roadmaps, build-vs-buy decisions, and technical standards that improve system resiliency,
+              delivery predictability, and engineering quality across teams.
             </p>
           </div>
           <ul class="chip-list reveal">
@@ -95,44 +167,45 @@
       </section>
 
       <section id="experience" class="section">
+        <span class="doodle-peek doodle-squiggle doodle-exp-right" aria-hidden="true" data-drift="0.14"></span>
         <div class="container">
           <div class="section-header reveal">
             <p class="section-kicker">Career Path</p>
             <h2>Experience</h2>
-            <p>Architecture, leadership, and delivery impact across fintech platforms.</p>
+            <p>Architecture ownership, cross-team leadership, and measurable modernization outcomes across financial platforms.</p>
           </div>
           <div class="experience-shell" id="experience-timeline">
             <aside class="experience-rail reveal" aria-label="Experience companies">
               <button class="rail-item is-active" type="button" data-exp="jpmc">
-                <img src="./images/jpmorgan.png" alt="JPMorgan Chase logo" class="company-logo" />
+                <img src="./images/jpmorgan.png" alt="JPMorgan Chase logo" class="company-logo" width="32" height="32" />
                 <span class="rail-text">
                   <strong>JPMorgan Chase</strong>
                   <span>07/2022 - Present</span>
                 </span>
               </button>
               <button class="rail-item" type="button" data-exp="nice">
-                <img src="./images/nice.svg" alt="NICE logo" class="company-logo" />
+                <img src="./images/nice.svg" alt="NICE logo" class="company-logo" width="32" height="32" />
                 <span class="rail-text">
                   <strong>NICE</strong>
                   <span>10/2021 - 06/2022</span>
                 </span>
               </button>
               <button class="rail-item" type="button" data-exp="pitney">
-                <img src="./images/pitneybowes.png" alt="Pitney Bowes logo" class="company-logo" />
+                <img src="./images/pitneybowes.png" alt="Pitney Bowes logo" class="company-logo" width="32" height="32" />
                 <span class="rail-text">
                   <strong>Pitney Bowes</strong>
                   <span>04/2020 - 10/2021</span>
                 </span>
               </button>
               <button class="rail-item" type="button" data-exp="fis">
-                <img src="./images/fis.png" alt="FIS logo" class="company-logo" />
+                <img src="./images/fis.png" alt="FIS logo" class="company-logo" width="32" height="32" />
                 <span class="rail-text">
                   <strong>FIS</strong>
                   <span>02/2019 - 04/2020</span>
                 </span>
               </button>
               <button class="rail-item" type="button" data-exp="zensar">
-                <img src="./images/Zensar.png" alt="Zensar Technologies logo" class="company-logo" />
+                <img src="./images/Zensar.png" alt="Zensar Technologies logo" class="company-logo" width="32" height="32" />
                 <span class="rail-text">
                   <strong>Zensar Technologies</strong>
                   <span>08/2015 - 02/2019</span>
@@ -144,7 +217,7 @@
               <article class="card experience-focus" id="experience-focus">
                 <header class="card-header exp-header">
                   <div class="exp-brand">
-                    <img src="./images/jpmorgan.png" alt="JPMorgan Chase logo" class="company-logo" id="exp-focus-logo" />
+                    <img src="./images/jpmorgan.png" alt="JPMorgan Chase logo" class="company-logo" id="exp-focus-logo" width="32" height="32" />
                     <h3 id="exp-focus-company">JPMorgan Chase</h3>
                   </div>
                   <p class="meta" id="exp-focus-period">07/2022 - Present</p>
@@ -233,6 +306,8 @@
       </section>
 
       <section id="projects" class="section">
+        <span class="doodle-peek doodle-pill doodle-projects-right" aria-hidden="true" data-drift="0.22"></span>
+        <span class="doodle-peek doodle-loop doodle-projects-left" aria-hidden="true" data-drift="0.1"></span>
         <div class="container">
           <div class="section-header reveal">
             <p class="section-kicker">Work In Focus</p>
@@ -244,7 +319,7 @@
               <h3>Real-Time Financial Orders Platform</h3>
               <p><strong>Problem:</strong> Financial order events needed low-latency and reliable downstream delivery.</p>
               <p><strong>Solution:</strong> Designed event-driven integration patterns on Kafka with retries and standards.</p>
-              <p><strong>Impact:</strong> Improved reliability and operational responsiveness for high-volume order flows.</p>
+              <p><strong>Impact:</strong> Improved reliability and operational responsiveness for high-volume order flows with reduced manual intervention.</p>
               <p class="stack">.NET | Kafka | AWS | REST APIs</p>
             </article>
 
@@ -268,7 +343,7 @@
               <h3>Monolith to Microservices Modernization</h3>
               <p><strong>Problem:</strong> Legacy systems constrained resilience and slowed delivery.</p>
               <p><strong>Solution:</strong> Led incremental modernization using service extraction and messaging patterns.</p>
-              <p><strong>Impact:</strong> Reduced delivery timelines by around 20 percent.</p>
+              <p><strong>Impact:</strong> Reduced delivery timelines by around 20 percent while improving operational stability.</p>
               <p class="stack">.NET Core | Microservices | Distributed Messaging</p>
             </article>
           </div>
@@ -276,6 +351,7 @@
       </section>
 
       <section id="skills" class="section">
+        <span class="doodle-peek doodle-orbit doodle-skills-right" aria-hidden="true" data-drift="0.13"></span>
         <div class="container">
           <div class="section-header reveal">
             <p class="section-kicker">Capabilities</p>
@@ -361,22 +437,41 @@
       </section>
 
       <section id="contact" class="section contact">
+        <span class="doodle-peek doodle-squiggle doodle-contact-left" aria-hidden="true" data-drift="0.2"></span>
         <div class="container">
           <div class="section-header reveal">
             <p class="section-kicker">Get In Touch</p>
             <h2>Contact</h2>
-            <p>Let us connect on architecture, modernization, and platform engineering opportunities.</p>
+            <p>
+              Open to architecture and platform modernization conversations, technical leadership opportunities,
+              and consulting discussions for distributed systems.
+            </p>
           </div>
           <div class="contact-grid reveal">
             <a class="contact-link" href="mailto:sanjyot.agureddy4@gmail.com">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img" aria-label="Email icon">
+                  <path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm0 2v.4l9 6.6 9-6.6V7l-9 6.6L3 7Z" fill="currentColor" />
+                </svg>
+              </span>
               <span class="contact-label">Email</span>
               <span class="contact-value">sanjyot.agureddy4@gmail.com</span>
             </a>
             <a class="contact-link" href="https://www.linkedin.com/in/sanjyotagureddy" target="_blank" rel="noreferrer">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img" aria-label="LinkedIn icon">
+                  <path d="M6.94 8.5A1.56 1.56 0 1 0 6.9 5.4a1.56 1.56 0 0 0 .04 3.1ZM5.6 9.6h2.6V18H5.6V9.6Zm4.2 0h2.5v1.15h.04c.35-.66 1.2-1.35 2.47-1.35 2.64 0 3.12 1.74 3.12 4v4.6h-2.6v-4.08c0-.98-.02-2.24-1.36-2.24-1.36 0-1.57 1.06-1.57 2.16V18H9.8V9.6Z" fill="currentColor" />
+                </svg>
+              </span>
               <span class="contact-label">LinkedIn</span>
               <span class="contact-value">linkedin.com/in/sanjyotagureddy</span>
             </a>
             <a class="contact-link" href="https://github.com/sanjyotagureddy" target="_blank" rel="noreferrer">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img" aria-label="GitHub icon">
+                  <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.72c-2.78.6-3.37-1.18-3.37-1.18-.46-1.15-1.11-1.45-1.11-1.45-.9-.62.07-.61.07-.61 1 .07 1.53 1.02 1.53 1.02.89 1.51 2.33 1.08 2.9.83.09-.64.35-1.08.64-1.33-2.22-.25-4.56-1.1-4.56-4.92 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.8c.85 0 1.71.12 2.51.36 1.9-1.29 2.74-1.02 2.74-1.02.55 1.38.21 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.83-2.34 4.67-4.57 4.91.36.31.68.92.68 1.86v2.77c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" fill="currentColor" />
+                </svg>
+              </span>
               <span class="contact-label">GitHub</span>
               <span class="contact-value">github.com/sanjyotagureddy</span>
             </a>

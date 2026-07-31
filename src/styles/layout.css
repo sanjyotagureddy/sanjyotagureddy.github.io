@@ -24,6 +24,8 @@
 .section-header p {
   color: var(--text-muted);
   max-width: 70ch;
+  font-size: clamp(1rem, 0.94rem + 0.35vw, 1.14rem);
+  line-height: 1.72;
 }
 
 .grid {

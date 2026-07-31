@@ -81,7 +81,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(10px) saturate(125%);
+  backdrop-filter: blur(6px) saturate(110%);
 }
 
 .theme-toggle:hover {
@@ -114,7 +114,7 @@
 
 .hero h1 {
   margin-top: var(--space-3);
-  font-size: clamp(2.2rem, 1.35rem + 3.7vw, 4.1rem);
+  font-size: clamp(2.35rem, 1.4rem + 4.1vw, 4.5rem);
   max-width: 16ch;
   line-height: 1.08;
 }
@@ -129,7 +129,8 @@
 .summary {
   margin-top: var(--space-4);
   max-width: 64ch;
-  font-size: 1.06rem;
+  font-size: clamp(1.05rem, 0.98rem + 0.35vw, 1.2rem);
+  line-height: 1.75;
 }
 
 .hero-actions {
@@ -157,7 +158,6 @@
 .button.ghost {
   border-color: color-mix(in srgb, var(--glass-stroke) 82%, transparent);
   background: color-mix(in srgb, var(--surface-strong) 72%, transparent);
-  backdrop-filter: blur(8px) saturate(118%);
 }
 
 .impact-panel {
@@ -170,7 +170,7 @@
   border-radius: var(--radius-md);
   padding: var(--space-5);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(12px) saturate(132%);
+  backdrop-filter: blur(8px) saturate(112%);
 }
 
 .panel-title {
@@ -196,7 +196,7 @@
 
 .impact-list strong {
   font-family: var(--font-heading);
-  font-size: 1.28rem;
+  font-size: 1.42rem;
 }
 
 .impact-list span {
@@ -216,7 +216,6 @@
   padding: var(--space-5);
   position: relative;
   transition: transform 200ms ease, box-shadow 200ms ease;
-  backdrop-filter: blur(10px) saturate(124%);
 }
 
 .card::before {
@@ -302,7 +301,6 @@
   align-items: center;
   gap: 0.65rem;
   cursor: pointer;
-  backdrop-filter: blur(10px) saturate(120%);
   position: relative;
 }
 
@@ -405,7 +403,6 @@
   border: 1px solid color-mix(in srgb, var(--glass-stroke) 74%, transparent);
   font-size: 0.84rem;
   font-weight: 700;
-  backdrop-filter: blur(8px) saturate(118%);
 }
 
 .role-list,
@@ -445,43 +442,80 @@
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-3);
+  gap: 0.9rem;
+  max-width: 980px;
+  margin-top: 0.35rem;
 }
 
 .contact-link {
   border: 1px solid color-mix(in srgb, var(--glass-stroke) 80%, transparent);
   border-radius: var(--radius-md);
   background: color-mix(in srgb, var(--surface) 72%, transparent);
-  backdrop-filter: blur(10px) saturate(122%);
-  padding: 0.9rem 1rem;
+  padding: 1rem 1.05rem;
   display: grid;
-  gap: 0.15rem;
-  min-height: 5.3rem;
+  grid-template-columns: 2.1rem 1fr;
+  column-gap: 0.8rem;
+  row-gap: 0.18rem;
+  align-items: start;
+  min-height: 6.35rem;
+  aspect-ratio: 2.7 / 1;
 }
 
 .contact-link:hover {
   border-color: color-mix(in srgb, var(--primary) 48%, var(--glass-stroke) 52%);
   transform: translateY(-2px);
+  background: color-mix(in srgb, var(--surface-strong) 74%, transparent);
 }
 
 .contact-label {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.08em;
   color: var(--primary);
+  margin-top: 0.08rem;
+}
+
+.contact-icon {
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-strong);
+  margin-bottom: 0;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface-strong) 84%, transparent);
+  border: 1px solid color-mix(in srgb, var(--glass-stroke) 70%, transparent);
+}
+
+.contact-icon svg {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+}
+
+.contact-label,
+.contact-value {
+  grid-column: 2;
 }
 
 .contact-value {
   color: var(--text);
-  font-weight: 700;
+  font-weight: 650;
+  line-height: 1.28;
+  font-size: clamp(1rem, 0.88rem + 0.32vw, 1.14rem);
   word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .contact-location {
   grid-column: 1 / -1;
   color: var(--text-muted);
-  margin-top: var(--space-1);
+  margin-top: var(--space-2);
+  font-size: 0.98rem;
 }
 
 .site-footer {
@@ -534,6 +568,64 @@
 
   .contact-grid {
     grid-template-columns: 1fr;
+    max-width: 560px;
   }
 
+
+@media (max-width: 600px) {
+  .container {
+    width: min(var(--container-width), calc(100% - 1.2rem));
+  }
+
+  .hero {
+    padding-top: calc(var(--space-6) + 1rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(1.9rem, 7.2vw, 2.4rem);
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+  }
+
+  .summary {
+    font-size: 0.98rem;
+  }
+
+  .rail-item {
+    padding: 0.58rem 0.65rem;
+  }
+
+  .rail-text strong {
+    font-size: 0.86rem;
+  }
+
+  .rail-text span {
+    font-size: 0.74rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .company-logo {
+    width: 1.85rem;
+    height: 1.85rem;
+  }
+
+  .contact-link {
+    aspect-ratio: auto;
+    min-height: 5.7rem;
+    padding: 0.85rem 0.9rem;
+  }
+
+  .contact-value {
+    font-size: 0.98rem;
+  }
+
+  .nav-list a {
+    padding: 0.38rem 0.62rem;
+  }
+}
 }

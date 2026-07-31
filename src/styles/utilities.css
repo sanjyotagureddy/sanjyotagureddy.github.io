@@ -1,17 +1,24 @@
 .reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 500ms ease, transform 500ms ease;
+  opacity: 1;
+  transform: none;
 }
 
-.reveal.is-visible {
+.js-reveal .reveal {
+  opacity: 0.94;
+  transform: translateY(8px);
+  transition: opacity 360ms ease, transform 360ms ease;
+}
+
+.js-reveal .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal,
-  .reveal.is-visible {
+  .reveal.is-visible,
+  .js-reveal .reveal,
+  .js-reveal .reveal.is-visible {
     opacity: 1;
     transform: none;
     transition: none;

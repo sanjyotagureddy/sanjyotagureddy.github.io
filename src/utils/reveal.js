@@ -1,4 +1,6 @@
 export function initReveal() {
+  document.documentElement.classList.add("js-reveal");
+
   const items = document.querySelectorAll(".reveal");
   if (!items.length) return;
 
@@ -13,7 +15,8 @@ export function initReveal() {
     },
     {
       root: null,
-      threshold: 0.12,
+      threshold: 0.02,
+      rootMargin: "18% 0px 18% 0px",
     }
   );
 
