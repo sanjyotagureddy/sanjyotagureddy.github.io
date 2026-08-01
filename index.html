@@ -285,9 +285,9 @@
                 </g>
 
                 <!-- Gateway → Auth (down) -->
-                <path id="path-gw-auth" class="svg-path color-blue" d="M 430 115 V 155" marker-end="url(#arrow-blue)"/>
+                <path id="path-gw-auth" class="svg-path color-blue" d="M 430 115 V 160" marker-end="url(#arrow-blue)"/>
                 <!-- Gateway → Order (down-right) -->
-                <path id="path-gw-core" class="svg-path color-teal" d="M 485 90 H 570 V 155" marker-end="url(#arrow-teal)"/>
+                <path id="path-gw-core" class="svg-path color-teal" d="M 485 90 H 627 V 160" marker-end="url(#arrow-teal)"/>
 
                 <!-- ═══ APPLICATION LAYER ═══ -->
                 <!-- Auth Service -->
@@ -319,7 +319,7 @@
 
                 <!-- ═══ DATA LAYER ═══ -->
                 <!-- Order → Redis (down) -->
-                <path id="path-core-cache" class="svg-path color-amber" d="M 595 210 V 265" marker-end="url(#arrow-amber)"/>
+                <path id="path-core-cache" class="svg-path color-amber" d="M 595 210 V 270" marker-end="url(#arrow-amber)"/>
 
                 <!-- Redis -->
                 <g class="svg-node color-amber" data-node="cache" transform="translate(540, 270)">
@@ -329,7 +329,7 @@
                 </g>
 
                 <!-- Order → PostgreSQL (down-left) -->
-                <path id="path-core-db" class="svg-path color-teal" d="M 627 210 L 627 250 H 430" marker-end="url(#arrow-teal)"/>
+                <path id="path-core-db" class="svg-path color-teal" d="M 627 210 V 250 H 440" marker-end="url(#arrow-teal)"/>
 
                 <!-- PostgreSQL Primary -->
                 <g class="svg-node color-teal" data-node="database" transform="translate(325, 270)">
@@ -348,11 +348,11 @@
                   <text class="tech-label" x="55" y="36">VAULT + LAMBDA</text>
                 </g>
 
-                <!-- Secrets → Auth (up to row 2) -->
-                <path id="path-sec-auth" class="svg-path color-purple" stroke-dasharray="4 3" d="M 185 270 V 185" marker-end="url(#arrow-purple)"/>
+                <!-- Secrets → Auth (up then right to Auth left edge) -->
+                <path id="path-sec-auth" class="svg-path color-purple" stroke-dasharray="4 3" d="M 185 270 V 185 H 375" marker-end="url(#arrow-purple)"/>
 
-                <!-- Workers → S3 (right then up) -->
-                <path id="path-worker-s3" class="svg-path color-amber" stroke-dasharray="3 3" d="M 735 395 H 790 V 290" marker-end="url(#arrow-amber)" opacity="0.75"/>
+                <!-- Workers → S3 (right then up to S3 bottom) -->
+                <path id="path-worker-s3" class="svg-path color-amber" stroke-dasharray="3 3" d="M 735 395 H 780 V 315" marker-end="url(#arrow-amber)" opacity="0.75"/>
 
                 <!-- S3 -->
                 <g class="svg-node color-amber" data-node="s3" transform="translate(740, 265)">
@@ -363,7 +363,7 @@
 
                 <!-- ═══ ASYNC / MESSAGING LAYER ═══ -->
                 <!-- Order → Kafka (down) -->
-                <path id="path-core-kafka" class="svg-path color-purple" d="M 627 210 V 250 H 530 V 365" marker-end="url(#arrow-purple)"/>
+                <path id="path-core-kafka" class="svg-path color-purple" d="M 650 210 V 250 H 502 V 370" marker-end="url(#arrow-purple)"/>
 
                 <!-- Confluent Kafka Cluster -->
                 <g class="svg-node color-purple" data-node="broker" transform="translate(440, 370)">
@@ -411,7 +411,7 @@
                 <path id="path-otel-elk" class="svg-path color-blue" d="M 250 482 H 280" marker-end="url(#arrow-blue)"/>
 
                 <!-- Telemetry feeds (dashed) from services → OTel -->
-                <path id="path-gw-otel"      class="svg-path" stroke-dasharray="3 4" d="M 430 90  L 190 460" opacity="0.3"/>
+                <path id="path-gw-otel"      class="svg-path" stroke-dasharray="3 4" d="M 430 115 L 190 460" opacity="0.3"/>
                 <path id="path-core-otel"    class="svg-path" stroke-dasharray="3 4" d="M 627 210 L 190 460" opacity="0.3"/>
                 <path id="path-kafka-otel"   class="svg-path" stroke-dasharray="3 4" d="M 502 420 L 190 460" opacity="0.25"/>
                 <path id="path-db-otel"      class="svg-path" stroke-dasharray="3 4" d="M 375 295 L 190 460" opacity="0.3"/>
