@@ -5,6 +5,8 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--bg);
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--header-height);
 }
 
 body {
@@ -104,8 +106,14 @@ button {
 
 /* Section Common */
 .section {
-  padding: var(--space-8) 0;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-6) 0;
   border-bottom: 1px solid var(--border);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .section-header {
