@@ -20,12 +20,12 @@ export const experienceData = [
       "Present architectural designs, technology choices, and build-vs-buy recommendations directly to VP/Director leadership and architecture review boards.",
       "Defined security integration rules (encryption, IAM roles, access controls) and OpenTelemetry tracing standards for microservices, which helped speed up production incident debugging.",
       "Mentor other engineers on distributed systems design, helping teams understand tradeoffs around eventual consistency, network partitioning, and database isolation.",
-      "Led the technical design of our event-driven order processing platform on Apache Kafka, setting up partitioning key strategies to ensure correct message ordering under heavy load.",
+      "Led the technical design of our event-driven order processing platform on Confluent Kafka, setting up partitioning key strategies to ensure correct message ordering under heavy load.",
       "Designed automated message transformation pipelines to process downstream financial data, reducing manual reconciliation work and bottlenecks.",
       "Helped teams adopt AI coding practices (like Copilot) and co-developed an LLM-based documentation tool that won 2nd Runner-Up at the 2024 JPMorgan Chase Hackathon.",
       "Led the migration of legacy .NET monoliths to .NET 8 microservices, reducing service bootstrap time from 3 weeks to under 5 days using reusable design templates."
     ],
-    techStack: [".NET 8", "C#", "Apache Kafka", "AWS (ECS/Lambda)", "OpenTelemetry", "SQL CDC", "Sumo Logic", "Clean Architecture"]
+    techStack: [".NET 8", "C#", "Confluent Kafka", "AWS (ECS/Lambda)", "OpenTelemetry", "SQL CDC", "ELK Stack", "Clean Architecture"]
   },
   {
     key: "nice",
@@ -70,7 +70,7 @@ export const experienceData = [
       "Migrated parts of our core shipping systems to .NET Core microservices incrementally, ensuring zero downtime for live merchant traffic.",
       "Designed REST APIs and messaging flows to connect legacy platforms, microservices, and external shipping carriers."
     ],
-    techStack: [".NET Core", "Apache Kafka", "SQL Server", "CDC", "Microservices", "REST APIs"]
+    techStack: [".NET Core", "Confluent Kafka", "SQL Server", "CDC", "Microservices", "REST APIs"]
   },
   {
     key: "fis",
@@ -91,9 +91,9 @@ export const experienceData = [
       "Configured and customized risk assessment platforms used for loan decisions and portfolio analysis by global financial clients.",
       "Wrote backend services in .NET and Python to aggregate and process client financial data from various upstream banking legacy systems.",
       "Coordinated requirements and releases directly with client teams onsite in Bangkok and developers back in Pune.",
-      "Set up centralized logging using Serilog and Sumo Logic, which helped teams diagnose production bugs faster."
+      "Set up centralized logging using Serilog and ELK Stack, which helped teams diagnose production bugs faster."
     ],
-    techStack: [".NET Framework", "Python", "SQL Server", "Serilog", "Sumo Logic", "Risk Analytics"]
+    techStack: [".NET Framework", "Python", "SQL Server", "Serilog", "ELK Stack", "Risk Analytics"]
   },
   {
     key: "zensar",

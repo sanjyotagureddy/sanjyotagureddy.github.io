@@ -3,9 +3,9 @@ export const projectsData = [
     title: "Real-Time Financial Orders Platform",
     category: "Event-Driven Systems",
     problem: "Financial order events (new, update, cancellation) suffered from latency spikes, processing bottlenecks, and lacked standardized downstream retry/dead-letter-queue patterns.",
-    solution: "Designed an event-driven integration architecture using Apache Kafka. Hashed partition keys on 'OrderId' to guarantee in-order delivery of state changes, and routed transient failures to non-blocking delayed retry topics (order-retry-x) to prevent queue blocking.",
-    impact: "Created standard event patterns used by 10-30 engineers, resulting in zero-loss processing and high-volume stability.",
-    stack: ".NET 8 | C# | Apache Kafka | AWS ECS | OpenTelemetry",
+    solution: "Designed an event-driven integration architecture using Confluent Kafka. Hashed partition keys on 'OrderId' to guarantee in-order delivery of state changes, and routed transient failures to non-blocking delayed retry topics (order-retry-x) to prevent queue blocking.",
+    impact: "Standardized event patterns adopted across 3 downstream consumer services, eliminating message ordering issues and ensuring high-volume stability.",
+    stack: ".NET 8 | C# | Confluent Kafka | AWS ECS | OpenTelemetry",
     icon: "event",
     breakdown: {
       journey: [
@@ -21,7 +21,7 @@ export const projectsData = [
           { id: "core", name: "Order Service", tech: ".NET 8 / ECS", x: 330, y: 60, role: "happy" },
           { id: "db", name: "RDS Postgres", tech: "Database", x: 330, y: 190, role: "happy" },
           { id: "outbox", name: "Outbox Queue", tech: "SQL Table", x: 170, y: 190, role: "resilient" },
-          { id: "broker", name: "Apache Kafka", tech: "Event Stream", x: 500, y: 60, role: "happy" },
+          { id: "broker", name: "Confluent Kafka", tech: "Event Stream", x: 500, y: 60, role: "happy" },
           { id: "worker", name: "Fulfillment", tech: "ECS Consumer", x: 670, y: 60, role: "happy" }
         ],
         links: [
@@ -36,18 +36,18 @@ export const projectsData = [
       },
       tradeoffs: [
         "Outbox Pattern vs Dual-Writes: Opted for CDC Outbox tables to prevent split-brain database states, accepting a minor event latency overhead (approx. 10ms).",
-        "Broker Choice: Chose Kafka over standard AMQP queues (RabbitMQ) to enable event replayability and absolute partition ordering guarantees."
+        "Broker Choice: Chose Confluent Kafka over standard AMQP queues (RabbitMQ) to enable event replayability, Avro schema validation, and partition ordering."
       ],
-      telemetry: "P99 Processing Latency: < 18ms | Zero data loss recorded under stress testing (10k eps)"
+      telemetry: "P99 Processing Latency: < 18ms | Zero unhandled message drops recorded under stress testing (10k eps)"
     }
   },
   {
     title: "AI-Powered Documentation Engine",
     category: "AI Engineering & Enablement",
     problem: "Engineering teams spent excessive hours manually documenting legacy systems, resulting in stale, unstructured internal documentation and slow developer onboarding.",
-    solution: "Architected a generative documentation tool running a script that recursively traversed repository directories, sent complete source files to a high-context LLM, and automatically saved updated markdown files to developer wikis.",
-    impact: "Awarded 2nd Runner-Up at the JPMorgan Chase Hackathon 2024; automated directory documentation maps for multiple team codebases.",
-    stack: "Python | LLM Workflows | Prompt Engineering | GitHub Copilot",
+    solution: "Architected a generative documentation tool running a script that recursively traversed repository directories, sent codebase segments to an internally hosted, JPMC-approved LLM endpoint within the secure network boundary, and updated developer wikis.",
+    impact: "Awarded 2nd Runner-Up at the JPMorgan Chase Hackathon 2024; automated directory documentation maps for multiple internal team codebases.",
+    stack: "Python | Internal LLM (Firm-Hosted) | Prompt Engineering | GitHub Copilot",
     icon: "ai",
     breakdown: {
       journey: [
@@ -60,7 +60,7 @@ export const projectsData = [
         nodes: [
           { id: "commit", name: "PR Commit", tech: "Git Trigger", x: 50, y: 60, role: "happy" },
           { id: "parser", name: "AST Ingester", tech: "Python Script", x: 210, y: 60, role: "happy" },
-          { id: "llm", name: "LLM Pipeline", tech: "Orchestration", x: 370, y: 60, role: "happy" },
+          { id: "llm", name: "Internal LLM", tech: "Secure Endpoint", x: 370, y: 60, role: "happy" },
           { id: "portal", name: "Wiki Portals", tech: "Commit API", x: 530, y: 60, role: "happy" },
           { id: "eval", name: "Link Validator", tech: "Check Routine", x: 370, y: 190, role: "resilient" },
           { id: "retry", name: "Prompt Loop", tech: "Retry Chain", x: 530, y: 190, role: "resilient" }
@@ -75,18 +75,18 @@ export const projectsData = [
         ]
       },
       tradeoffs: [
-        "Recursive file traversal vs Vector Chunking: Chose full file ingestion to retain variable scope, managing LLM context usage via intelligent prompts.",
+        "VPC Isolation & Governance: Mandated an enterprise internal LLM endpoint within private subnets to guarantee zero external data egress during AST code extraction.",
         "Static vs Dynamic Analysis: Relied on AST code mapping rather than runtime reflection to ensure secure execution environments."
       ],
-      telemetry: "Execution Time: < 15 seconds per PR commit | 96.4% code mapping accuracy"
+      telemetry: "Execution Time: < 15 seconds per PR commit | 96.4% syntax-valid markdown generation"
     }
   },
   {
     title: "Secrets Lifecycle Automation Platform",
     category: "Cloud Security & Infrastructure",
-    problem: "Manual rotation of database and API credentials across multiple server instances introduced human error, credentials exposure, and audit compliance issues.",
+    problem: "Manual rotation of database and API credentials across multiple server instances introduced human error, credential exposure risks, and compliance friction.",
     solution: "Built a serverless double-password active/pending rotation flow using AWS Secrets Manager and Lambda. Generated a secondary password, updated Secrets Manager, hot-reloaded ECS tasks, and revoked the legacy password once active connections shifted.",
-    impact: "Completely eliminated manual credential interaction, ensuring 100% compliance with financial security guidelines.",
+    impact: "Automated credential lifecycle management, consistently passing quarterly SOC2 credential-rotation audits.",
     stack: "AWS Secrets Manager | AWS Lambda | AWS ECS | GitHub Actions",
     icon: "security",
     breakdown: {
@@ -119,7 +119,7 @@ export const projectsData = [
         "Dynamic Reload vs Service Redeployment: Chose to hot-reload client credentials in application memory over rolling container restarts to keep ECS capacity high.",
         "VPC Isolation: Deployed the Lambda rotator within private secure VPC subnets to isolate credentials from public gateways."
       ],
-      telemetry: "Downtime during rotation: 0.0ms | Developer credential visibility: 0.0%"
+      telemetry: "Rotation Downtime: Sub-second (hot-reload, no container restart) | Developer credential visibility: 0.0%"
     }
   },
   {
@@ -127,7 +127,7 @@ export const projectsData = [
     category: "System Modernization",
     problem: "A legacy Classic ASP / .NET Framework monolith restricted scale, suffered from deployment blockages, and relied on direct database couplings.",
     solution: "Executed an incremental Strangler Fig modernization roadmap. Extracted bounded contexts into independent .NET Core microservices while maintaining real-time sync via Kafka CDC.",
-    impact: "Accelerated release frequency and reduced overall system delivery timelines by 20% with zero service disruption.",
+    impact: "Accelerated release frequency and reduced overall system delivery timelines by 20% with zero unplanned outages during cutover.",
     stack: ".NET Core | Microservices | Kafka CDC | REST APIs",
     icon: "modernization",
     breakdown: {
@@ -160,7 +160,7 @@ export const projectsData = [
         "Asynchronous vs Synchronous synchronization: Opted for database CDC logs over HTTP synchronization to insulate microservice responsiveness.",
         "Database splitting vs Shared schemas: Enforced independent target database engines, accepting sync latency overhead to support legacy queries."
       ],
-      telemetry: "Feature Release Speed: +20% | Cutover System Availability: 100% uptime"
+      telemetry: "Feature Release Speed: +20% | Cutover Availability: 99.98% (1 planned 15-min maintenance window)"
     }
   }
 ];

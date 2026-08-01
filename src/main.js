@@ -1,4 +1,5 @@
 import { initTheme } from "./utils/theme.js";
+import { initNavigation } from "./utils/navigation.js";
 import { initReveal } from "./utils/reveal.js";
 import { initExperienceTimeline } from "./utils/experience-timeline.js";
 import { initSimulator } from "./utils/simulator.js";
@@ -7,6 +8,7 @@ import { projectsData } from "./data/projects-data.js";
 
 // Initialize UI controllers
 initTheme();
+initNavigation();
 initExperienceTimeline();
 initSimulator();
 initModernizationPlaybook();
