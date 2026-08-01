@@ -15,7 +15,7 @@ export function initExperienceTimeline() {
       const roleTitle = exp.roles[0]?.title || "Engineer";
       return `
         <button class="rail-item ${index === 0 ? "is-active" : ""}" type="button" data-exp="${exp.key}" aria-current="${index === 0 ? "true" : "false"}">
-          <img src="${exp.logo || './images/jpmorgan.png'}" alt="${exp.company} logo" class="company-logo" width="32" height="32" />
+          <img src="${exp.logo || './images/jpmorgan.png'}" alt="${exp.company} logo" class="company-logo" style="background-color: ${exp.logoBg || 'var(--bg-elevated)'}" width="42" height="42" />
           <span class="rail-text">
             <strong>${exp.company}</strong>
             <span>${exp.period}</span>
@@ -49,7 +49,7 @@ export function initExperienceTimeline() {
       <div class="card highlight-blue">
         <header class="exp-header">
           <div class="exp-brand">
-            <img src="${exp.logo}" alt="${exp.company} logo" class="company-logo" width="36" height="36" />
+            <img src="${exp.logo}" alt="${exp.company} logo" class="company-logo" style="background-color: ${exp.logoBg || 'var(--bg-elevated)'}" width="58" height="58" />
             <h3>${exp.company}</h3>
           </div>
           <span class="meta">${exp.location}</span>

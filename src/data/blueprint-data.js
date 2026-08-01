@@ -19,7 +19,7 @@ export const blueprintData = {
     name: "Apache Kafka Cluster",
     subtitle: "Distributed Event Streaming",
     description: "The high-throughput message backbone. Streams order events (Created, Cancelled, Validated) to decouple core processing from heavy analytics and external sync operations.",
-    architectRole: "Designed the topic layout and partitioning strategy. Standardized partition key hashing on 'OrderId' to guarantee sequential processing of order state changes.",
+    architectRole: "Designed the topic layout. Hashed partitions on 'OrderId' to guarantee in-order delivery of state changes. Redirected transient failures to non-blocking delayed retry topics (order-retry-x) to prevent partition head-of-line blocking.",
     tradeoff: "Chosen replication factor of 3 and min.insync.replicas of 2 to guarantee zero data loss, accepting a minor write latency increase.",
     metrics: "Lag Monitor: < 50 messages | Average Pub-Sub Latency: < 8ms"
   },
@@ -51,7 +51,7 @@ export const blueprintData = {
     name: "AWS Secrets Manager & Lambda",
     subtitle: "Automated Credential Lifecycle",
     description: "Securely stores database passwords, AWS IAM roles, and third-party API keys. Lambda triggers automated rotation every 30 days.",
-    architectRole: "Designed zero-downtime database credential rotation. Lambda updates Postgres passwords, updates Secrets Manager, and notifies ECS tasks to hot-reload config.",
+    architectRole: "Designed zero-downtime double-password active/pending rotation. Lambda generates a secondary password, updates Secrets Manager, hot-reloads ECS tasks, and revokes the legacy credential once active connections shift.",
     tradeoff: "Added minor initial setup complexity to ensure zero developer exposure to production passwords.",
     metrics: "Manual Credential Operations: 0 | Rotation Downtime: 0ms"
   },

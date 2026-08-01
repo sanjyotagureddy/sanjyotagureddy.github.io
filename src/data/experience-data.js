@@ -5,6 +5,7 @@ export const experienceData = [
     location: "Pune, India",
     period: "07/2022 - Present",
     logo: "./images/jpmorgan.png",
+    logoBg: "#ffffff",
     roles: [
       { title: "Solution Architect", date: "01/2025 - Present" },
       { title: "Technical Lead", date: "07/2022 - 12/2024" }
@@ -15,20 +16,24 @@ export const experienceData = [
       focus: "Modernization & Event Streaming"
     },
     highlights: [
-      "Own architecture direction and technical standards for enterprise modernization programs used across multiple engineering teams.",
-      "Present technical roadmaps, build-vs-buy decisions, and architecture decisions to VP/Director leadership and architectural review boards.",
-      "Defined secure integration, IAM controls, and observability standards (OpenTelemetry, tracing) that shortened incident resolution times.",
-      "Led design & delivery of a high-throughput event-driven order processing platform using Apache Kafka, establishing resilient partition-key routing and failover strategies.",
-      "Co-built an LLM-driven internal code documentation platform using multi-model orchestration, earning 2nd Runner-Up at the 2024 JPMC Hackathon.",
-      "Guided monolith-to-microservices migration, decreasing delivery timelines by 20% through reusable modernization blueprints."
+      "Set the architectural direction and technical roadmap for cloud modernization programs, defining development standards used by 10-30 engineers across multiple teams.",
+      "Present architectural designs, technology choices, and build-vs-buy recommendations directly to VP/Director leadership and architecture review boards.",
+      "Defined security integration rules (encryption, IAM roles, access controls) and OpenTelemetry tracing standards for microservices, which helped speed up production incident debugging.",
+      "Mentor other engineers on distributed systems design, helping teams understand tradeoffs around eventual consistency, network partitioning, and database isolation.",
+      "Led the technical design of our event-driven order processing platform on Apache Kafka, setting up partitioning key strategies to ensure correct message ordering under heavy load.",
+      "Designed automated message transformation pipelines to process downstream financial data, reducing manual reconciliation work and bottlenecks.",
+      "Helped teams adopt AI coding practices (like Copilot) and co-developed an LLM-based documentation tool that won 2nd Runner-Up at the 2024 JPMorgan Chase Hackathon.",
+      "Led the migration of legacy .NET monoliths to .NET 8 microservices, helping speed up delivery times by 20% using reusable design templates."
     ],
-    techStack: [".NET 8", "C#", "Apache Kafka", "AWS (ECS/Lambda)", "OpenTelemetry", "SQL CDC", "Sumo Logic"]
+    techStack: [".NET 8", "C#", "Apache Kafka", "AWS (ECS/Lambda)", "OpenTelemetry", "SQL CDC", "Sumo Logic", "Clean Architecture"]
   },
   {
     key: "nice",
     company: "NICE",
     location: "Pune, India",
     period: "10/2021 - 06/2022",
+    logo: "./images/nice.svg",
+    logoBg: "#ffffff",
     roles: [
       { title: "Technical Lead Software Engineer", date: "10/2021 - 06/2022" }
     ],
@@ -38,17 +43,19 @@ export const experienceData = [
       focus: "Security & Microservice Resilience"
     },
     highlights: [
-      "Designed reusable enterprise-wide platform frameworks covering resilience (Polly retry/circuit-breakers), unified exceptions, and observability.",
-      "Architected and deployed an automated secrets rotation lifecycle using AWS Secrets Manager and Lambda, eradicating manual credential handling.",
-      "Established strict CI/CD quality gates, led sprint execution, and conducted architecture/design reviews to mentor junior engineers."
+      "Designed reusable libraries for resilience (Polly retries, circuit breakers) and centralized exception handling, shared across microservices.",
+      "Built an automated database credential rotation pipeline using AWS Secrets Manager and Lambda, removing manual password handling and improving security posture.",
+      "Led a team of 5 developers through the software delivery lifecycle, establishing coding guidelines, setting up CI/CD pipelines, and running design reviews."
     ],
-    techStack: [".NET Core", "AWS Secrets Manager", "AWS Lambda", "CI/CD Pipelines", "Polly Resilience"]
+    techStack: [".NET Core", "AWS Secrets Manager", "AWS Lambda", "CI/CD Pipelines", "Polly Resilience", "Docker"]
   },
   {
     key: "pitney",
     company: "Pitney Bowes",
     location: "Pune, India",
     period: "04/2020 - 10/2021",
+    logo: "./images/pitneybowes.png",
+    logoBg: "#0f1a30",
     roles: [
       { title: "Senior Software Engineer", date: "04/2020 - 10/2021" }
     ],
@@ -58,17 +65,20 @@ export const experienceData = [
       focus: "Monolith Migration & CDC"
     },
     highlights: [
-      "Owned Kafka synchronization module end-to-end, replacing a legacy Classic ASP monolith with a real-time event-driven sync pipeline.",
-      "Implemented CDC (Change Data Capture) and integration patterns to stream data smoothly between legacy systems and modern microservices.",
-      "Drove incremental modernization of logistics and shipping platforms to .NET Core, ensuring zero live traffic disruptions."
+      "Owned a Kafka-based synchronization module from design and development through to production support.",
+      "Replaced a legacy Classic ASP monolith database sync with an event-driven system on Kafka, removing blocking database locks and enabling real-time data movement.",
+      "Migrated parts of our core shipping systems to .NET Core microservices incrementally, ensuring zero downtime for live merchant traffic.",
+      "Designed REST APIs and messaging flows to connect legacy platforms, microservices, and external shipping carriers."
     ],
-    techStack: [".NET Core", "Apache Kafka", "SQL Server", "CDC", "Microservices", "APIs"]
+    techStack: [".NET Core", "Apache Kafka", "SQL Server", "CDC", "Microservices", "REST APIs"]
   },
   {
     key: "fis",
     company: "FIS",
     location: "Pune & Bangkok",
     period: "02/2019 - 04/2020",
+    logo: "./images/FIS.svg",
+    logoBg: "#ffffff",
     roles: [
       { title: "Technical Consultant", date: "02/2019 - 04/2020" }
     ],
@@ -78,9 +88,10 @@ export const experienceData = [
       focus: "Risk Workflows & Data Aggregation"
     },
     highlights: [
-      "Built risk-assessment backend pipelines in .NET and Python to aggregate financial records across multiple upstream services.",
-      "Supported and customized configurable risk evaluation algorithms for global financial institutions.",
-      "Integrated Serilog and Sumo Logic, enhancing production log observability and shortening diagnosis workflows by onsite teams in Bangkok."
+      "Configured and customized risk assessment platforms used for loan decisions and portfolio analysis by global financial clients.",
+      "Wrote backend services in .NET and Python to aggregate and process client financial data from various upstream banking legacy systems.",
+      "Coordinated requirements and releases directly with client teams onsite in Bangkok and developers back in Pune.",
+      "Set up centralized logging using Serilog and Sumo Logic, which helped teams diagnose production bugs faster."
     ],
     techStack: [".NET Framework", "Python", "SQL Server", "Serilog", "Sumo Logic", "Risk Analytics"]
   },
@@ -89,6 +100,8 @@ export const experienceData = [
     company: "Zensar Technologies",
     location: "Pune, India",
     period: "08/2015 - 02/2019",
+    logo: "./images/Zensar.png",
+    logoBg: "#ffffff",
     roles: [
       { title: "Software Engineer", date: "08/2015 - 02/2019" }
     ],
@@ -98,9 +111,11 @@ export const experienceData = [
       focus: "Monitoring & Server Automation"
     },
     highlights: [
-      "Created server health automation dashboards and alerts, improving overall system availability by 30% and cutting response times.",
-      "Shipped backend capabilities and workflow automations for retail/manufacturing .NET applications.",
-      "Collaborated with QA, planning teams, and business owners in an Agile environment."
+      "Developed backend features and automated workflows for enterprise .NET systems in retail and manufacturing.",
+      "Built a custom server monitoring and alerting tool, which improved production server uptime by 30%.",
+      "Tuned slow SQL Server queries, index rules, and stored procedures, speeding up average report generation times by 40%.",
+      "Wrote unit tests using NUnit and Moq to cover core transaction paths, keeping test coverage above 80% to protect against regressions.",
+      "Worked in a standard Agile sprint team, reviewing code, fixing bugs, and coordinating deployments with QA and product owners."
     ],
     techStack: [".NET Framework", "C#", "SQL Server", "ASP.NET", "Agile Automation"]
   }

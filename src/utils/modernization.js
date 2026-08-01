@@ -52,9 +52,9 @@ export function initModernizationPlaybook() {
       title: "Step 3: Event Extraction & CDC Sync",
       description: "Carve out the Orders module into a .NET Core microservice. Stream changes from the legacy database using Debezium CDC (Change Data Capture) and Apache Kafka to maintain data parity.",
       details: [
-        "Extracted new Order Service (.NET Core) handles write traffic.",
-        "Kafka CDC replicates writes from legacy SQL to modern schema.",
-        "Both systems operate in parallel, eliminating risky big-bang cuts."
+        "Used Change Data Capture (CDC) on the monolith DB to stream updates to the new microservice DB.",
+        "Both systems ran in parallel, validating data integrity before switching write traffic.",
+        "Eliminated risky big-bang cutovers through parallel replication and verification."
       ],
       markup: `
         <div class="mod-block-container" style="flex-wrap: wrap; max-width: 440px;">

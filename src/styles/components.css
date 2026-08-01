@@ -248,13 +248,41 @@
 }
 
 .company-logo {
-  width: 2.2rem;
-  height: 2.2rem;
-  border-radius: var(--radius-sm);
-  padding: 4px;
-  background: #ffffff;
-  border: 1px solid var(--border);
+  width: 2.6rem;
+  height: 2.6rem;
   object-fit: contain;
+  background: transparent !important;
+  border: none !important;
+  padding: 0;
+  opacity: 0.85;
+  transition: filter 250ms, opacity 250ms, transform 250ms;
+}
+
+/* Light Mode specific contrasts: Make white Pitney Bowes logo dark slate */
+:root[data-theme="light"] .company-logo[src*="pitneybowes"] {
+  filter: brightness(0.15);
+}
+
+/* Dark Mode specific contrasts: Convert dark-text logos (NICE, JPMC, Zensar) to white */
+:root[data-theme="dark"] .company-logo[src*="nice"] {
+  filter: brightness(0) invert(1);
+}
+:root[data-theme="dark"] .company-logo[src*="jpmorgan"] {
+  filter: brightness(0) invert(1);
+}
+:root[data-theme="dark"] .company-logo[src*="Zensar"] {
+  filter: brightness(0) invert(1);
+}
+
+.rail-item:hover .company-logo,
+.rail-item.is-active .company-logo {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.exp-header .company-logo {
+  width: 3.6rem;
+  height: 3.6rem;
 }
 
 .experience-focus {
@@ -1161,4 +1189,269 @@
   .blueprint-canvas-wrapper {
     aspect-ratio: 1.2 / 1;
   }
+}
+
+/* ==========================================================================
+   Project Details Modal Overlay & Content
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(4, 7, 13, 0.8);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+  padding: var(--space-4);
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-container {
+  width: 100%;
+  max-width: 800px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modal-slide 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  padding: var(--space-6) !important;
+}
+
+@keyframes modal-slide {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 200ms;
+}
+
+.modal-close-btn:hover {
+  border-color: var(--accent-rose);
+  color: var(--accent-rose);
+  transform: rotate(90deg);
+}
+
+/* Modal Inner Elements */
+.modal-project-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.modal-project-title {
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.modal-section {
+  margin-bottom: var(--space-5);
+}
+
+.modal-section-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+  margin-bottom: var(--space-2);
+}
+
+/* Sequence/Flow chart styles */
+.flow-diagram-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  margin-top: var(--space-3);
+}
+
+.flow-block-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  transition: transform 200ms, border-color 200ms, box-shadow 200ms;
+}
+
+.flow-block-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-neon-blue);
+}
+
+.flow-arrow {
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-family: var(--font-mono);
+  animation: pulse-arrow-modal 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse-arrow-modal {
+  0%, 100% { opacity: 0.4; transform: translateX(0); }
+  50% { opacity: 1; transform: translateX(3px); }
+}
+
+/* Journey Checkpoints */
+.journey-checkpoints {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.journey-step {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.journey-number {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.journey-text {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.journey-text strong {
+  color: var(--text);
+}
+
+/* ==========================================================================
+   Project Details Modal Interactive SVG Mesh Styling
+   ========================================================================== */
+#modal-mesh-canvas {
+  aspect-ratio: 3 / 1;
+  max-height: 260px;
+  min-height: 200px;
+  width: 100%;
+}
+
+.modal-svg-path {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 1.5;
+  transition: stroke 300ms, stroke-width 300ms, opacity 300ms;
+}
+
+.modal-svg-path.pulse {
+  stroke: var(--pulse-color);
+  stroke-width: 2;
+  stroke-dasharray: 6 3;
+  animation: modal-path-pulse 30s linear infinite;
+}
+
+@keyframes modal-path-pulse {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+.modal-svg-path.inactive {
+  stroke: var(--border);
+  stroke-dasharray: 2 3;
+  opacity: 0.2;
+}
+
+.modal-svg-node {
+  cursor: default;
+  transition: opacity 300ms;
+}
+
+.modal-svg-node rect {
+  fill: var(--bg-elevated);
+  stroke: var(--border);
+  stroke-width: 1px;
+  transition: stroke 300ms, stroke-width 300ms, filter 300ms;
+}
+
+.modal-svg-node text {
+  fill: var(--text);
+  font-family: var(--font-heading);
+  pointer-events: none;
+}
+
+.modal-svg-node .tech-label {
+  fill: var(--text-muted);
+}
+
+.modal-svg-node.is-active rect {
+  stroke: var(--active-color);
+  stroke-width: 1.5px;
+  filter: drop-shadow(0 0 4px var(--active-color));
+}
+
+.modal-svg-node.is-active text {
+  fill: var(--active-color);
+}
+
+.modal-svg-node.inactive {
+  opacity: 0.35;
+}
+
+/* Switch styling overrides for dynamic modal flow controls */
+.simulator-btn-teal {
+  border-color: var(--accent-teal);
+  color: var(--accent-teal);
+}
+.simulator-btn-teal:hover, .simulator-btn-teal.is-active {
+  background: var(--accent-teal);
+  box-shadow: var(--shadow-neon-teal);
+  color: #000000;
+}
+
+.simulator-btn-amber {
+  border-color: var(--accent-amber);
+  color: var(--accent-amber);
+}
+.simulator-btn-amber:hover, .simulator-btn-amber.is-active {
+  background: var(--accent-amber);
+  box-shadow: var(--shadow-neon-amber);
+  color: #000000;
 }
