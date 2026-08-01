@@ -2,7 +2,7 @@
    Hero Section
    ========================================================================== */
 .hero {
-  padding-top: calc(var(--space-8) + 1rem);
+  padding-top: calc(var(--space-6) + 0.5rem);
   padding-bottom: var(--space-8);
   position: relative;
   overflow: hidden;
@@ -109,6 +109,109 @@
   position: relative;
 }
 
+/* Dossier Portrait Header */
+.dossier-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.portrait-wrapper {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  flex-shrink: 0;
+}
+
+.dossier-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dossier-pulse-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(45, 212, 191, 0.08);
+  border: 1px solid rgba(45, 212, 191, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--accent-teal);
+  margin-left: var(--space-2);
+  vertical-align: middle;
+}
+
+.pulse-dot {
+  width: 5px;
+  height: 5px;
+  background-color: var(--accent-teal);
+  border-radius: 50%;
+  display: inline-block;
+  animation: dossier-pulse 1.8s infinite;
+}
+
+.pulse-text {
+  color: var(--accent-teal);
+}
+
+@keyframes dossier-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 4px rgba(45, 212, 191, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(45, 212, 191, 0);
+  }
+}
+
+.dossier-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dossier-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.dossier-role {
+  font-size: 0.84rem;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dossier-loc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.dossier-divider {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin-bottom: var(--space-4);
+}
+
 .snapshot-title {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -130,7 +233,7 @@
 
 .snapshot-list {
   display: grid;
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .snapshot-list li {
@@ -148,14 +251,14 @@
 
 .snapshot-list strong {
   font-family: var(--font-heading);
-  font-size: 1.45rem;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--text);
   line-height: 1.1;
 }
 
 .snapshot-list span {
-  font-size: 0.86rem;
+  font-size: 0.78rem;
   color: var(--text-muted);
 }
 
@@ -296,7 +399,8 @@
   }
 
   .executive-snapshot {
-    order: -1; /* Put snapshot on top for tablet view profiles */
+    order: -1;
+    /* Put snapshot on top for tablet view profiles */
   }
 }
 
