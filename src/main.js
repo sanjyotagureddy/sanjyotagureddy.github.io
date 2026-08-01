@@ -114,17 +114,19 @@ function generateModalMeshSVG(mesh, mode) {
     // Determine link styles based on the active path toggle (happy vs resilient)
     let pathClass = 'modal-svg-path';
     let pulseColor = '';
+    let markerId = 'modal-arrow';
 
     if (link.type === 'both' || link.type === mode) {
       pathClass += ' pulse';
       pulseColor = mode === 'happy' ? 'var(--accent-teal)' : 'var(--accent-amber)';
+      markerId = mode === 'happy' ? 'modal-arrow-happy' : 'modal-arrow-resilient';
     } else {
       pathClass += ' inactive';
     }
 
     return `
       <g>
-        <path id="modal-path-${idx}" class="${pathClass}" style="--pulse-color: ${pulseColor}" d="${d}" marker-end="url(#modal-arrow)" />
+        <path id="modal-path-${idx}" class="${pathClass}" style="--pulse-color: ${pulseColor}" d="${d}" marker-end="url(#${markerId})" />
         ${link.label ? `
           <text x="${x1 + dx/2 + (dx >= 0 ? 30 : -30)}" y="${y1 + dy/2 + (dy >= 0 ? 12 : -12)}" 
                 fill="var(--text-muted)" font-family="var(--font-mono)" font-size="6" text-anchor="middle">
@@ -163,6 +165,12 @@ function generateModalMeshSVG(mesh, mode) {
       <defs>
         <marker id="modal-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
           <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--border)" />
+        </marker>
+        <marker id="modal-arrow-happy" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+          <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent-teal)" />
+        </marker>
+        <marker id="modal-arrow-resilient" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+          <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--accent-amber)" />
         </marker>
       </defs>
       ${pathsHTML}

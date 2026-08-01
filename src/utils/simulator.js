@@ -135,8 +135,13 @@ export function initSimulator() {
   const scenarios = {
     spike: {
       color: "var(--accent-blue)",
-      nodes: ["waf", "cdn", "gateway", "auth", "core", "broker", "worker"],
-      activePaths: ["path-clt-waf", "path-waf-cdn", "path-cdn-gw", "path-gw-auth", "path-gw-core", "path-auth-core", "path-core-kafka", "path-kafka-worker"],
+      nodes: ["waf", "cdn", "gateway", "auth", "core", "broker", "worker", "observability", "elk", "s3", "notification"],
+      activePaths: [
+        "path-clt-waf", "path-waf-cdn", "path-cdn-gw", "path-gw-auth", "path-gw-core", 
+        "path-auth-core", "path-core-kafka", "path-kafka-worker", "path-worker-s3", 
+        "path-core-notify", "path-gw-otel", "path-core-otel", "path-kafka-otel", 
+        "path-worker-otel", "path-otel-elk"
+      ],
       lines: [
         { type: "system",  text: "exec simulate-load-spike --target=ecs-core --tps=10000" },
         { type: "info",    text: "[00:01] Loading simulator metrics pipeline..." },
@@ -149,8 +154,8 @@ export function initSimulator() {
     },
     failover: {
       color: "var(--accent-rose)",
-      nodes: ["core", "database"],
-      activePaths: ["path-core-db", "path-db-sec", "path-db-otel"],
+      nodes: ["core", "database", "security", "observability", "elk"],
+      activePaths: ["path-core-db", "path-db-sec", "path-db-otel", "path-otel-elk"],
       lines: [
         { type: "system",  text: "exec trigger-failover --db=rds-postgresql-primary" },
         { type: "info",    text: "[00:01] Injecting connection partition fault on PostgreSQL Master port 5432..." },
@@ -165,8 +170,8 @@ export function initSimulator() {
     },
     secrets: {
       color: "var(--accent-purple)",
-      nodes: ["security", "auth", "core", "database"],
-      activePaths: ["path-db-sec", "path-sec-auth", "path-auth-core"],
+      nodes: ["security", "auth", "core", "database", "observability", "elk"],
+      activePaths: ["path-db-sec", "path-sec-auth", "path-auth-core", "path-db-otel", "path-otel-elk"],
       lines: [
         { type: "system",  text: "exec cron-rotate-credentials --vault=aws-secrets-manager --days=30" },
         { type: "info",    text: "[00:01] Triggering scheduled credential rotation for PostgreSQL database..." },
@@ -180,8 +185,8 @@ export function initSimulator() {
     },
     breaker: {
       color: "var(--accent-amber)",
-      nodes: ["core", "broker", "worker"],
-      activePaths: ["path-core-kafka", "path-kafka-worker"],
+      nodes: ["core", "broker", "worker", "observability", "elk"],
+      activePaths: ["path-core-kafka", "path-kafka-worker", "path-worker-otel", "path-otel-elk"],
       lines: [
         { type: "system",  text: "exec inject-latency --target=downstream-billing-worker --latency=3500ms" },
         { type: "info",    text: "[00:01] Simulating network latency jitter on downstream billing gateway API..." },
@@ -195,8 +200,8 @@ export function initSimulator() {
     },
     kafka_lag: {
       color: "var(--accent-teal)",
-      nodes: ["broker", "worker", "dlq"],
-      activePaths: ["path-core-kafka", "path-kafka-worker", "path-kafka-dlq", "path-worker-otel"],
+      nodes: ["broker", "worker", "dlq", "observability", "elk", "s3"],
+      activePaths: ["path-core-kafka", "path-kafka-worker", "path-kafka-dlq", "path-worker-otel", "path-otel-elk", "path-worker-s3"],
       lines: [
         { type: "system",  text: "exec monitor-consumer-lag --topic=order-events --group=fulfillment-consumers" },
         { type: "info",    text: "[00:01] Polling Confluent Control Center for consumer group metrics..." },
@@ -212,8 +217,8 @@ export function initSimulator() {
     },
     schema_conflict: {
       color: "var(--accent-purple)",
-      nodes: ["broker", "core", "worker"],
-      activePaths: ["path-core-kafka", "path-kafka-worker", "path-kafka-otel"],
+      nodes: ["broker", "core", "worker", "observability", "elk"],
+      activePaths: ["path-core-kafka", "path-kafka-worker", "path-kafka-otel", "path-otel-elk"],
       lines: [
         { type: "system",  text: "exec deploy-schema --subject=order-events-value --compatibility=BACKWARD" },
         { type: "info",    text: "[00:01] Connecting to Confluent Schema Registry at registry.internal:8081..." },
@@ -229,8 +234,8 @@ export function initSimulator() {
     },
     ddos: {
       color: "var(--accent-rose)",
-      nodes: ["waf", "cdn", "gateway"],
-      activePaths: ["path-clt-waf", "path-waf-cdn", "path-cdn-gw", "path-gw-otel"],
+      nodes: ["waf", "cdn", "gateway", "observability", "elk"],
+      activePaths: ["path-clt-waf", "path-waf-cdn", "path-cdn-gw", "path-gw-otel", "path-otel-elk"],
       lines: [
         { type: "system",  text: "exec simulate-ddos --attack=syn-flood --rps=240000 --source=botnet-cluster" },
         { type: "info",    text: "[00:01] Ingress anomaly detected. CloudFront reporting 240k req/sec from 4,200 IPs." },
@@ -245,8 +250,8 @@ export function initSimulator() {
     },
     cache_eviction: {
       color: "var(--accent-amber)",
-      nodes: ["cache", "database", "core"],
-      activePaths: ["path-core-cache", "path-core-db", "path-db-otel"],
+      nodes: ["cache", "database", "core", "observability", "elk"],
+      activePaths: ["path-core-cache", "path-core-db", "path-db-otel", "path-otel-elk"],
       lines: [
         { type: "system",  text: "exec simulate-cache-pressure --target=elasticache-redis --eviction-policy=allkeys-lru" },
         { type: "info",    text: "[00:01] Redis memory utilization: 94.2% → 97.8% → 99.1%. Eviction pressure critical." },

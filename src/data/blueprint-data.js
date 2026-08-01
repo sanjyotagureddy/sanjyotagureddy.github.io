@@ -106,7 +106,7 @@ export const blueprintData = {
   observability: {
     name: "OpenTelemetry Collector",
     subtitle: "Distributed Trace Pipeline",
-    description: "Central trace and metric aggregation pipeline. Collects OTLP spans from all ECS services, Kafka consumers, and the API Gateway, then routes to Sumo Logic for APM analysis and dashboards.",
+    description: "Central trace and metric aggregation pipeline. Collects OTLP spans from all ECS services, Kafka consumers, and the API Gateway, then routes to ELK Stack for APM analysis and dashboards.",
     architectRole: "Standardized OpenTelemetry trace propagation headers (traceparent / W3C format) across all C# microservices. Deployed the OTel Collector as a sidecar on each ECS task to minimize network hops in trace reporting.",
     tradeoff: "Accepted ~3% CPU overhead per service for trace instrumentation to gain complete end-to-end distributed request tracing across all service boundaries.",
     metrics: "Trace Coverage: 100% of services | P99 Incident Isolation: < 3 mins"
