@@ -415,7 +415,7 @@
    ========================================================================== */
 .blueprint-dashboard {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.4fr 0.6fr;
   gap: var(--space-5);
   margin-top: var(--space-5);
   align-items: start;
@@ -432,7 +432,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1.35 / 1;
+  aspect-ratio: 820 / 520;
 }
 
 .blueprint-canvas-wrapper::before {
@@ -542,7 +542,10 @@
 }
 
 .inspector-card {
-  min-height: 380px;
+  flex-grow: 1; /* Match neighboring canvas height */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .inspector-empty {
@@ -554,19 +557,94 @@
   height: 100%;
   color: var(--text-muted);
   padding: var(--space-6);
+  flex-grow: 1;
 }
 
-.inspector-empty-icon {
-  font-size: 2.5rem;
-  color: var(--primary);
+/* Radar sweep wrap */
+.radar-wrap {
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+  margin-bottom: var(--space-5);
+}
+
+.radar-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Rotating beam group */
+.radar-beam {
+  animation: radar-sweep 3s linear infinite;
+  transform-origin: 60px 60px;
+}
+
+@keyframes radar-sweep {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Inspector terminal lines */
+.inspector-terminal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
   margin-bottom: var(--space-4);
-  opacity: 0.6;
-  animation: float 3s ease-in-out infinite;
+  width: 100%;
+  max-width: 260px;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+.iterm-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  animation: iterm-fade-in 0.4s ease both;
+}
+
+.iterm-line:nth-child(1) { animation-delay: 0s; }
+.iterm-line:nth-child(2) { animation-delay: 1.2s; }
+.iterm-line:nth-child(3) { animation-delay: 2.4s; }
+
+@keyframes iterm-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.iterm-prefix {
+  color: var(--accent-teal);
+  font-weight: 700;
+}
+
+/* Blinking cursor on the last line */
+.iterm-cursor {
+  display: inline-block;
+  width: 6px;
+  height: 0.85em;
+  background: var(--accent-teal);
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.inspector-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  max-width: 22ch;
+  line-height: 1.5;
 }
 
 .inspector-content {
@@ -642,7 +720,7 @@
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: var(--space-5);
-  align-items: start;
+  align-items: stretch;
 }
 
 .simulator-controls {
@@ -704,9 +782,10 @@
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
   overflow: hidden;
-  height: 320px;
+  min-height: 320px;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .console-header {
@@ -1443,25 +1522,17 @@
   opacity: 0.35;
 }
 
-/* Switch styling overrides for dynamic modal flow controls */
-.simulator-btn-teal {
+/* simulator-btn-teal and simulator-btn-amber: only styled on hover/active */
+.simulator-btn-teal:hover, .simulator-btn-teal.is-active {
   border-color: var(--accent-teal);
   color: var(--accent-teal);
-}
-.simulator-btn-teal:hover, .simulator-btn-teal.is-active {
-  background: var(--accent-teal);
-  box-shadow: var(--shadow-neon-teal);
-  color: #000000;
+  box-shadow: 0 0 10px rgba(45, 212, 191, 0.15);
 }
 
-.simulator-btn-amber {
+.simulator-btn-amber:hover, .simulator-btn-amber.is-active {
   border-color: var(--accent-amber);
   color: var(--accent-amber);
-}
-.simulator-btn-amber:hover, .simulator-btn-amber.is-active {
-  background: var(--accent-amber);
-  box-shadow: var(--shadow-neon-amber);
-  color: #000000;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.15);
 }
 
 /* ==========================================================================
