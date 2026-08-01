@@ -2136,10 +2136,33 @@
   margin-bottom: 6px;
 }
 
+@media (max-width: 900px) {
+  .contact-split {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}
+
 @media (max-width: 640px) {
   .education-card {
     flex-direction: column;
     gap: var(--space-3);
     padding: var(--space-4);
+  }
+  
+  .contact-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-web-panel {
+    transform: scale(0.85);
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .skills-web-panel {
+    transform: scale(0.7);
+    min-height: 250px;
   }
 }
