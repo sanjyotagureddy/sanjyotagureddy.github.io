@@ -11,19 +11,19 @@ export const experienceData = [
       { title: "Technical Lead", date: "07/2022 - 12/2024" }
     ],
     scope: {
-      engineers: "10-30 Engineers",
-      impact: "20% Acceleration in Delivery",
+      engineers: "25 Engineers (4 Teams)",
+      impact: "3 Weeks to <5 Days Bootstrap",
       focus: "Modernization & Event Streaming"
     },
     highlights: [
-      "Set the architectural direction and technical roadmap for cloud modernization programs, defining development standards used by 10-30 engineers across multiple teams.",
+      "Set the architectural direction and technical roadmap for cloud modernization programs, defining development standards adopted by 25 engineers across 4 feature teams.",
       "Present architectural designs, technology choices, and build-vs-buy recommendations directly to VP/Director leadership and architecture review boards.",
       "Defined security integration rules (encryption, IAM roles, access controls) and OpenTelemetry tracing standards for microservices, which helped speed up production incident debugging.",
       "Mentor other engineers on distributed systems design, helping teams understand tradeoffs around eventual consistency, network partitioning, and database isolation.",
       "Led the technical design of our event-driven order processing platform on Apache Kafka, setting up partitioning key strategies to ensure correct message ordering under heavy load.",
       "Designed automated message transformation pipelines to process downstream financial data, reducing manual reconciliation work and bottlenecks.",
       "Helped teams adopt AI coding practices (like Copilot) and co-developed an LLM-based documentation tool that won 2nd Runner-Up at the 2024 JPMorgan Chase Hackathon.",
-      "Led the migration of legacy .NET monoliths to .NET 8 microservices, helping speed up delivery times by 20% using reusable design templates."
+      "Led the migration of legacy .NET monoliths to .NET 8 microservices, reducing service bootstrap time from 3 weeks to under 5 days using reusable design templates."
     ],
     techStack: [".NET 8", "C#", "Apache Kafka", "AWS (ECS/Lambda)", "OpenTelemetry", "SQL CDC", "Sumo Logic", "Clean Architecture"]
   },

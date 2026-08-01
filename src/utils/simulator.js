@@ -245,10 +245,13 @@ export function initSimulator() {
 
   // Print initial greeting inside terminal console
   writeLinesToConsole([
-    { type: "info", text: "SYSTEM ARCHITECTURE CONSOLE v1.0.4" },
-    { type: "info", text: "Sanjyot Agureddy | Solution Architect Systems Engine" },
-    { type: "info", text: "System Status: ONLINE | Active Cluster nodes: 8" },
-    { type: "info", text: "Click any scenario button on the left to inject latency spikes, database partition fails, credentials updates, or scaling stresses and observe how the system architecture dynamically adapts." }
+    { type: "info", text: "Initializing Architect Console v1.0.4..." },
+    { type: "info", text: "[bootstrap] Postgres relational driver: CONNECTED." },
+    { type: "info", text: "[bootstrap] ElastiCache Redis replication: READY." },
+    { type: "info", text: "[bootstrap] Apache Kafka topic partitions mapping: ONLINE." },
+    { type: "info", text: "[bootstrap] AWS Secrets Manager rotation pipeline: SECURE." },
+    { type: "success", text: "[system] System design topology parsed. Status: HEALTHY." },
+    { type: "success", text: "[system] Console online. Select any simulation trigger to run stressing parameters." }
   ]);
   
   resetInspector();

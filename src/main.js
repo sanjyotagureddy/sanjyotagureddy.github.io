@@ -22,7 +22,7 @@ if (projectsGrid) {
       if (p.icon === "modernization") cardHighlight = "highlight-teal";
 
       return `
-        <article class="card ${cardHighlight} reveal" data-project-index="${index}" style="cursor: pointer;" title="Click to view interactive system design & resiliency flows">
+        <article class="card ${cardHighlight} reveal" data-project-index="${index}" tabindex="0" role="button" aria-haspopup="dialog" style="cursor: pointer;" title="Press Enter or Space to view interactive system design & resiliency flows">
           <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: var(--space-2);">
             <span class="meta" style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">${p.category}</span>
             <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--primary);">Interactive Blueprint ➔</span>
@@ -43,7 +43,7 @@ if (projectsGrid) {
     })
     .join("");
 
-  // Event Delegation for Project Modals
+  // Click Trigger for Project Modals
   projectsGrid.addEventListener("click", (e) => {
     const card = e.target.closest("article.card");
     if (!card) return;
@@ -52,6 +52,21 @@ if (projectsGrid) {
     const project = projectsData[index];
     if (project) {
       openProjectModal(project);
+    }
+  });
+
+  // Keyboard Accessibility Trigger (Enter and Space keypress)
+  projectsGrid.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      const card = e.target.closest("article.card");
+      if (!card) return;
+      
+      e.preventDefault(); // Prevents standard page scroll on Space keypress
+      const index = parseInt(card.getAttribute("data-project-index"));
+      const project = projectsData[index];
+      if (project) {
+        openProjectModal(project);
+      }
     }
   });
 }

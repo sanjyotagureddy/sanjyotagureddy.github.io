@@ -161,6 +161,14 @@
   border-color: var(--glass-stroke);
 }
 
+.card:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary);
+}
+
 .card.highlight-blue::before { background: linear-gradient(90deg, transparent, var(--accent-blue), transparent); }
 .card.highlight-purple::before { background: linear-gradient(90deg, transparent, var(--accent-purple), transparent); }
 .card.highlight-teal::before { background: linear-gradient(90deg, transparent, var(--accent-teal), transparent); }
@@ -1455,3 +1463,81 @@
   box-shadow: var(--shadow-neon-amber);
   color: #000000;
 }
+
+/* ==========================================================================
+   Technical Credentials & Badges Styling
+   ========================================================================== */
+.credential-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.credential-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 8px 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color 200ms, transform 200ms;
+}
+
+.credential-item:hover {
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.cert-logo-box {
+  width: 32px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cert-svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.credential-name {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ==========================================================================
+   Industry Recognition Icons Styling
+   ========================================================================== */
+.award-icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 250ms;
+}
+
+.info-strip-item:hover .award-icon-box {
+  border-color: var(--primary);
+  transform: scale(1.08);
+}
+
+.award-svg {
+  width: 18px;
+  height: 18px;
+}
+
+.award-svg.trophy { color: var(--accent-purple); filter: drop-shadow(0 0 2px var(--accent-purple)); }
+.award-svg.medal { color: var(--accent-amber); filter: drop-shadow(0 0 2px var(--accent-amber)); }
+.award-svg.star { color: var(--accent-blue); filter: drop-shadow(0 0 2px var(--accent-blue)); }
+.award-svg.bulb { color: var(--accent-teal); filter: drop-shadow(0 0 2px var(--accent-teal)); }
