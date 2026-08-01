@@ -1314,12 +1314,19 @@
   transform: translateY(-1px);
 }
 
-/* Contact Links Grid */
-.contact-grid {
+/* Contact Split Layout */
+.contact-split {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-4);
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  align-items: center;
   margin-top: var(--space-4);
+}
+
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
 }
 
 .contact-link {
@@ -1329,7 +1336,7 @@
   padding: var(--space-4);
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-3);
   transition: all 250ms ease;
 }
 
@@ -1340,9 +1347,20 @@
   transform: translateY(-2px);
 }
 
+.contact-location-card {
+  cursor: default;
+  border-style: dashed;
+}
+
+.contact-location-card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--accent-teal);
+}
+
 .contact-icon {
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 999px;
   background: var(--bg-elevated);
   border: 1px solid var(--border);
@@ -1350,6 +1368,7 @@
   align-items: center;
   justify-content: center;
   color: var(--primary);
+  flex-shrink: 0;
   transition: all 250ms;
 }
 
@@ -1360,35 +1379,131 @@
 }
 
 .contact-icon svg {
-  width: 1.3rem;
-  height: 1.3rem;
+  width: 1.15rem;
+  height: 1.15rem;
 }
 
 .contact-details {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .contact-label {
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-family: var(--font-mono);
   text-transform: uppercase;
   color: var(--text-muted);
+  letter-spacing: 0.04em;
 }
 
 .contact-value {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--text);
   word-break: break-all;
 }
 
-.contact-location {
-  grid-column: 1 / -1;
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-top: var(--space-4);
+/* ==========================================================================
+   Floating Skills Web Animation
+   ========================================================================== */
+.skills-web-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+}
+
+.skills-web-box {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 400 / 350;
+}
+
+/* SVG Connection Lines */
+.web-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.web-lines line {
+  stroke: var(--border);
+  stroke-width: 1;
+  opacity: 0.4;
+  stroke-dasharray: 6 4;
+  animation: web-dash 6s linear infinite;
+}
+
+.web-lines line:nth-child(even) {
+  animation-duration: 9s;
+  animation-direction: reverse;
+}
+
+@keyframes web-dash {
+  to { stroke-dashoffset: -60; }
+}
+
+/* Floating Skill Nodes */
+.web-node {
+  position: absolute;
+  z-index: 3;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 7px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text);
+  box-shadow: var(--shadow-soft);
+  transform: translate(-50%, -50%);
+  transition: all 300ms ease;
+  cursor: default;
+}
+
+.web-node:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-neon-blue);
+  transform: translate(-50%, -50%) scale(1.2);
+  z-index: 5;
+}
+
+/* Node positions — mapped to SVG viewBox percentages */
+.web-node.wn1 { top: 8.6%; left: 50%; border-color: var(--accent-blue); color: var(--accent-blue); animation: web-float 5s ease-in-out infinite; }
+.web-node.wn2 { top: 34.3%; left: 17.5%; border-color: var(--accent-teal); color: var(--accent-teal); animation: web-float 6.2s ease-in-out 0.4s infinite; }
+.web-node.wn3 { top: 34.3%; left: 82.5%; border-color: var(--accent-purple); color: var(--accent-purple); animation: web-float 5.8s ease-in-out 0.9s infinite; }
+.web-node.wn4 { top: 65.7%; left: 35%; border-color: var(--accent-blue); color: var(--accent-blue); animation: web-float 7s ease-in-out 0.6s infinite; }
+.web-node.wn5 { top: 65.7%; left: 65%; border-color: var(--accent-teal); color: var(--accent-teal); animation: web-float 6s ease-in-out 1.2s infinite; }
+.web-node.wn6 { top: 91.4%; left: 17.5%; border-color: var(--accent-amber); color: var(--accent-amber); animation: web-float 5.5s ease-in-out 0.2s infinite; }
+.web-node.wn7 { top: 91.4%; left: 82.5%; border-color: var(--accent-purple); color: var(--accent-purple); animation: web-float 6.5s ease-in-out 1.5s infinite; }
+
+@keyframes web-float {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-8px); }
+}
+
+/* Central Pulse Ring */
+.web-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1.5px solid var(--primary);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+  animation: web-pulse-ring 3s ease-out infinite;
+}
+
+@keyframes web-pulse-ring {
+  0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.3); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(2.8); }
 }
 
 /* ==========================================================================
