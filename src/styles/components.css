@@ -1736,3 +1736,88 @@
 .award-svg.medal { color: var(--accent-amber); filter: drop-shadow(0 0 2px var(--accent-amber)); }
 .award-svg.star { color: var(--accent-blue); filter: drop-shadow(0 0 2px var(--accent-blue)); }
 .award-svg.bulb { color: var(--accent-teal); filter: drop-shadow(0 0 2px var(--accent-teal)); }
+
+/* ==========================================================================
+   Education Layout Styling
+   ========================================================================== */
+.education-card {
+  display: flex;
+  gap: var(--space-5);
+  align-items: flex-start;
+  padding: var(--space-5);
+  height: 100%;
+}
+
+.education-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--primary);
+  transition: all 300ms ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.card:hover .education-icon-box {
+  border-color: var(--primary);
+  transform: scale(1.08) rotate(5deg);
+  box-shadow: var(--shadow-neon-blue);
+  color: var(--primary-strong);
+}
+
+.education-svg {
+  width: 24px;
+  height: 24px;
+}
+
+.education-details {
+  flex-grow: 1;
+}
+
+.education-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.education-card-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.education-school {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 4px 0 0 0;
+}
+
+.education-bullets {
+  margin: var(--space-3) 0 0 0;
+  padding-left: var(--space-4);
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.education-bullets li {
+  margin-bottom: 6px;
+}
+
+@media (max-width: 640px) {
+  .education-card {
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+}
