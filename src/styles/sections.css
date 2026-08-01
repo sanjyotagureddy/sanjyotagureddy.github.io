@@ -1,163 +1,317 @@
-#home,
-#about,
-#experience,
-#projects,
-#skills,
-#contact {
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+  padding-top: calc(var(--space-8) + 1rem);
+  padding-bottom: var(--space-8);
   position: relative;
+  overflow: hidden;
 }
 
-#home .container,
-#about .container,
-#experience .container,
-#projects .container,
-#skills .container,
-#contact .container {
-  position: relative;
-  z-index: 2;
-}
-
-.doodle-peek {
+/* Background blueprint grid focus in Hero */
+.hero::before {
+  content: "";
   position: absolute;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 75% 30%, var(--accent-blue-glow) 0%, transparent 60%);
+  z-index: -1;
   pointer-events: none;
-  opacity: 0.72;
-  --drift: 0px;
-  --peek-start-x: 0px;
-  --peek-end-x: 0px;
-  --peek-start-y: 0px;
-  --peek-end-y: 0px;
-  --peek-rotate: 0deg;
-  transform: translate(var(--peek-end-x), calc(var(--peek-end-y) + var(--drift))) rotate(var(--peek-rotate)) scale(1);
-  transition: opacity 420ms ease, transform 460ms ease;
 }
 
-.js-doodles .doodle-peek {
-  opacity: 0;
-  transform: translate(var(--peek-start-x), calc(var(--peek-start-y) + var(--drift))) rotate(var(--peek-rotate)) scale(0.86);
+.hero-shell {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: var(--space-7);
+  align-items: center;
 }
 
-.js-doodles .doodle-peek.is-visible {
-  opacity: 0.9;
-  transform: translate(var(--peek-end-x), calc(var(--peek-end-y) + var(--drift))) rotate(var(--peek-rotate)) scale(1);
+.hero-info {
+  display: flex;
+  flex-direction: column;
 }
 
-.doodle-loop {
-  width: 170px;
-  height: 170px;
-  border-radius: 999px;
-  border: 2px solid color-mix(in srgb, var(--primary) 44%, transparent);
-  background: radial-gradient(circle, color-mix(in srgb, var(--surface-strong) 58%, transparent) 0%, transparent 70%);
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary);
+  letter-spacing: 0.15em;
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
-.doodle-orbit {
-  width: 130px;
-  height: 130px;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--accent) 56%, transparent);
-  box-shadow: inset 0 0 0 12px color-mix(in srgb, var(--surface) 42%, transparent);
+.eyebrow::after {
+  content: "";
+  display: inline-block;
+  height: 1px;
+  width: 48px;
+  background-color: var(--border);
 }
 
-.doodle-pill {
-  width: 180px;
-  height: 64px;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--primary) 46%, transparent);
-  background: linear-gradient(
-    120deg,
-    color-mix(in srgb, var(--surface-strong) 64%, transparent) 0%,
-    color-mix(in srgb, var(--accent) 24%, transparent) 100%
-  );
+.hero h1 {
+  font-size: clamp(2.5rem, 2rem + 3.2vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-4);
 }
 
-.doodle-squiggle {
-  width: 124px;
-  height: 56px;
-  border-radius: 999px;
-  border: 2px dashed color-mix(in srgb, var(--primary) 54%, transparent);
-  transform-origin: center;
+.tagline {
+  font-family: var(--font-mono);
+  font-size: clamp(0.85rem, 0.8rem + 0.5vw, 1.1rem);
+  color: var(--primary-strong);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
 }
 
-.doodle-home-right {
-  top: 12%;
-  right: -48px;
-  --peek-start-x: 90px;
-  --peek-end-x: 0px;
+.tagline span:not(:last-child)::after {
+  content: " |";
+  color: var(--border);
+  margin-left: var(--space-2);
 }
 
-.doodle-home-left {
-  left: -72px;
-  bottom: 12%;
-  --peek-start-x: -88px;
-  --peek-end-x: 0px;
+.summary {
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.18rem);
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 66ch;
+  margin-bottom: var(--space-6);
 }
 
-.doodle-about-left {
-  top: 18%;
-  left: -34px;
-  --peek-start-x: -72px;
-  --peek-end-x: 0px;
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
 }
 
-.doodle-exp-right {
-  top: 22%;
-  right: -30px;
-  --peek-start-x: 88px;
-  --peek-end-x: 0px;
+/* Executive Snapshot Panel */
+.executive-snapshot {
+  display: flex;
+  flex-direction: column;
 }
 
-.doodle-projects-right {
-  top: 20%;
-  right: -66px;
-  --peek-start-x: 92px;
-  --peek-end-x: 0px;
+.snapshot-card {
+  padding: var(--space-5);
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  position: relative;
 }
 
-.doodle-projects-left {
-  bottom: 14%;
-  left: -46px;
-  --peek-start-x: -86px;
-  --peek-end-x: 0px;
+.snapshot-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.doodle-skills-right {
-  top: 17%;
-  right: -28px;
-  --peek-start-x: 82px;
-  --peek-end-x: 0px;
+.snapshot-title::after {
+  content: "[SYS_STAT: OK]";
+  color: var(--accent-teal);
+  font-size: 0.68rem;
 }
 
-.doodle-contact-left {
-  top: 26%;
-  left: -24px;
-  --peek-start-x: -68px;
-  --peek-end-x: 0px;
+.snapshot-list {
+  display: grid;
+  gap: var(--space-4);
 }
 
-#experience .card,
-#projects .card,
-#skills .card {
+.snapshot-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-left: 2px solid var(--border);
+  padding-left: var(--space-3);
+  transition: border-color 200ms;
+}
+
+.snapshot-list li:hover {
+  border-color: var(--primary);
+}
+
+.snapshot-list strong {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.snapshot-list span {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Capability / Skills Matrix
+   ========================================================================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.skill-category-card {
   height: 100%;
 }
 
-#recognition .section,
-#education .section {
-  padding-top: var(--space-5);
-  padding-bottom: var(--space-2);
+.skill-category-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
-.contact {
-  padding-bottom: var(--space-8);
+.skill-category-card h3::before {
+  content: "[ ]";
+  font-family: var(--font-mono);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
-@media (max-width: 900px) {
-  .doodle-peek {
-    opacity: 0.35;
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.skill-item {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.skill-name {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.skill-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--primary);
+  background: rgba(56, 189, 248, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--glass-stroke);
+}
+
+/* ==========================================================================
+   Recognition & Education
+   ========================================================================== */
+.info-strip-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.info-strip-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.info-strip-item .title-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-strip-item h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.info-strip-item p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.info-strip-item .badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Scroll Reveal System (Simple JS Interaction fallback)
+   ========================================================================== */
+.reveal {
+  opacity: 1;
+  transform: none;
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.js-reveal .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-shell {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
   }
 
-  .doodle-home-right,
-  .doodle-projects-right,
-  .doodle-contact-left {
-    display: none;
+  .executive-snapshot {
+    order: -1; /* Put snapshot on top for tablet view profiles */
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-strip-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .info-strip-item .badge {
+    align-self: flex-end;
   }
 }

@@ -4,7 +4,7 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--bg-elevated);
+  background-color: var(--bg);
 }
 
 body {
@@ -13,49 +13,148 @@ body {
   overflow-x: hidden;
   font-family: var(--font-body);
   color: var(--text);
-  background-color: var(--bg-elevated);
-  background:
-    radial-gradient(circle at 10% 12%, rgba(47, 94, 255, 0.22) 0, transparent 38%),
-    radial-gradient(circle at 88% 18%, rgba(22, 181, 176, 0.2) 0, transparent 34%),
-    radial-gradient(circle at 52% 78%, rgba(131, 146, 255, 0.18) 0, transparent 42%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-elevated) 100%);
-  line-height: 1.6;
-  transition: background-color 250ms ease, color 250ms ease;
+  background-color: var(--bg);
+  background-image: 
+    radial-gradient(circle at 15% 15%, var(--accent-blue-glow) 0, transparent 45%),
+    radial-gradient(circle at 85% 25%, var(--accent-purple-glow) 0, transparent 40%),
+    radial-gradient(circle at 50% 70%, var(--accent-teal-glow) 0, transparent 50%),
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+  line-height: 1.65;
+  transition: background-color 300ms ease, color 300ms ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   margin: 0;
   font-family: var(--font-heading);
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text);
+  letter-spacing: -0.02em;
 }
 
 p {
   margin: 0;
+  color: var(--text-muted);
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+  transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease, transform 200ms ease;
 }
 
-ul {
+ul, ol {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 img {
   max-width: 100%;
   display: block;
+  height: auto;
+}
+
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: inherit;
 }
 
 :focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
+  outline: 2px solid var(--border-focus);
+  outline-offset: 3px;
 }
 
+/* Container */
+.container {
+  width: min(var(--container-width), calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+/* Section Common */
+.section {
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-header {
+  max-width: 68ch;
+  margin-bottom: var(--space-6);
+}
+
+.section-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: var(--space-2);
+  display: inline-block;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 1.6rem + 2vw, 3.2rem);
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.03em;
+}
+
+/* Keyboard Skip Link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 1.5rem;
+  top: 1.5rem;
+  width: auto;
+  height: auto;
+  z-index: 1000;
+  background: var(--bg-elevated);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-4);
+  font-weight: 700;
+  box-shadow: var(--shadow-neon-blue);
+}
+
+/* Reduced Motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

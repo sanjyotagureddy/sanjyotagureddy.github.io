@@ -1,23 +1,49 @@
 :root {
-  --bg: #e9edf1;
-  --bg-elevated: #f2f5f8;
-  --surface: rgba(255, 255, 255, 0.56);
-  --surface-strong: rgba(255, 255, 255, 0.72);
-  --text: #1e2933;
-  --text-muted: #5a6876;
-  --primary: #4e6f8a;
-  --primary-strong: #3d5a72;
-  --accent: #5b8b83;
-  --border: rgba(255, 255, 255, 0.55);
-  --glass-stroke: rgba(255, 255, 255, 0.6);
-  --glass-tint: rgba(255, 255, 255, 0.35);
-  --shadow-soft: 0 18px 40px rgba(44, 61, 79, 0.12);
-  --shadow-hover: 0 22px 50px rgba(44, 61, 79, 0.18);
+  /* Default Dark Mode Theme */
+  --bg: #06090f;
+  --bg-elevated: #0d121c;
+  --surface: rgba(13, 19, 30, 0.65);
+  --surface-strong: rgba(18, 26, 41, 0.88);
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+  --primary: #38bdf8;
+  --primary-strong: #0ea5e9;
+  --border: rgba(30, 48, 80, 0.45);
+  --border-focus: #38bdf8;
+  --glass-stroke: rgba(56, 189, 248, 0.16);
+  --glass-tint: rgba(6, 9, 15, 0.8);
+  --grid-line: rgba(56, 189, 248, 0.035);
+  --grid-dot: rgba(56, 189, 248, 0.07);
 
-  --radius-sm: 10px;
-  --radius-md: 18px;
-  --radius-lg: 28px;
+  /* Architectural Component Accent Colors */
+  --accent-blue: #38bdf8;
+  --accent-blue-glow: rgba(56, 189, 248, 0.25);
+  --accent-purple: #c084fc;
+  --accent-purple-glow: rgba(192, 132, 252, 0.25);
+  --accent-teal: #2dd4bf;
+  --accent-teal-glow: rgba(45, 212, 191, 0.25);
+  --accent-amber: #fbbf24;
+  --accent-amber-glow: rgba(251, 191, 36, 0.25);
+  --accent-rose: #f43f5e;
+  --accent-rose-glow: rgba(244, 63, 94, 0.3);
 
+  /* Shadows & Radius */
+  --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --shadow-hover: 0 24px 60px rgba(0, 0, 0, 0.75);
+  --shadow-neon-blue: 0 0 20px rgba(56, 189, 248, 0.2);
+  --shadow-neon-purple: 0 0 20px rgba(192, 132, 252, 0.2);
+  --shadow-neon-teal: 0 0 20px rgba(45, 212, 191, 0.2);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  /* Typography */
+  --font-heading: "Sora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Fira Code", "JetBrains Mono", source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+
+  /* Spacing */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -25,28 +51,44 @@
   --space-5: 1.5rem;
   --space-6: 2rem;
   --space-7: 3rem;
-  --space-8: 4rem;
+  --space-8: 4.5rem;
 
-  --container-width: 1140px;
+  --container-width: 1160px;
   --header-height: 72px;
-
-  --font-heading: "Sora", "Segoe UI", sans-serif;
-  --font-body: "Manrope", "Segoe UI", sans-serif;
 }
 
-:root[data-theme="dark"] {
-  --bg: #0d141d;
-  --bg-elevated: #131d29;
-  --surface: rgba(20, 33, 47, 0.58);
-  --surface-strong: rgba(24, 40, 57, 0.76);
-  --text: #e6edf3;
-  --text-muted: #9fb0bf;
-  --primary: #8ea3b5;
-  --primary-strong: #b3c3d1;
-  --accent: #88b7ad;
-  --border: rgba(151, 173, 191, 0.2);
-  --glass-stroke: rgba(188, 207, 223, 0.24);
-  --glass-tint: rgba(16, 27, 39, 0.45);
-  --shadow-soft: 0 20px 45px rgba(1, 7, 13, 0.5);
-  --shadow-hover: 0 24px 56px rgba(1, 7, 13, 0.6);
+/* Light Theme Variables */
+:root[data-theme="light"] {
+  --bg: #f4f6f9;
+  --bg-elevated: #ffffff;
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-strong: rgba(255, 255, 255, 0.95);
+  --text: #0f172a;
+  --text-muted: #475569;
+  --primary: #0ea5e9;
+  --primary-strong: #0284c7;
+  --border: rgba(148, 163, 184, 0.35);
+  --border-focus: #0ea5e9;
+  --glass-stroke: rgba(14, 165, 233, 0.15);
+  --glass-tint: rgba(244, 246, 249, 0.85);
+  --grid-line: rgba(14, 165, 233, 0.04);
+  --grid-dot: rgba(14, 165, 233, 0.08);
+
+  /* Accents adjusted for light mode contrast */
+  --accent-blue: #0284c7;
+  --accent-blue-glow: rgba(2, 132, 199, 0.18);
+  --accent-purple: #9333ea;
+  --accent-purple-glow: rgba(147, 51, 234, 0.18);
+  --accent-teal: #0d9488;
+  --accent-teal-glow: rgba(13, 148, 136, 0.18);
+  --accent-amber: #d97706;
+  --accent-amber-glow: rgba(217, 119, 6, 0.18);
+  --accent-rose: #e11d48;
+  --accent-rose-glow: rgba(225, 29, 72, 0.18);
+
+  --shadow-soft: 0 16px 40px rgba(148, 163, 184, 0.12);
+  --shadow-hover: 0 24px 60px rgba(148, 163, 184, 0.2);
+  --shadow-neon-blue: 0 0 15px rgba(14, 165, 233, 0.15);
+  --shadow-neon-purple: 0 0 15px rgba(147, 51, 234, 0.15);
+  --shadow-neon-teal: 0 0 15px rgba(13, 148, 136, 0.15);
 }

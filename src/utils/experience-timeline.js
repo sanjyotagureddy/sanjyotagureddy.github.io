@@ -1,74 +1,110 @@
+import { experienceData } from "../data/experience-data.js";
+
 export function initExperienceTimeline() {
   const timeline = document.querySelector("#experience-timeline");
   if (!timeline) return;
 
-  const railItems = Array.from(timeline.querySelectorAll(".rail-item"));
-  const sentinels = Array.from(timeline.querySelectorAll(".exp-sentinel"));
-  const dataItems = Array.from(timeline.querySelectorAll(".experience-data [data-exp]"));
-  const dataByKey = new Map(dataItems.map((item) => [item.dataset.exp, item]));
+  const rail = timeline.querySelector("#experience-rail");
+  const focusCard = timeline.querySelector("#experience-focus");
 
-  const focusLogo = document.querySelector("#exp-focus-logo");
-  const focusCompany = document.querySelector("#exp-focus-company");
-  const focusPeriod = document.querySelector("#exp-focus-period");
-  const focusRoles = document.querySelector("#exp-focus-roles");
-  const focusHighlights = document.querySelector("#exp-focus-highlights");
+  if (!rail || !focusCard) return;
 
-  if (!railItems.length || !focusLogo || !focusCompany || !focusPeriod || !focusRoles || !focusHighlights) {
-    return;
+  // Render Left Rails
+  rail.innerHTML = experienceData
+    .map((exp, index) => {
+      const roleTitle = exp.roles[0]?.title || "Engineer";
+      return `
+        <button class="rail-item ${index === 0 ? "is-active" : ""}" type="button" data-exp="${exp.key}" aria-current="${index === 0 ? "true" : "false"}">
+          <img src="${exp.logo || './images/jpmorgan.png'}" alt="${exp.company} logo" class="company-logo" width="32" height="32" />
+          <span class="rail-text">
+            <strong>${exp.company}</strong>
+            <span>${exp.period}</span>
+          </span>
+        </button>
+      `;
+    })
+    .join("");
+
+  // Render Card Details for Selected Job
+  function renderJobDetails(expKey) {
+    const exp = experienceData.find((item) => item.key === expKey);
+    if (!exp) return;
+
+    // Build roles lists
+    const rolesHTML = exp.roles
+      .map((role) => `<li>${role.title} (${role.date})</li>`)
+      .join("");
+
+    // Build accomplishments list
+    const highlightsHTML = exp.highlights
+      .map((hl) => `<li>${hl}</li>`)
+      .join("");
+
+    // Build tech tag list
+    const techHTML = exp.techStack
+      .map((tech) => `<span class="tech-tag">${tech}</span>`)
+      .join("");
+
+    focusCard.innerHTML = `
+      <div class="card highlight-blue">
+        <header class="exp-header">
+          <div class="exp-brand">
+            <img src="${exp.logo}" alt="${exp.company} logo" class="company-logo" width="36" height="36" />
+            <h3>${exp.company}</h3>
+          </div>
+          <span class="meta">${exp.location}</span>
+        </header>
+
+        <ul class="role-list">
+          ${rolesHTML}
+        </ul>
+
+        <div class="scope-grid">
+          <div class="scope-item">
+            <span class="label">Devs Influenced</span>
+            <span class="value">${exp.scope.engineers}</span>
+          </div>
+          <div class="scope-item">
+            <span class="label">Core Metrics</span>
+            <span class="value">${exp.scope.impact}</span>
+          </div>
+          <div class="scope-item">
+            <span class="label">Scope / Focus</span>
+            <span class="value">${exp.scope.focus}</span>
+          </div>
+        </div>
+
+        <ul class="detail-list">
+          ${highlightsHTML}
+        </ul>
+
+        <div class="tech-tag-list">
+          ${techHTML}
+        </div>
+      </div>
+    `;
   }
 
-  function setActive(expKey) {
-    const data = dataByKey.get(expKey);
-    if (!data) return;
-
-    railItems.forEach((item) => {
-      const isActive = item.dataset.exp === expKey;
-      item.classList.toggle("is-active", isActive);
-      item.setAttribute("aria-current", isActive ? "true" : "false");
-    });
-
-    focusLogo.src = data.dataset.logo || "";
-    focusLogo.alt = `${data.dataset.company || "Company"} logo`;
-    focusCompany.textContent = data.dataset.company || "";
-    focusPeriod.textContent = data.dataset.period || "";
-
-    const roles = data.querySelector(".role-list");
-    const highlights = data.querySelector(".detail-list");
-    if (roles) focusRoles.innerHTML = roles.innerHTML;
-    if (highlights) focusHighlights.innerHTML = highlights.innerHTML;
-  }
-
+  // Setup click listeners on rails
+  const railItems = Array.from(rail.querySelectorAll(".rail-item"));
   railItems.forEach((item) => {
     item.addEventListener("click", () => {
       const expKey = item.dataset.exp;
       if (!expKey) return;
-      setActive(expKey);
 
-      const target = timeline.querySelector(`.exp-sentinel[data-exp="${expKey}"]`);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
+      // Update active state in rail
+      railItems.forEach((railBtn) => {
+        const isActive = railBtn.dataset.exp === expKey;
+        railBtn.classList.toggle("is-active", isActive);
+        railBtn.setAttribute("aria-current", isActive ? "true" : "false");
+      });
+
+      renderJobDetails(expKey);
     });
   });
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-      if (visible.length > 0) {
-        const expKey = visible[0].target.getAttribute("data-exp");
-        if (expKey) setActive(expKey);
-      }
-    },
-    {
-      root: null,
-      threshold: [0.45, 0.65],
-      rootMargin: "-20% 0px -30% 0px",
-    }
-  );
-
-  sentinels.forEach((item) => observer.observe(item));
-  setActive("jpmc");
+  // Render initial first item
+  if (experienceData.length > 0) {
+    renderJobDetails(experienceData[0].key);
+  }
 }

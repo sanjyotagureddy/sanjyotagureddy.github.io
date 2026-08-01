@@ -5,31 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Sanjyot Agureddy - Solution Architect focused on cloud-native distributed systems, .NET, AWS, and AI-driven engineering."
+      content="Sanjyot Agureddy - Solution Architect focused on cloud-native distributed systems, .NET, AWS, Kafka event streaming, and AI-driven platform engineering."
     />
     <meta property="og:title" content="Sanjyot Agureddy | Solution Architect" />
     <meta
       property="og:description"
-      content="Solution Architect with 11+ years building cloud-native distributed systems using .NET, AWS, and AI-driven engineering practices."
+      content="Solution Architect with 11+ years building cloud-native, event-driven financial platforms using .NET, AWS, and modern AI engineering."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sanjyotagureddy.github.io/" />
     <meta property="og:image" content="https://sanjyotagureddy.github.io/images/developer.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sanjyot Agureddy | Solution Architect" />
-    <meta
-      name="twitter:description"
-      content="Cloud-native distributed systems, .NET, AWS, and AI-driven engineering."
-    />
-    <meta name="twitter:image" content="https://sanjyotagureddy.github.io/images/developer.png" />
+    
     <link rel="icon" type="image/png" href="./images/developer.png" />
     <link rel="apple-touch-icon" href="./images/developer.png" />
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
     />
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./src/styles/tokens.css" />
+    <link rel="stylesheet" href="./src/styles/base.css" />
+    <link rel="stylesheet" href="./src/styles/layout.css" />
+    <link rel="stylesheet" href="./src/styles/components.css" />
+    <link rel="stylesheet" href="./src/styles/sections.css" />
+    <link rel="stylesheet" href="./src/styles/utilities.css" />
+
+    <!-- Inline Script for Early Theme Resolution -->
     <script>
       (function () {
         try {
@@ -43,16 +49,12 @@
                 : "light";
           document.documentElement.setAttribute("data-theme", theme);
         } catch (error) {
-          document.documentElement.setAttribute("data-theme", "light");
+          document.documentElement.setAttribute("data-theme", "dark");
         }
       })();
     </script>
-    <link rel="stylesheet" href="./src/styles/tokens.css" />
-    <link rel="stylesheet" href="./src/styles/base.css" />
-    <link rel="stylesheet" href="./src/styles/layout.css" />
-    <link rel="stylesheet" href="./src/styles/components.css" />
-    <link rel="stylesheet" href="./src/styles/sections.css" />
-    <link rel="stylesheet" href="./src/styles/utilities.css" />
+
+    <!-- Structured Data (JSON-LD) for SEO -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -79,12 +81,15 @@
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
+    
+    <!-- Site Header -->
     <header class="site-header">
       <div class="container nav-wrap">
-        <a class="brand" href="#home">Sanjyot Agureddy</a>
-        <nav aria-label="Primary">
+        <a class="brand" href="#home">Sanjyot.A</a>
+        <nav aria-label="Primary Navigation">
           <ul class="nav-list">
             <li><a href="#about">About</a></li>
+            <li><a href="#blueprint">System Blueprint</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -98,395 +103,533 @@
     </header>
 
     <main id="main-content">
+      <!-- Hero Section -->
       <section id="home" class="hero section">
-        <span class="doodle-peek doodle-loop doodle-home-right" aria-hidden="true" data-drift="0.1"></span>
-        <span class="doodle-peek doodle-pill doodle-home-left" aria-hidden="true" data-drift="0.12"></span>
         <div class="container hero-shell">
-          <div>
-            <p class="eyebrow reveal">Solution Architect</p>
-            <h1 class="reveal">Designing Resilient Financial Platforms with Cloud, Events, and AI</h1>
-            <p class="tagline reveal">Sanjyot Agureddy | .NET | AWS | Distributed Systems | AI-Driven Engineering</p>
+          <div class="hero-info">
+            <span class="eyebrow">Solution Architect Portfolio</span>
+            <h1 class="reveal">Designing Resilient Platform Architectures for Enterprise Scale</h1>
+            <p class="tagline reveal">
+              <span>Solution Architecture</span>
+              <span>Cloud-Native Systems</span>
+              <span>Event-Driven (.NET / Kafka)</span>
+              <span>AI-Driven Engineering</span>
+            </p>
             <p class="summary reveal">
-              Solution Architect with 11+ years in fintech platform engineering. I set architecture direction,
-              modernization standards, and delivery patterns used by 10-30 engineers to build secure,
-              cloud-native systems with faster time-to-value.
+              Solution Architect with 11+ years leading platform modernization in fintech. 
+              I design resilient backend services, set secure API standards, build high-throughput event processing pipelines, 
+              and architect custom AI orchestration workflows to accelerate delivery cycles.
             </p>
             <div class="hero-actions reveal">
-              <a class="button primary" href="#contact">Contact Me</a>
-              <a class="button ghost" href="./docs/iSanjyotAgureddy_SolutionArchitect.pdf" download>Download Resume</a>
+              <a class="button primary" href="#contact">Get In Touch</a>
+              <a class="button ghost" href="./docs/iSanjyotAgureddy_SolutionArchitect.pdf" download>Download Resume (PDF)</a>
             </div>
           </div>
-          <aside class="impact-panel reveal" aria-label="Profile highlights">
-            <p class="panel-title">Executive Snapshot</p>
-            <ul class="impact-list">
-              <li>
-                <strong>11+ years</strong>
-                <span>Platform engineering across fintech systems</span>
-              </li>
-              <li>
-                <strong>10-30 engineers</strong>
-                <span>Architecture standards and technical direction influence</span>
-              </li>
-              <li>
-                <strong>20% faster delivery</strong>
-                <span>Through reusable modernization patterns</span>
-              </li>
-              <li>
-                <strong>Hackathon recognition</strong>
-                <span>2nd Runner-Up for AI documentation platform</span>
-              </li>
-            </ul>
+          
+          <!-- Executive Snapshot Side Panel -->
+          <aside class="executive-snapshot reveal" aria-label="Executive Technical Metrics">
+            <div class="snapshot-card">
+              <div class="snapshot-title">Executive Snapshot</div>
+              <ul class="snapshot-list">
+                <li>
+                  <strong>11+ Years</strong>
+                  <span>Platform engineering & enterprise architecture</span>
+                </li>
+                <li>
+                  <strong>10 - 30 Devs</strong>
+                  <span>Technical standards & architectural direction governance</span>
+                </li>
+                <li>
+                  <strong>20% Faster</strong>
+                  <span>Delivery acceleration via reusable service patterns</span>
+                </li>
+                <li>
+                  <strong>2nd Runner-Up</strong>
+                  <span>JPMorgan Chase Gen-AI Hackathon 2024</span>
+                </li>
+              </ul>
+            </div>
           </aside>
         </div>
       </section>
 
+      <!-- About Section -->
       <section id="about" class="section">
-        <span class="doodle-peek doodle-orbit doodle-about-left" aria-hidden="true" data-drift="0.08"></span>
         <div class="container">
           <div class="section-header reveal">
-            <p class="section-kicker">Profile</p>
-            <h2>About</h2>
+            <span class="section-kicker">Core Strategy</span>
+            <h2>Architectural Governance</h2>
             <p>
-              I work at the intersection of architecture governance, platform engineering, and execution strategy.
-              At JPMorgan Chase, I progressed from Technical Lead to Solution Architect, and now drive
-              modernization roadmaps, build-vs-buy decisions, and technical standards that improve system resiliency,
-              delivery predictability, and engineering quality across teams.
+              I work at the interface of software engineering, platform architecture, and execution delivery. 
+              Having transitioned from Technical Lead to Solution Architect at JPMorgan Chase, I drive modernized system roadmaps, 
+              author robust standards (observability, schema definitions, IAM access controls), and informally mentor 
+              engineering teams on reasoning about scalability and eventual consistency tradeoffs in complex distributed systems.
             </p>
           </div>
-          <ul class="chip-list reveal">
-            <li class="chip">Architecture Governance and Standards</li>
-            <li class="chip">Cross-Team Technical Leadership</li>
-            <li class="chip">Technology Roadmap and Modernization Strategy</li>
-            <li class="chip">Event-Driven and Distributed Systems Design</li>
-            <li class="chip">Cloud-Native Platform Engineering</li>
-            <li class="chip">AI-Driven Engineering Enablement</li>
-            <li class="chip">Stakeholder and Executive Communication</li>
-            <li class="chip">Financial Services Compliance and Security</li>
-          </ul>
+          <div class="chip-list reveal">
+            <span class="chip">Event-Driven Architecture (EDA)</span>
+            <span class="chip">Monolith-to-Microservices Migration</span>
+            <span class="chip">AWS/Azure Cloud Platforms</span>
+            <span class="chip">Transactional Outbox & CDC Patterns</span>
+            <span class="chip">Resilience Sidecars & Polly Frameworks</span>
+            <span class="chip">AI Agentic Workflows & Copilot Adoption</span>
+            <span class="chip">Observability (OpenTelemetry / Sumo Logic)</span>
+            <span class="chip">Financial Compliance & IAM Governance</span>
+          </div>
         </div>
       </section>
 
-      <section id="experience" class="section">
-        <span class="doodle-peek doodle-squiggle doodle-exp-right" aria-hidden="true" data-drift="0.14"></span>
+      <!-- Interactive System Blueprint & Scenario Simulator Section -->
+      <section id="blueprint" class="section">
         <div class="container">
           <div class="section-header reveal">
-            <p class="section-kicker">Career Path</p>
-            <h2>Experience</h2>
-            <p>Architecture ownership, cross-team leadership, and measurable modernization outcomes across financial platforms.</p>
+            <span class="section-kicker">Interactive blueprint</span>
+            <h2>System Design Explorer</h2>
+            <p>
+              Analyze a typical event-driven transaction pipeline built using .NET 8, AWS, and Kafka. 
+              Click nodes in the diagram to inspect trade-offs, or choose a stress test scenario below to simulate failovers and auto-scaling.
+            </p>
           </div>
-          <div class="experience-shell" id="experience-timeline">
-            <aside class="experience-rail reveal" aria-label="Experience companies">
-              <button class="rail-item is-active" type="button" data-exp="jpmc">
-                <img src="./images/jpmorgan.png" alt="JPMorgan Chase logo" class="company-logo" width="32" height="32" />
-                <span class="rail-text">
-                  <strong>JPMorgan Chase</strong>
-                  <span>07/2022 - Present</span>
-                </span>
-              </button>
-              <button class="rail-item" type="button" data-exp="nice">
-                <img src="./images/nice.svg" alt="NICE logo" class="company-logo" width="32" height="32" />
-                <span class="rail-text">
-                  <strong>NICE</strong>
-                  <span>10/2021 - 06/2022</span>
-                </span>
-              </button>
-              <button class="rail-item" type="button" data-exp="pitney">
-                <img src="./images/pitneybowes.png" alt="Pitney Bowes logo" class="company-logo" width="32" height="32" />
-                <span class="rail-text">
-                  <strong>Pitney Bowes</strong>
-                  <span>04/2020 - 10/2021</span>
-                </span>
-              </button>
-              <button class="rail-item" type="button" data-exp="fis">
-                <img src="./images/fis.png" alt="FIS logo" class="company-logo" width="32" height="32" />
-                <span class="rail-text">
-                  <strong>FIS</strong>
-                  <span>02/2019 - 04/2020</span>
-                </span>
-              </button>
-              <button class="rail-item" type="button" data-exp="zensar">
-                <img src="./images/Zensar.png" alt="Zensar Technologies logo" class="company-logo" width="32" height="32" />
-                <span class="rail-text">
-                  <strong>Zensar Technologies</strong>
-                  <span>08/2015 - 02/2019</span>
-                </span>
-              </button>
-            </aside>
 
-            <div class="experience-main reveal">
-              <article class="card experience-focus" id="experience-focus">
-                <header class="card-header exp-header">
-                  <div class="exp-brand">
-                    <img src="./images/jpmorgan.png" alt="JPMorgan Chase logo" class="company-logo" id="exp-focus-logo" width="32" height="32" />
-                    <h3 id="exp-focus-company">JPMorgan Chase</h3>
-                  </div>
-                  <p class="meta" id="exp-focus-period">07/2022 - Present</p>
-                </header>
-                <ul class="role-list" id="exp-focus-roles">
-                  <li>Solution Architect (01/2025 - Present)</li>
-                  <li>Technical Lead (07/2022 - 12/2024)</li>
-                </ul>
-                <ul class="detail-list" id="exp-focus-highlights">
-                  <li>Own architecture direction for modernization programs used by 10-30 engineers.</li>
-                  <li>Present architecture decisions and roadmaps to VP and Director leadership and architecture boards.</li>
-                  <li>Defined secure integration and observability standards for financial microservices.</li>
-                  <li>Led event-driven platform design on Kafka for real-time order processing.</li>
-                </ul>
+          <!-- Dynamic SVG Blueprint + Details Inspector -->
+          <div class="blueprint-dashboard reveal">
+            <!-- Left side: Interactive SVG canvas -->
+            <div class="blueprint-canvas-wrapper">
+              <svg id="blueprint-svg" viewBox="0 0 760 400" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="var(--border)" />
+                  </marker>
+                </defs>
+
+                <!-- Connection Lines -->
+                <path id="path-client-gw" class="svg-path" d="M 15 90 H 70" marker-end="url(#arrow)" />
+                <path id="path-gw-core" class="svg-path color-blue" d="M 175 90 H 260" marker-end="url(#arrow)" />
+                <path id="path-core-broker" class="svg-path color-teal" d="M 370 90 H 455" marker-end="url(#arrow)" />
+                <path id="path-broker-worker" class="svg-path color-purple" d="M 565 90 H 650" marker-end="url(#arrow)" />
+                
+                <path id="path-core-cache" class="svg-path color-teal" d="M 315 115 V 185" marker-end="url(#arrow)" />
+                <path id="path-core-db" class="svg-path color-teal" d="M 315 115 V 270" marker-end="url(#arrow)" />
+                
+                <path id="path-sec-db" class="svg-path color-purple" d="M 175 295 H 260" marker-end="url(#arrow)" />
+                <path id="path-sec-core" class="svg-path color-purple" d="M 120 270 V 115" marker-end="url(#arrow)" />
+                
+                <!-- Telemetry Lines -->
+                <path id="path-gw-otel" class="svg-path" stroke-dasharray="3 3" d="M 122 115 L 455 295" />
+                <path id="path-core-otel" class="svg-path" stroke-dasharray="3 3" d="M 315 115 L 455 295" />
+                <path id="path-worker-otel" class="svg-path" stroke-dasharray="3 3" d="M 700 115 L 565 295" />
+                <path id="path-broker-otel" class="svg-path" stroke-dasharray="3 3" d="M 510 115 L 510 270" />
+                <path id="path-db-otel" class="svg-path" stroke-dasharray="3 3" d="M 370 295 H 455" />
+
+                <!-- Nodes -->
+                <circle cx="35" cy="90" r="12" fill="var(--surface-strong)" stroke="var(--border)" stroke-width="1.5" />
+                <text x="35" y="93" text-anchor="middle" font-family="var(--font-mono)" font-size="9" fill="var(--text)" font-weight="800">UI</text>
+
+                <!-- AWS API Gateway -->
+                <g class="svg-node color-blue" data-node="gateway" transform="translate(70, 65)">
+                  <rect width="105" height="50" rx="6" />
+                  <text x="52" y="24">API Gateway</text>
+                  <text class="tech-label" x="52" y="38">AWS GATEWAY</text>
+                </g>
+
+                <!-- Core Order Service -->
+                <g class="svg-node color-teal" data-node="core" transform="translate(260, 65)">
+                  <rect width="110" height="50" rx="6" />
+                  <text x="55" y="24">Order Service</text>
+                  <text class="tech-label" x="55" y="38">.NET 8 / ECS</text>
+                </g>
+
+                <!-- Redis Cache -->
+                <g class="svg-node color-amber" data-node="cache" transform="translate(260, 185)">
+                  <rect width="110" height="50" rx="6" />
+                  <text x="55" y="24">Redis Cache</text>
+                  <text class="tech-label" x="55" y="38">AWS ELASTICACHE</text>
+                </g>
+
+                <!-- RDS PostgreSQL -->
+                <g class="svg-node color-amber" data-node="database" transform="translate(260, 270)">
+                  <rect width="110" height="50" rx="6" />
+                  <text x="55" y="24">RDS PostgreSQL</text>
+                  <text class="tech-label" x="55" y="38">ACID RELATIONAL</text>
+                </g>
+
+                <!-- Secrets Manager -->
+                <g class="svg-node color-purple" data-node="security" transform="translate(70, 270)">
+                  <rect width="105" height="50" rx="6" />
+                  <text x="52" y="24">Secrets Manager</text>
+                  <text class="tech-label" x="52" y="38">VAULT & ROTATOR</text>
+                </g>
+
+                <!-- Apache Kafka -->
+                <g class="svg-node color-purple" data-node="broker" transform="translate(455, 65)">
+                  <rect width="110" height="50" rx="6" />
+                  <text x="55" y="24">Apache Kafka</text>
+                  <text class="tech-label" x="55" y="38">EVENT STREAMING</text>
+                </g>
+
+                <!-- Billing & Fulfillment Consumers -->
+                <g class="svg-node color-teal" data-node="worker" transform="translate(650, 65)">
+                  <rect width="100" height="50" rx="6" />
+                  <text x="50" y="24">Workers</text>
+                  <text class="tech-label" x="50" y="38">ECS CONSUMERS</text>
+                </g>
+
+                <!-- OpenTelemetry Collector -->
+                <g class="svg-node color-blue" data-node="observability" transform="translate(455, 270)">
+                  <rect width="110" height="50" rx="6" />
+                  <text x="55" y="24">OpenTelemetry</text>
+                  <text class="tech-label" x="55" y="38">LOGS & TRACES</text>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Right side: Details Inspector Panel -->
+            <div class="node-inspector">
+              <article class="card inspector-card" id="node-inspector">
+                <!-- Javascript will inject node details here -->
               </article>
+            </div>
+          </div>
 
-              <div class="experience-sentinels" aria-hidden="true">
-                <div class="exp-sentinel" data-exp="jpmc"></div>
-                <div class="exp-sentinel" data-exp="nice"></div>
-                <div class="exp-sentinel" data-exp="pitney"></div>
-                <div class="exp-sentinel" data-exp="fis"></div>
-                <div class="exp-sentinel" data-exp="zensar"></div>
+          <!-- Scenario Simulator CLI Console Widget -->
+          <div class="simulator-section reveal">
+            <!-- Left: Scenarios actions selection -->
+            <div class="simulator-controls">
+              <h3 style="font-size: 1.15rem; margin-bottom: var(--space-2);">Inject System Scenarios</h3>
+              <p style="font-size: 0.86rem; margin-bottom: var(--space-4);">Inject active events directly into the architecture design pipeline.</p>
+              
+              <button class="simulator-btn simulator-btn-blue" data-scenario="spike" type="button">
+                <span>Simulate Load Spike (10k req/s)</span>
+                <span class="indicator"></span>
+              </button>
+              <button class="simulator-btn simulator-btn-rose" data-scenario="failover" type="button">
+                <span>Simulate PostgreSQL Failover</span>
+                <span class="indicator"></span>
+              </button>
+              <button class="simulator-btn simulator-btn-purple" data-scenario="secrets" type="button">
+                <span>Rotate Database Credentials</span>
+                <span class="indicator"></span>
+              </button>
+              <button class="simulator-btn simulator-btn-amber" data-scenario="breaker" type="button">
+                <span>Billing Gateway Interruption</span>
+                <span class="indicator"></span>
+              </button>
+            </div>
+
+            <!-- Right: Simulated Monospace CLI Console Screen -->
+            <div class="console-wrapper">
+              <div class="console-header">
+                <div class="console-dots">
+                  <span class="console-dot red"></span>
+                  <span class="console-dot yellow"></span>
+                  <span class="console-dot green"></span>
+                </div>
+                <div class="console-title">Telemetry Console</div>
+                <div style="width: 42px;"></div>
               </div>
-
-              <div class="experience-data" hidden>
-                <article data-exp="jpmc" data-company="JPMorgan Chase" data-period="07/2022 - Present" data-logo="./images/jpmorgan.png">
-                  <ul class="role-list">
-                    <li>Solution Architect (01/2025 - Present)</li>
-                    <li>Technical Lead (07/2022 - 12/2024)</li>
-                  </ul>
-                  <ul class="detail-list">
-                    <li>Own architecture direction for modernization programs used by 10-30 engineers.</li>
-                    <li>Present architecture decisions and roadmaps to VP and Director leadership and architecture boards.</li>
-                    <li>Defined secure integration and observability standards for financial microservices.</li>
-                    <li>Led event-driven platform design on Kafka for real-time order processing.</li>
-                  </ul>
-                </article>
-
-                <article data-exp="nice" data-company="NICE" data-period="10/2021 - 06/2022" data-logo="./images/nice.svg">
-                  <ul class="role-list">
-                    <li>Technical Lead Software Engineer</li>
-                  </ul>
-                  <ul class="detail-list">
-                    <li>Designed reusable resilience, observability, and security services for enterprise microservices.</li>
-                    <li>Implemented automated secrets management using AWS Secrets Manager and Lambda.</li>
-                    <li>Established standards for CI/CD quality gates and architecture reviews.</li>
-                  </ul>
-                </article>
-
-                <article data-exp="pitney" data-company="Pitney Bowes" data-period="04/2020 - 10/2021" data-logo="./images/pitneybowes.png">
-                  <ul class="role-list">
-                    <li>Senior Software Engineer</li>
-                  </ul>
-                  <ul class="detail-list">
-                    <li>Owned a Kafka synchronization module end-to-end as sole module owner.</li>
-                    <li>Replaced synchronous legacy processing with event-driven architecture for real-time data movement.</li>
-                    <li>Led incremental modernization from monolith to .NET Core microservices.</li>
-                  </ul>
-                </article>
-
-                <article data-exp="fis" data-company="FIS" data-period="02/2019 - 04/2020" data-logo="./images/fis.png">
-                  <ul class="role-list">
-                    <li>Technical Consultant</li>
-                  </ul>
-                  <ul class="detail-list">
-                    <li>Built backend services in .NET and Python for banking risk assessment workflows.</li>
-                    <li>Supported configurable client-specific risk modules across global institutions.</li>
-                    <li>Improved production diagnostics via centralized logging and monitoring.</li>
-                  </ul>
-                </article>
-
-                <article data-exp="zensar" data-company="Zensar Technologies" data-period="08/2015 - 02/2019" data-logo="./images/Zensar.png">
-                  <ul class="role-list">
-                    <li>Software Engineer</li>
-                  </ul>
-                  <ul class="detail-list">
-                    <li>Delivered backend capabilities and workflow automation for enterprise .NET applications.</li>
-                    <li>Built monitoring and alerting that improved production availability by 30 percent.</li>
-                    <li>Contributed to Agile delivery through code reviews and stakeholder collaboration.</li>
-                  </ul>
-                </article>
+              <div class="console-screen" id="console-screen">
+                <!-- Javascript typing simulation inserts here -->
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="projects" class="section">
-        <span class="doodle-peek doodle-pill doodle-projects-right" aria-hidden="true" data-drift="0.22"></span>
-        <span class="doodle-peek doodle-loop doodle-projects-left" aria-hidden="true" data-drift="0.1"></span>
+      <!-- Monolith to Microservices Modernization Roadmap -->
+      <section id="modernization" class="section">
         <div class="container">
           <div class="section-header reveal">
-            <p class="section-kicker">Work In Focus</p>
-            <h2>Featured Projects</h2>
-            <p>Selected platform and modernization initiatives.</p>
-          </div>
-          <div class="grid two-col">
-            <article class="card reveal">
-              <h3>Real-Time Financial Orders Platform</h3>
-              <p><strong>Problem:</strong> Financial order events needed low-latency and reliable downstream delivery.</p>
-              <p><strong>Solution:</strong> Designed event-driven integration patterns on Kafka with retries and standards.</p>
-              <p><strong>Impact:</strong> Improved reliability and operational responsiveness for high-volume order flows with reduced manual intervention.</p>
-              <p class="stack">.NET | Kafka | AWS | REST APIs</p>
-            </article>
-
-            <article class="card reveal">
-              <h3>AI-Powered Source Code Documentation</h3>
-              <p><strong>Problem:</strong> Teams needed faster, consistent internal documentation.</p>
-              <p><strong>Solution:</strong> Built LLM-driven workflows with multi-model orchestration and automation outputs.</p>
-              <p><strong>Impact:</strong> 2nd Runner-Up at JPMorgan Chase Hackathon 2024.</p>
-              <p class="stack">LLM Workflows | Automation | GitHub Copilot</p>
-            </article>
-
-            <article class="card reveal">
-              <h3>Secrets Automation Platform</h3>
-              <p><strong>Problem:</strong> Manual credential handling increased security and operational risk.</p>
-              <p><strong>Solution:</strong> Implemented automated secrets lifecycle with AWS Secrets Manager and Lambda.</p>
-              <p><strong>Impact:</strong> Reduced manual handling and strengthened secure rotation practices.</p>
-              <p class="stack">AWS Secrets Manager | Lambda | CI/CD</p>
-            </article>
-
-            <article class="card reveal">
-              <h3>Monolith to Microservices Modernization</h3>
-              <p><strong>Problem:</strong> Legacy systems constrained resilience and slowed delivery.</p>
-              <p><strong>Solution:</strong> Led incremental modernization using service extraction and messaging patterns.</p>
-              <p><strong>Impact:</strong> Reduced delivery timelines by around 20 percent while improving operational stability.</p>
-              <p class="stack">.NET Core | Microservices | Distributed Messaging</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills" class="section">
-        <span class="doodle-peek doodle-orbit doodle-skills-right" aria-hidden="true" data-drift="0.13"></span>
-        <div class="container">
-          <div class="section-header reveal">
-            <p class="section-kicker">Capabilities</p>
-            <h2>Skills</h2>
-            <p>Architecture depth, engineering execution, and AI-enabled practices.</p>
-          </div>
-          <div class="grid two-col">
-            <article class="card reveal">
-              <h3>Architecture</h3>
-              <ul class="detail-list compact">
-                <li>Solution Architecture</li>
-                <li>Microservices</li>
-                <li>Event-Driven Architecture</li>
-                <li>Distributed Systems</li>
-                <li>Domain-Driven Design</li>
-              </ul>
-            </article>
-            <article class="card reveal">
-              <h3>Engineering</h3>
-              <ul class="detail-list compact">
-                <li>C#</li>
-                <li>.NET Core and .NET 8</li>
-                <li>ASP.NET Core</li>
-                <li>Kafka and RabbitMQ</li>
-                <li>SQL Server and PostgreSQL</li>
-              </ul>
-            </article>
-            <article class="card reveal">
-              <h3>Cloud and DevOps</h3>
-              <ul class="detail-list compact">
-                <li>AWS and Azure</li>
-                <li>GitHub Actions and Jenkins</li>
-                <li>CI/CD Automation</li>
-                <li>Structured Logging and Distributed Tracing</li>
-              </ul>
-            </article>
-            <article class="card reveal">
-              <h3>AI Engineering</h3>
-              <ul class="detail-list compact">
-                <li>Generative AI and Agentic AI</li>
-                <li>LLM Workflows</li>
-                <li>Prompt Engineering</li>
-                <li>GitHub Copilot</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="recognition" class="section">
-        <div class="container">
-          <div class="section-header reveal">
-            <p class="section-kicker">Recognition</p>
-            <h2>Awards</h2>
-          </div>
-          <ul class="info-list reveal">
-            <li>2nd Runner-Up, JPMorgan Chase Hackathon 2024</li>
-            <li>ADS Quarterly Award, Pitney Bowes 2021</li>
-            <li>Annual Excellence Award, Zensar 2018</li>
-            <li>Budding Innovator's Award, Zensar 2018</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="education" class="section">
-        <div class="container grid two-col">
-          <article class="card reveal">
-            <h3>Education</h3>
-            <ul class="info-list">
-              <li>MBA, IT and Systems Management - SVKM's NMIMS (2022 - 2024)</li>
-              <li>B.E., Computer Engineering - Pune University (2012 - 2015)</li>
-            </ul>
-          </article>
-          <article class="card reveal">
-            <h3>Certifications</h3>
-            <ul class="info-list">
-              <li>AWS Associate: Solutions Architect, Developer, SysOps Administrator</li>
-              <li>AWS Foundational: Cloud Practitioner</li>
-              <li>Azure Foundational: AZ-900, DP-900, AI-900, SC-900</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact" class="section contact">
-        <span class="doodle-peek doodle-squiggle doodle-contact-left" aria-hidden="true" data-drift="0.2"></span>
-        <div class="container">
-          <div class="section-header reveal">
-            <p class="section-kicker">Get In Touch</p>
-            <h2>Contact</h2>
+            <span class="section-kicker">Modernization Playbook</span>
+            <h2>Strangler Fig Decomposition</h2>
             <p>
-              Open to architecture and platform modernization conversations, technical leadership opportunities,
-              and consulting discussions for distributed systems.
+              Decomposing legacy monoliths into distributed APIs requires clear step-by-step decoupling. 
+              Drag the playbook slider below to see how I migrate systems with zero downtime and verify database synchronization.
             </p>
           </div>
+
+          <!-- Playbook Slider Panel -->
+          <div class="playbook-container reveal">
+            <div class="slider-wrapper">
+              <div class="slider-labels">
+                <span class="slider-label-item active" data-step="1">1. Monolith</span>
+                <span class="slider-label-item" data-step="2">2. Ingress Gate</span>
+                <span class="slider-label-item" data-step="3">3. Event Sync</span>
+                <span class="slider-label-item" data-step="4">4. Decoupled</span>
+              </div>
+              <input 
+                type="range" 
+                id="modernization-slider" 
+                class="playbook-slider" 
+                min="1" 
+                max="4" 
+                value="1" 
+                step="1"
+                aria-label="Modernization step slider"
+              />
+            </div>
+
+            <div class="playbook-view-grid">
+              <!-- Visual Diagram Panel -->
+              <div class="playbook-diagram-panel" id="playbook-diagram">
+                <!-- JS will inject dynamic visual block state here -->
+              </div>
+
+              <!-- Text explanations details panel -->
+              <div class="playbook-text-panel">
+                <h3 class="playbook-step-title" id="playbook-title">Step 1: Monolithic Application</h3>
+                <p class="playbook-step-desc" id="playbook-desc">
+                  Loading step description...
+                </p>
+                <h4 style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: var(--space-2);">Deliverables checklist</h4>
+                <ul class="playbook-details-list" id="playbook-details">
+                  <!-- Bullet items dynamically loaded -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-kicker">Professional History</span>
+            <h2>Career Milestones</h2>
+            <p>Chronological breakdown of leadership, platform design deliverables, and execution across financial systems.</p>
+          </div>
+
+          <div class="experience-shell reveal" id="experience-timeline">
+            <!-- Left side: Rails navigation list -->
+            <aside class="experience-rail" id="experience-rail" aria-label="Companies tab panel">
+              <!-- Dynamically populated buttons -->
+            </aside>
+
+            <!-- Right side: Role detail details display -->
+            <div class="experience-main" id="experience-focus">
+              <!-- Dynamically loaded details panel -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-kicker">Featured work</span>
+            <h2>Modernization Initiatives</h2>
+            <p>A selection of core projects highlighting distributed messaging, security rotators, and LLM automation tools.</p>
+          </div>
+          <div class="grid two-col" id="projects-grid">
+            <!-- Dynamic project list loaded from javascript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Matrix Dashboard Section -->
+      <section id="skills" class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-kicker">Skill Taxonomy</span>
+            <h2>Architect's Capabilities</h2>
+            <p>Grouped framework specifications, databases, CI/CD tools, and AI skills I command daily.</p>
+          </div>
+          
+          <div class="skills-grid reveal">
+            <!-- Category 1 -->
+            <article class="card highlight-blue skill-category-card">
+              <h3>Solution Architecture</h3>
+              <div class="skill-list">
+                <div class="skill-item"><span class="skill-name">Distributed Systems</span><span class="skill-meta">Expert</span></div>
+                <div class="skill-item"><span class="skill-name">Event-Driven Architecture (EDA)</span><span class="skill-meta">Expert</span></div>
+                <div class="skill-item"><span class="skill-name">Microservices Architecture</span><span class="skill-meta">Expert</span></div>
+                <div class="skill-item"><span class="skill-name">Domain-Driven Design (DDD)</span><span class="skill-meta">Intermediate</span></div>
+                <div class="skill-item"><span class="skill-name">Strangler Fig Decoupling</span><span class="skill-meta">Expert</span></div>
+              </div>
+            </article>
+            
+            <!-- Category 2 -->
+            <article class="card highlight-teal skill-category-card">
+              <h3>Backend Core & Streaming</h3>
+              <div class="skill-list">
+                <div class="skill-item"><span class="skill-name">C# / .NET 8 & .NET Core</span><span class="skill-meta">Expert</span></div>
+                <div class="skill-item"><span class="skill-name">Apache Kafka</span><span class="skill-meta">Expert</span></div>
+                <div class="skill-item"><span class="skill-name">PostgreSQL / SQL Server</span><span class="skill-meta">Expert</span></div>
+                <div class="skill-item"><span class="skill-name">Redis Cache & Pub-Sub</span><span class="skill-meta">Intermediate</span></div>
+                <div class="skill-item"><span class="skill-name">Polly Resiliency Library</span><span class="skill-meta">Expert</span></div>
+              </div>
+            </article>
+
+            <!-- Category 3 -->
+            <article class="card highlight-purple skill-category-card">
+              <h3>Cloud & Orchestration</h3>
+              <div class="skill-list">
+                <div class="skill-item"><span class="skill-name">AWS (ECS, Lambda, RDS, Gateway)</span><span class="skill-meta">Expert</span></div>
+                <div class="skill-item"><span class="skill-name">AWS Secrets Manager</span><span class="skill-meta">Expert</span></div>
+                <div class="skill-item"><span class="skill-name">GitHub Actions CI/CD</span><span class="skill-meta">Expert</span></div>
+                <div class="skill-item"><span class="skill-name">OpenTelemetry Collector</span><span class="skill-meta">Expert</span></div>
+                <div class="skill-item"><span class="skill-name">Sumo Logic / Centralized Logs</span><span class="skill-meta">Expert</span></div>
+              </div>
+            </article>
+
+            <!-- Category 4 -->
+            <article class="card highlight-amber skill-category-card">
+              <h3>AI Engineering & Automation</h3>
+              <div class="skill-list">
+                <div class="skill-item"><span class="skill-name">Multi-Model LLM Workflows</span><span class="skill-meta">Expert</span></div>
+                <div class="skill-item"><span class="skill-name">Agentic AI & Chain-of-Thought</span><span class="skill-meta">Intermediate</span></div>
+                <div class="skill-item"><span class="skill-name">GitHub Copilot Governance</span><span class="skill-meta">Expert</span></div>
+                <div class="skill-item"><span class="skill-name">Python Scripting & NLP</span><span class="skill-meta">Intermediate</span></div>
+                <div class="skill-item"><span class="skill-name">Prompt Chaining & AST Parsing</span><span class="skill-meta">Expert</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recognition & Awards -->
+      <section id="recognition" class="section">
+        <div class="container grid two-col">
+          <article class="card highlight-purple reveal" style="height: 100%;">
+            <div class="section-kicker">Honors</div>
+            <h3 style="margin-bottom: var(--space-4); font-size: 1.4rem;">Industry Recognition</h3>
+            <div class="info-strip-list">
+              <div class="info-strip-item">
+                <div class="title-block">
+                  <h4>JPMorgan Chase Gen-AI Hackathon</h4>
+                  <p>2nd Runner-Up - Automated source documentation generator</p>
+                </div>
+                <span class="badge">2024</span>
+              </div>
+              <div class="info-strip-item">
+                <div class="title-block">
+                  <h4>ADS Quarterly Award</h4>
+                  <p>Pitney Bowes - Excellence in monolith-to-microservices migration</p>
+                </div>
+                <span class="badge">2021</span>
+              </div>
+              <div class="info-strip-item">
+                <div class="title-block">
+                  <h4>Annual Excellence Award</h4>
+                  <p>Zensar Technologies - Key server health automation contribution</p>
+                </div>
+                <span class="badge">2018</span>
+              </div>
+              <div class="info-strip-item">
+                <div class="title-block">
+                  <h4>Budding Innovator's Award</h4>
+                  <p>Zensar Technologies - Rapid delivery and workflow enhancements</p>
+                </div>
+                <span class="badge">2018</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Education & Certifications -->
+          <article class="card highlight-blue reveal" style="height: 100%;">
+            <div class="section-kicker">Credentials</div>
+            <h3 style="margin-bottom: var(--space-4); font-size: 1.4rem;">Education & Certs</h3>
+            
+            <div style="margin-bottom: var(--space-5);">
+              <h4 style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: var(--space-3);">Academic Degrees</h4>
+              <ul class="info-strip-list">
+                <li class="info-strip-item" style="padding: 10px 14px;">
+                  <div>
+                    <h5 style="font-size: 0.88rem; font-weight: 700; margin: 0;">MBA, IT & Systems Management</h5>
+                    <p style="font-size: 0.78rem; color: var(--text-muted);">SVKM's NMIMS (Grade A)</p>
+                  </div>
+                  <span class="badge">2022 - 2024</span>
+                </li>
+                <li class="info-strip-item" style="padding: 10px 14px;">
+                  <div>
+                    <h5 style="font-size: 0.88rem; font-weight: 700; margin: 0;">B.E., Computer Engineering</h5>
+                    <p style="font-size: 0.78rem; color: var(--text-muted);">Pune University</p>
+                  </div>
+                  <span class="badge">2012 - 2015</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: var(--space-3);">Cloud Credentials</h4>
+              <div class="chip-list" style="gap: var(--space-2);">
+                <span class="chip" style="font-size: 0.72rem; padding: 4px 10px;">AWS Solutions Architect Assoc.</span>
+                <span class="chip" style="font-size: 0.72rem; padding: 4px 10px;">AWS Developer Assoc.</span>
+                <span class="chip" style="font-size: 0.72rem; padding: 4px 10px;">AWS SysOps Admin Assoc.</span>
+                <span class="chip" style="font-size: 0.72rem; padding: 4px 10px;">Azure AZ-900 Core</span>
+                <span class="chip" style="font-size: 0.72rem; padding: 4px 10px;">Azure DP-900 Data</span>
+                <span class="chip" style="font-size: 0.72rem; padding: 4px 10px;">Azure AI-900 Cognitive</span>
+                <span class="chip" style="font-size: 0.72rem; padding: 4px 10px;">Azure SC-900 Compliance</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-kicker">Connection</span>
+            <h2>Let's Collaborate</h2>
+            <p>
+              I am open to discuss solution architecture roadmap strategies, distributed systems resiliency audits, 
+              Kafka event integration frameworks, and enterprise-scale tech consulting.
+            </p>
+          </div>
+
           <div class="contact-grid reveal">
             <a class="contact-link" href="mailto:sanjyot.agureddy4@gmail.com">
               <span class="contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img" aria-label="Email icon">
-                  <path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm0 2v.4l9 6.6 9-6.6V7l-9 6.6L3 7Z" fill="currentColor" />
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm0 2v.4l9 6.6 9-6.6V7l-9 6.6L3 7Z" />
                 </svg>
               </span>
-              <span class="contact-label">Email</span>
-              <span class="contact-value">sanjyot.agureddy4<wbr>@gmail.com</span>
+              <div class="contact-details">
+                <span class="contact-label">Email Direct</span>
+                <span class="contact-value">sanjyot.agureddy4@gmail.com</span>
+              </div>
             </a>
+            
             <a class="contact-link" href="https://www.linkedin.com/in/sanjyotagureddy" target="_blank" rel="noreferrer">
               <span class="contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img" aria-label="LinkedIn icon">
-                  <path d="M6.94 8.5A1.56 1.56 0 1 0 6.9 5.4a1.56 1.56 0 0 0 .04 3.1ZM5.6 9.6h2.6V18H5.6V9.6Zm4.2 0h2.5v1.15h.04c.35-.66 1.2-1.35 2.47-1.35 2.64 0 3.12 1.74 3.12 4v4.6h-2.6v-4.08c0-.98-.02-2.24-1.36-2.24-1.36 0-1.57 1.06-1.57 2.16V18H9.8V9.6Z" fill="currentColor" />
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.94 8.5A1.56 1.56 0 1 0 6.9 5.4a1.56 1.56 0 0 0 .04 3.1ZM5.6 9.6h2.6V18H5.6V9.6Zm4.2 0h2.5v1.15h.04c.35-.66 1.2-1.35 2.47-1.35 2.64 0 3.12 1.74 3.12 4v4.6h-2.6v-4.08c0-.98-.02-2.24-1.36-2.24-1.36 0-1.57 1.06-1.57 2.16V18H9.8V9.6Z" />
                 </svg>
               </span>
-              <span class="contact-label">LinkedIn</span>
-              <span class="contact-value">linkedin.com/<wbr>in/<wbr>sanjyotagureddy</span>
+              <div class="contact-details">
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">linkedin.com/in/sanjyotagureddy</span>
+              </div>
             </a>
+            
             <a class="contact-link" href="https://github.com/sanjyotagureddy" target="_blank" rel="noreferrer">
               <span class="contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img" aria-label="GitHub icon">
-                  <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.72c-2.78.6-3.37-1.18-3.37-1.18-.46-1.15-1.11-1.45-1.11-1.45-.9-.62.07-.61.07-.61 1 .07 1.53 1.02 1.53 1.02.89 1.51 2.33 1.08 2.9.83.09-.64.35-1.08.64-1.33-2.22-.25-4.56-1.1-4.56-4.92 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.8c.85 0 1.71.12 2.51.36 1.9-1.29 2.74-1.02 2.74-1.02.55 1.38.21 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.83-2.34 4.67-4.57 4.91.36.31.68.92.68 1.86v2.77c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" fill="currentColor" />
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.72c-2.78.6-3.37-1.18-3.37-1.18-.46-1.15-1.11-1.45-1.11-1.45-.9-.62.07-.61.07-.61 1 .07 1.53 1.02 1.53 1.02.89 1.51 2.33 1.08 2.9.83.09-.64.35-1.08.64-1.33-2.22-.25-4.56-1.1-4.56-4.92 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.8c.85 0 1.71.12 2.51.36 1.9-1.29 2.74-1.02 2.74-1.02.55 1.38.21 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.83-2.34 4.67-4.57 4.91.36.31.68.92.68 1.86v2.77c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" />
                 </svg>
               </span>
-              <span class="contact-label">GitHub</span>
-              <span class="contact-value">github.com/<wbr>sanjyotagureddy</span>
+              <div class="contact-details">
+                <span class="contact-label">GitHub Engine</span>
+                <span class="contact-value">github.com/sanjyotagureddy</span>
+              </div>
             </a>
-            <p class="contact-location">Pune, India</p>
+            
+            <p class="contact-location">Operating from Pune, India</p>
           </div>
         </div>
       </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
       <div class="container">
-        <p>2026 Sanjyot Agureddy. All rights reserved.</p>
+        <p>© 2026 Sanjyot Agureddy. Powered by resilient cloud designs.</p>
       </div>
     </footer>
 
+    <!-- Main Module Bundle -->
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
