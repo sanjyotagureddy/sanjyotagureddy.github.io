@@ -92,7 +92,7 @@ export function initSimulator() {
             <circle cx="60" cy="60" r="3" fill="var(--accent-teal)" opacity="0.9"/>
           </svg>
         </div>
-        <div class="inspector-terminal">
+        <div class="inspector-terminal" aria-live="polite">
           <span class="iterm-line"><span class="iterm-prefix">SYS &gt;</span> Awaiting node selection&hellip;</span>
           <span class="iterm-line"><span class="iterm-prefix">SYS &gt;</span> Click any architecture node</span>
           <span class="iterm-line"><span class="iterm-prefix">SYS &gt;</span> Trade-off analysis ready<span class="iterm-cursor"></span></span>
@@ -106,27 +106,44 @@ export function initSimulator() {
   // Console Logging Terminal Simulator Logic
   // ==========================================================================
 
-  let printInterval = null;
+  let printTimeout = null;
 
   function writeLinesToConsole(lines) {
-    if (printInterval) clearInterval(printInterval);
+    if (printTimeout) clearTimeout(printTimeout);
     consoleScreen.innerHTML = "";
+    
+    // Add aria-live for accessibility
+    consoleScreen.setAttribute("aria-live", "polite");
+
     let lineIndex = 0;
 
     function printNextLine() {
-      if (lineIndex >= lines.length) { clearInterval(printInterval); return; }
+      if (lineIndex >= lines.length) {
+        // Add final blinking cursor when done
+        const cursorDiv = document.createElement("div");
+        cursorDiv.className = "console-line";
+        cursorDiv.innerHTML = '<span class="iterm-cursor"></span>';
+        consoleScreen.appendChild(cursorDiv);
+        return;
+      }
+      
       const lineData = lines[lineIndex];
       const div = document.createElement("div");
       div.className = `console-line ${lineData.type || "info"}`;
       const prefixHTML = lineData.type === "system" ? '<span class="prefix">&gt;</span>' : "";
+      
+      // Simulate typing text
       div.innerHTML = `${prefixHTML}${lineData.text}`;
       consoleScreen.appendChild(div);
       consoleScreen.scrollTop = consoleScreen.scrollHeight;
       lineIndex++;
+
+      // Random delay between 200ms and 800ms for more organic feel
+      const delay = Math.floor(Math.random() * 600) + 200;
+      printTimeout = setTimeout(printNextLine, delay);
     }
 
     printNextLine();
-    printInterval = setInterval(printNextLine, 500);
   }
 
   // ==========================================================================

@@ -1,0 +1,121 @@
+<!-- Experience Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker">Professional History</span>
+          <h2>Career Milestones</h2>
+          <p>Chronological breakdown of leadership, platform design deliverables, and execution across financial
+            systems.</p>
+        </div>
+
+        <div class="experience-shell reveal" id="experience-timeline">
+          <!-- Left side: Rails navigation list -->
+          <aside class="experience-rail" id="experience-rail" aria-label="Companies tab panel">
+            <button class="rail-item is-active" type="button" data-exp="jpmc" aria-current="true">
+              <img src="./images/jpmorgan.png" alt="JPMorgan Chase logo" class="company-logo"
+                style="background-color: #ffffff" width="42" height="42" />
+              <span class="rail-text">
+                <strong>JPMorgan Chase</strong>
+                <span>07/2022 - Present</span>
+              </span>
+            </button>
+            <button class="rail-item" type="button" data-exp="nice" aria-current="false">
+              <img src="./images/nice.svg" alt="NICE logo" class="company-logo" style="background-color: #ffffff"
+                width="42" height="42" />
+              <span class="rail-text">
+                <strong>NICE</strong>
+                <span>10/2021 - 06/2022</span>
+              </span>
+            </button>
+            <button class="rail-item" type="button" data-exp="pitney" aria-current="false">
+              <img src="./images/pitneybowes.png" alt="Pitney Bowes logo" class="company-logo"
+                style="background-color: #0f1a30" width="42" height="42" />
+              <span class="rail-text">
+                <strong>Pitney Bowes</strong>
+                <span>04/2020 - 10/2021</span>
+              </span>
+            </button>
+            <button class="rail-item" type="button" data-exp="fis" aria-current="false">
+              <img src="./images/FIS.svg" alt="FIS logo" class="company-logo" style="background-color: #ffffff"
+                width="42" height="42" />
+              <span class="rail-text">
+                <strong>FIS</strong>
+                <span>02/2019 - 04/2020</span>
+              </span>
+            </button>
+            <button class="rail-item" type="button" data-exp="zensar" aria-current="false">
+              <img src="./images/Zensar.png" alt="Zensar Technologies logo" class="company-logo"
+                style="background-color: #ffffff" width="42" height="42" />
+              <span class="rail-text">
+                <strong>Zensar Technologies</strong>
+                <span>08/2015 - 02/2019</span>
+              </span>
+            </button>
+          </aside>
+
+          <!-- Right side: Role detail details display -->
+          <div class="experience-main" id="experience-focus">
+            <div class="card highlight-blue">
+              <header class="exp-header">
+                <div class="exp-brand">
+                  <img src="./images/jpmorgan.png" alt="JPMorgan Chase logo" class="company-logo"
+                    style="background-color: #ffffff" width="58" height="58" />
+                  <h3>JPMorgan Chase</h3>
+                </div>
+                <span class="meta">Pune, India</span>
+              </header>
+
+              <ul class="role-list">
+                <li>Solution Architect (01/2025 - Present)</li>
+                <li>Technical Lead (07/2022 - 12/2024)</li>
+              </ul>
+
+              <div class="scope-grid">
+                <div class="scope-item">
+                  <span class="label">Devs Influenced</span>
+                  <span class="value">25 Engineers (4 Teams)</span>
+                </div>
+                <div class="scope-item">
+                  <span class="label">Core Metrics</span>
+                  <span class="value">3 Weeks to &lt;5 Days Bootstrap</span>
+                </div>
+                <div class="scope-item">
+                  <span class="label">Scope / Focus</span>
+                  <span class="value">Modernization &amp; Event Streaming</span>
+                </div>
+              </div>
+
+              <ul class="detail-list">
+                <li>Set the architectural direction and technical roadmap for cloud modernization programs, defining
+                  development standards adopted by 25 engineers across 4 feature teams.</li>
+                <li>Present architectural designs, technology choices, and build-vs-buy recommendations directly to
+                  VP/Director leadership and architecture review boards.</li>
+                <li>Defined security integration rules (encryption, IAM roles, access controls) and OpenTelemetry
+                  tracing standards for microservices, which helped speed up production incident debugging.</li>
+                <li>Mentor other engineers on distributed systems design, helping teams understand tradeoffs around
+                  eventual consistency, network partitioning, and database isolation.</li>
+                <li>Led the technical design of our event-driven order processing platform on Confluent Kafka, setting
+                  up partitioning key strategies to ensure correct message ordering under heavy load.</li>
+                <li>Designed automated message transformation pipelines to process downstream financial data, reducing
+                  manual reconciliation work and bottlenecks.</li>
+                <li>Helped teams adopt AI coding practices (like Copilot) and co-developed an LLM-based documentation
+                  tool that won 2nd Runner-Up at the 2024 JPMorgan Chase Hackathon.</li>
+                <li>Led the migration of legacy .NET monoliths to .NET 8 microservices, reducing service bootstrap time
+                  from 3 weeks to under 5 days using reusable design templates.</li>
+              </ul>
+
+              <div class="tech-tag-list">
+                <span class="tech-tag">.NET 8</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">Confluent Kafka</span>
+                <span class="tech-tag">AWS (ECS/Lambda)</span>
+                <span class="tech-tag">OpenTelemetry</span>
+                <span class="tech-tag">SQL CDC</span>
+                <span class="tech-tag">ELK Stack</span>
+                <span class="tech-tag">Clean Architecture</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

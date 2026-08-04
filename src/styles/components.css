@@ -507,12 +507,33 @@
   border-radius: var(--radius-md);
   padding: var(--space-4);
   position: relative;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   box-shadow: var(--shadow-soft);
   display: flex;
   align-items: center;
   justify-content: center;
   aspect-ratio: 820 / 520;
+  -webkit-overflow-scrolling: touch;
+}
+
+.blueprint-canvas-wrapper::after {
+  content: "Swipe to explore ➔";
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+@media (max-width: 768px) {
+  .blueprint-canvas-wrapper::after {
+    opacity: 0.6;
+  }
 }
 
 .blueprint-canvas-wrapper::before {
@@ -529,6 +550,7 @@
 /* SVG Blueprint Styling */
 #blueprint-svg {
   width: 100%;
+  min-width: 650px;
   height: 100%;
   max-height: 480px;
   display: block;
@@ -1552,21 +1574,30 @@
 
 /* Flapping Animation Triggered on Click */
 .butterfly-mesh.is-flapping .left-wing {
-  animation: flap-left 0.6s ease-in-out 3;
+  animation: flap-left 0.6s cubic-bezier(0.25, 1, 0.5, 1) 3;
 }
 
 .butterfly-mesh.is-flapping .right-wing {
-  animation: flap-right 0.6s ease-in-out 3;
+  animation: flap-right 0.6s cubic-bezier(0.25, 1, 0.5, 1) 3;
+}
+
+.butterfly-mesh.is-flapping .b-node {
+  animation: node-glow 1.8s ease-in-out;
+}
+
+@keyframes node-glow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.5) drop-shadow(0 0 10px currentColor); }
 }
 
 @keyframes flap-left {
   0%, 100% { transform: rotateY(0deg); }
-  50% { transform: rotateY(60deg); }
+  50% { transform: rotateY(65deg); }
 }
 
 @keyframes flap-right {
   0%, 100% { transform: rotateY(0deg); }
-  50% { transform: rotateY(-60deg); }
+  50% { transform: rotateY(-65deg); }
 }
 
 /* Gentle idle float */

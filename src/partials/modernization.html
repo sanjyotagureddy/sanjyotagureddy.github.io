@@ -1,0 +1,51 @@
+<!-- Monolith to Microservices Modernization Roadmap -->
+    <section id="modernization" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker">Modernization Playbook</span>
+          <h2>Strangler Fig Decomposition</h2>
+          <p>
+            Decomposing legacy monoliths into distributed APIs requires clear step-by-step decoupling.
+            Drag the playbook slider below to see how I migrate systems with zero downtime and verify database
+            synchronization.
+          </p>
+        </div>
+
+        <!-- Playbook Slider Panel -->
+        <div class="playbook-container reveal">
+          <div class="slider-wrapper">
+            <div class="slider-labels">
+              <span class="slider-label-item active" data-step="1">1. Monolith</span>
+              <span class="slider-label-item" data-step="2">2. API Ingress</span>
+              <span class="slider-label-item" data-step="3">3. CDC Sync</span>
+              <span class="slider-label-item" data-step="4">4. Dual-Write</span>
+              <span class="slider-label-item" data-step="5">5. Canary / Rev-CDC</span>
+              <span class="slider-label-item" data-step="6">6. Decoupled</span>
+            </div>
+            <input type="range" id="modernization-slider" class="playbook-slider" min="1" max="6" value="1" step="1"
+              aria-label="Modernization step slider" />
+          </div>
+
+          <div class="playbook-view-grid">
+            <!-- Visual Diagram Panel -->
+            <div class="playbook-diagram-panel" id="playbook-diagram">
+              <!-- JS will inject dynamic visual block state here -->
+            </div>
+
+            <!-- Text explanations details panel -->
+            <div class="playbook-text-panel">
+              <h3 class="playbook-step-title" id="playbook-title">Step 1: Monolithic Application</h3>
+              <p class="playbook-step-desc" id="playbook-desc">
+                Loading step description...
+              </p>
+              <h4
+                style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: var(--space-2);">
+                Deliverables checklist</h4>
+              <ul class="playbook-details-list" id="playbook-details">
+                <!-- Bullet items dynamically loaded -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

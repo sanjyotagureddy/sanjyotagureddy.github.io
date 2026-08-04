@@ -1,0 +1,321 @@
+<!-- Interactive System Blueprint & Scenario Simulator Section -->
+    <section id="blueprint" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-kicker">Interactive blueprint</span>
+          <h2>System Design Explorer</h2>
+          <p>
+            The diagram below represents the production topology I designed and maintain. Select any node to inspect
+            architectural trade-offs, target SLAs, and decision rationale, or trigger stress scenario simulations below.
+          </p>
+        </div>
+
+        <!-- Dynamic SVG Blueprint + Details Inspector -->
+        <div class="blueprint-dashboard reveal">
+          <!-- Left side: Interactive SVG canvas -->
+          <div class="blueprint-canvas-wrapper">
+            <svg id="blueprint-svg" viewBox="0 0 820 520" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5"
+                  orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" style="fill: var(--border)" />
+                </marker>
+                <marker id="arrow-teal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5"
+                  orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" style="fill: var(--accent-teal)" />
+                </marker>
+                <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5"
+                  orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" style="fill: var(--accent-blue)" />
+                </marker>
+                <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5"
+                  orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" style="fill: var(--accent-purple)" />
+                </marker>
+                <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5"
+                  orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" style="fill: var(--accent-amber)" />
+                </marker>
+                <marker id="arrow-rose" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5"
+                  orient="auto-start-reverse">
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" style="fill: var(--accent-rose)" />
+                </marker>
+              </defs>
+
+              <!-- ═══════════════════════════════════════════════════════ -->
+              <!-- LANE LABELS                                             -->
+              <!-- ═══════════════════════════════════════════════════════ -->
+              <text x="4" y="52" font-family="var(--font-mono)" font-size="7" fill="var(--text-muted)" opacity="0.5"
+                letter-spacing="1">EDGE</text>
+              <text x="4" y="152" font-family="var(--font-mono)" font-size="7" fill="var(--text-muted)" opacity="0.5"
+                letter-spacing="1">APP</text>
+              <text x="4" y="252" font-family="var(--font-mono)" font-size="7" fill="var(--text-muted)" opacity="0.5"
+                letter-spacing="1">DATA</text>
+              <text x="4" y="352" font-family="var(--font-mono)" font-size="7" fill="var(--text-muted)" opacity="0.5"
+                letter-spacing="1">ASYNC</text>
+              <text x="4" y="452" font-family="var(--font-mono)" font-size="7" fill="var(--text-muted)" opacity="0.5"
+                letter-spacing="1">OBS</text>
+
+              <!-- Lane separators -->
+              <line x1="36" y1="60" x2="820" y2="60" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="4 6"
+                opacity="0.4" />
+              <line x1="36" y1="160" x2="820" y2="160" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="4 6"
+                opacity="0.4" />
+              <line x1="36" y1="260" x2="820" y2="260" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="4 6"
+                opacity="0.4" />
+              <line x1="36" y1="360" x2="820" y2="360" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="4 6"
+                opacity="0.4" />
+
+              <!-- ═══ EDGE LAYER ═══ -->
+              <!-- Client → WAF -->
+              <circle cx="50" cy="90" r="12" fill="var(--surface-strong)" stroke="var(--border)" stroke-width="1.5" />
+              <text x="50" y="94" text-anchor="middle" font-family="var(--font-mono)" font-size="7.5" fill="var(--text)"
+                font-weight="800">CLT</text>
+              <path id="path-clt-waf" class="svg-path" d="M 62 90 H 100" marker-end="url(#arrow)" />
+
+              <!-- WAF -->
+              <g class="svg-node color-rose" data-node="waf" transform="translate(100, 65)">
+                <rect width="95" height="50" rx="6" />
+                <text x="47" y="22">AWS WAF</text>
+                <text class="tech-label" x="47" y="36">EDGE SHIELD</text>
+              </g>
+
+              <!-- WAF → CDN -->
+              <path id="path-waf-cdn" class="svg-path color-rose" d="M 195 90 H 235" marker-end="url(#arrow-rose)" />
+
+              <!-- CDN -->
+              <g class="svg-node color-blue" data-node="cdn" transform="translate(235, 65)">
+                <rect width="100" height="50" rx="6" />
+                <text x="50" y="22">CloudFront</text>
+                <text class="tech-label" x="50" y="36">CDN / CACHE</text>
+              </g>
+
+              <!-- CDN → Gateway -->
+              <path id="path-cdn-gw" class="svg-path color-blue" d="M 335 90 H 375" marker-end="url(#arrow-blue)" />
+
+              <!-- API Gateway -->
+              <g class="svg-node color-blue" data-node="gateway" transform="translate(375, 65)">
+                <rect width="110" height="50" rx="6" />
+                <text x="55" y="22">API Gateway</text>
+                <text class="tech-label" x="55" y="36">AWS GATEWAY</text>
+              </g>
+
+              <!-- Gateway → Auth (down) -->
+              <path id="path-gw-auth" class="svg-path color-blue" d="M 430 115 V 160" marker-end="url(#arrow-blue)" />
+              <!-- Gateway → Order (down-right) -->
+              <path id="path-gw-core" class="svg-path color-teal" d="M 485 90 H 627 V 160"
+                marker-end="url(#arrow-teal)" />
+
+              <!-- ═══ APPLICATION LAYER ═══ -->
+              <!-- Auth Service -->
+              <g class="svg-node color-blue" data-node="auth" transform="translate(375, 160)">
+                <rect width="110" height="50" rx="6" />
+                <text x="55" y="22">Auth Service</text>
+                <text class="tech-label" x="55" y="36">JWT / COGNITO</text>
+              </g>
+
+              <!-- Auth → Order (right) -->
+              <path id="path-auth-core" class="svg-path color-blue" d="M 485 185 H 570" marker-end="url(#arrow-blue)" />
+
+              <!-- Order Service -->
+              <g class="svg-node color-teal" data-node="core" transform="translate(570, 160)">
+                <rect width="115" height="50" rx="6" />
+                <text x="57" y="22">Order Service</text>
+                <text class="tech-label" x="57" y="36">.NET 8 / ECS</text>
+              </g>
+
+              <!-- Order → Notification (right) -->
+              <path id="path-core-notify" class="svg-path color-teal" d="M 685 185 H 720"
+                marker-end="url(#arrow-teal)" />
+
+              <!-- Notification Service -->
+              <g class="svg-node color-amber" data-node="notification" transform="translate(720, 160)">
+                <rect width="95" height="50" rx="6" />
+                <text x="47" y="22">Notify Svc</text>
+                <text class="tech-label" x="47" y="36">SNS / SES</text>
+              </g>
+
+              <!-- ═══ DATA LAYER ═══ -->
+              <!-- Order → Redis (down) -->
+              <path id="path-core-cache" class="svg-path color-amber" d="M 595 210 V 270"
+                marker-end="url(#arrow-amber)" />
+
+              <!-- Redis -->
+              <g class="svg-node color-amber" data-node="cache" transform="translate(540, 270)">
+                <rect width="110" height="50" rx="6" />
+                <text x="55" y="22">Redis Cache</text>
+                <text class="tech-label" x="55" y="36">ELASTICACHE</text>
+              </g>
+
+              <!-- Order → PostgreSQL (down-left) -->
+              <path id="path-core-db" class="svg-path color-teal" d="M 627 210 V 250 H 440"
+                marker-end="url(#arrow-teal)" />
+
+              <!-- PostgreSQL Primary -->
+              <g class="svg-node color-teal" data-node="database" transform="translate(325, 270)">
+                <rect width="115" height="50" rx="6" />
+                <text x="57" y="22">RDS PostgreSQL</text>
+                <text class="tech-label" x="57" y="36">PRIMARY/REPLICA</text>
+              </g>
+
+              <!-- PG → Secrets (left arrow) -->
+              <path id="path-db-sec" class="svg-path color-purple" d="M 325 295 H 240"
+                marker-end="url(#arrow-purple)" />
+
+              <!-- Secrets Manager -->
+              <g class="svg-node color-purple" data-node="security" transform="translate(130, 270)">
+                <rect width="110" height="50" rx="6" />
+                <text x="55" y="22">Secrets Mgr</text>
+                <text class="tech-label" x="55" y="36">VAULT + LAMBDA</text>
+              </g>
+
+              <!-- Secrets → Auth (up then right to Auth left edge) -->
+              <path id="path-sec-auth" class="svg-path color-purple" stroke-dasharray="4 3" d="M 185 270 V 185 H 375"
+                marker-end="url(#arrow-purple)" />
+
+              <!-- Workers → S3 (right then up to S3 bottom) -->
+              <path id="path-worker-s3" class="svg-path color-amber" stroke-dasharray="3 3" d="M 735 395 H 780 V 315"
+                marker-end="url(#arrow-amber)" opacity="0.75" />
+
+              <!-- S3 -->
+              <g class="svg-node color-amber" data-node="s3" transform="translate(740, 265)">
+                <rect width="80" height="50" rx="6" />
+                <text x="40" y="22">S3 Bucket</text>
+                <text class="tech-label" x="40" y="36">ARCHIVE</text>
+              </g>
+
+              <!-- ═══ ASYNC / MESSAGING LAYER ═══ -->
+              <!-- Order → Kafka (down) -->
+              <path id="path-core-kafka" class="svg-path color-purple" d="M 650 210 V 250 H 502 V 370"
+                marker-end="url(#arrow-purple)" />
+
+              <!-- Confluent Kafka Cluster -->
+              <g class="svg-node color-purple" data-node="broker" transform="translate(440, 370)">
+                <rect width="125" height="50" rx="6" />
+                <text x="62" y="22">Confluent Kafka</text>
+                <text class="tech-label" x="62" y="36">EVENT STREAMING</text>
+              </g>
+
+              <!-- Kafka → Workers (right) -->
+              <path id="path-kafka-worker" class="svg-path color-purple" d="M 565 395 H 615"
+                marker-end="url(#arrow-purple)" />
+
+              <!-- Workers -->
+              <g class="svg-node color-teal" data-node="worker" transform="translate(615, 370)">
+                <rect width="120" height="50" rx="6" />
+                <text x="60" y="22">Workers</text>
+                <text class="tech-label" x="60" y="36">ECS CONSUMERS</text>
+              </g>
+
+              <!-- Kafka → DLQ (down) -->
+              <path id="path-kafka-dlq" class="svg-path color-rose" d="M 502 420 V 460" marker-end="url(#arrow-rose)" />
+
+              <!-- DLQ -->
+              <g class="svg-node color-rose" data-node="dlq" transform="translate(440, 460)">
+                <rect width="125" height="44" rx="6" />
+                <text x="62" y="20">Dead Letter Queue</text>
+                <text class="tech-label" x="62" y="34">SQS DLQ</text>
+              </g>
+
+              <!-- ═══ OBSERVABILITY LAYER ═══ -->
+              <!-- OpenTelemetry Collector -->
+              <g class="svg-node color-blue" data-node="observability" transform="translate(130, 460)">
+                <rect width="120" height="44" rx="6" />
+                <text x="60" y="20">OpenTelemetry</text>
+                <text class="tech-label" x="60" y="34">OTEL COLLECTOR</text>
+              </g>
+
+              <!-- ELK Stack -->
+              <g class="svg-node color-blue" data-node="elk" transform="translate(280, 460)">
+                <rect width="110" height="44" rx="6" />
+                <text x="55" y="20">ELK Stack</text>
+                <text class="tech-label" x="55" y="34">ES / KIBANA</text>
+              </g>
+
+              <!-- OTel → ELK -->
+              <path id="path-otel-elk" class="svg-path color-blue" d="M 250 482 H 280" marker-end="url(#arrow-blue)" />
+
+              <!-- Telemetry feeds (dashed) from services → OTel -->
+              <path id="path-gw-otel" class="svg-path color-blue" stroke-dasharray="3 4" d="M 430 115 L 190 460"
+                opacity="0.3" marker-end="url(#arrow-blue)" />
+              <path id="path-core-otel" class="svg-path color-blue" stroke-dasharray="3 4" d="M 627 210 L 190 460"
+                opacity="0.3" marker-end="url(#arrow-blue)" />
+              <path id="path-kafka-otel" class="svg-path color-blue" stroke-dasharray="3 4" d="M 502 420 L 190 460"
+                opacity="0.25" marker-end="url(#arrow-blue)" />
+              <path id="path-db-otel" class="svg-path color-blue" stroke-dasharray="3 4" d="M 375 295 L 190 460"
+                opacity="0.3" marker-end="url(#arrow-blue)" />
+              <path id="path-worker-otel" class="svg-path color-blue" stroke-dasharray="3 4" d="M 675 420 L 250 482"
+                opacity="0.25" marker-end="url(#arrow-blue)" />
+            </svg>
+          </div><!-- /.blueprint-canvas-wrapper -->
+
+          <!-- Right: Architect Inspector Panel -->
+          <div class="node-inspector">
+            <article class="card inspector-card" id="node-inspector">
+              <!-- Javascript will inject node details here -->
+            </article>
+          </div>
+
+        </div><!-- /.blueprint-dashboard -->
+
+        <!-- Scenario Simulator CLI Console Widget (full width below) -->
+        <div class="simulator-section reveal">
+          <!-- Left: Scenarios actions selection -->
+          <div class="simulator-controls">
+            <h3 style="font-size: 1.15rem; margin-bottom: var(--space-2);">Inject System Scenarios</h3>
+            <p style="font-size: 0.86rem; margin-bottom: var(--space-4);">Inject active events directly into the
+              architecture design pipeline.</p>
+
+            <button class="simulator-btn simulator-btn-blue" data-scenario="spike" type="button">
+              <span>Simulate Load Spike (10k req/s)</span>
+              <span class="indicator"></span>
+            </button>
+            <button class="simulator-btn simulator-btn-rose" data-scenario="failover" type="button">
+              <span>Simulate PostgreSQL Failover</span>
+              <span class="indicator"></span>
+            </button>
+            <button class="simulator-btn simulator-btn-purple" data-scenario="secrets" type="button">
+              <span>Rotate Database Credentials</span>
+              <span class="indicator"></span>
+            </button>
+            <button class="simulator-btn simulator-btn-amber" data-scenario="breaker" type="button">
+              <span>Billing Gateway Interruption</span>
+              <span class="indicator"></span>
+            </button>
+            <button class="simulator-btn simulator-btn-teal" data-scenario="kafka_lag" type="button">
+              <span>Confluent Kafka Consumer Lag Spike</span>
+              <span class="indicator"></span>
+            </button>
+            <button class="simulator-btn simulator-btn-purple" data-scenario="schema_conflict" type="button">
+              <span>Schema Registry Breaking Change</span>
+              <span class="indicator"></span>
+            </button>
+            <button class="simulator-btn simulator-btn-rose" data-scenario="ddos" type="button">
+              <span>WAF DDoS Attack Mitigation</span>
+              <span class="indicator"></span>
+            </button>
+            <button class="simulator-btn simulator-btn-amber" data-scenario="cache_eviction" type="button">
+              <span>Redis Cache Eviction Storm</span>
+              <span class="indicator"></span>
+            </button>
+          </div>
+
+          <!-- Right: Simulated Monospace CLI Console Screen -->
+          <div class="console-wrapper">
+            <div class="console-header">
+              <div class="console-dots">
+                <span class="console-dot red"></span>
+                <span class="console-dot yellow"></span>
+                <span class="console-dot green"></span>
+              </div>
+              <div class="console-title">Telemetry Console</div>
+              <div style="width: 42px;"></div>
+            </div>
+            <div class="console-screen" id="console-screen">
+              <!-- Javascript typing simulation inserts here -->
+            </div>
+          </div>
+        </div><!-- /.simulator-section -->
+
+      </div><!-- /.container -->
+    </section>

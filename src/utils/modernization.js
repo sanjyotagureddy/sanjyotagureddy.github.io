@@ -273,17 +273,38 @@ export function initModernizationPlaybook() {
       label.classList.toggle("active", active);
     });
 
-    // Update text content
-    stepTitle.textContent = data.title;
-    stepDesc.textContent = data.description;
+    // Add fade transition
+    stepTitle.style.opacity = '0';
+    stepDesc.style.opacity = '0';
+    stepDetails.style.opacity = '0';
+    diagramPanel.style.opacity = '0';
     
-    // Update bullet list
-    stepDetails.innerHTML = data.details
-      .map((detail) => `<li>${detail}</li>`)
-      .join("");
+    setTimeout(() => {
+      // Update text content
+      stepTitle.textContent = data.title;
+      stepDesc.textContent = data.description;
+      
+      // Update bullet list
+      stepDetails.innerHTML = data.details
+        .map((detail) => `<li>${detail}</li>`)
+        .join("");
 
-    // Update visual diagram
-    diagramPanel.innerHTML = data.markup;
+      // Update visual diagram
+      diagramPanel.innerHTML = data.markup;
+      
+      // Fade back in
+      stepTitle.style.transition = 'opacity 300ms ease';
+      stepDesc.style.transition = 'opacity 300ms ease';
+      stepDetails.style.transition = 'opacity 300ms ease';
+      diagramPanel.style.transition = 'opacity 300ms ease';
+      
+      requestAnimationFrame(() => {
+        stepTitle.style.opacity = '1';
+        stepDesc.style.opacity = '1';
+        stepDetails.style.opacity = '1';
+        diagramPanel.style.opacity = '1';
+      });
+    }, 150);
   }
 
   // Slider change listener
