@@ -313,12 +313,23 @@ export function initModernizationPlaybook() {
     updatePlaybookStep(step);
   });
 
-  // Label click listeners
+  // Label click & keyboard accessibility listeners
   labels.forEach((label) => {
-    label.addEventListener("click", () => {
+    label.setAttribute("tabindex", "0");
+    label.setAttribute("role", "button");
+    
+    const triggerStep = () => {
       const step = parseInt(label.getAttribute("data-step"));
       slider.value = step;
       updatePlaybookStep(step);
+    };
+
+    label.addEventListener("click", triggerStep);
+    label.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        triggerStep();
+      }
     });
   });
 

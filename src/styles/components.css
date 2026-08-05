@@ -1656,10 +1656,17 @@
     position: static;
     flex-direction: row;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
     padding-left: 0;
     padding-bottom: var(--space-3);
     border-left: none;
     border-bottom: 2px solid var(--border);
+    gap: var(--space-2);
+  }
+
+  .experience-rail::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
   }
 
   .rail-item {

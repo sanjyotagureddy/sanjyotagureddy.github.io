@@ -219,20 +219,23 @@ function openProjectModal(project) {
   // Inject content details markup
   modalBody.innerHTML = `
     <header class="modal-project-header">
-      <span class="meta" style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--primary);">${project.category}</span>
+      <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 4px;">
+        <span class="meta" style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--primary);">${project.category}</span>
+        <span class="tech-tag" style="font-size: 0.65rem; padding: 2px 8px; background: rgba(56, 189, 248, 0.12); color: var(--accent-blue); border: 1px solid var(--glass-stroke);">ADR SPECIFICATION</span>
+      </div>
       <h2 class="modal-project-title" id="modal-title" style="margin-top: 4px;">${project.title}</h2>
       <p style="font-size: 0.95rem; margin-top: var(--space-3); color: var(--text-muted); line-height: 1.6;">${project.problem}</p>
     </header>
 
     <div class="modal-section">
-      <div class="modal-section-title">Architectural Evolution Journey</div>
+      <div class="modal-section-title">Architectural Evolution & Delivery Roadmap</div>
       <div class="journey-checkpoints" style="margin-top: var(--space-3);">
         ${journeyHTML}
       </div>
     </div>
 
     <div class="modal-section">
-      <div class="modal-section-title">System Mesh Topology & Data Flow</div>
+      <div class="modal-section-title">System Mesh Topology & Component Data Flow</div>
       <div class="modal-flow-controller" style="display: flex; gap: var(--space-3); margin-top: var(--space-3); margin-bottom: var(--space-3);">
         <button id="modal-flow-btn-happy" class="simulator-btn simulator-btn-teal is-active" style="padding: 6px 14px; font-size: 0.8rem;" type="button">
           <span>Happy Path Flow</span>
@@ -242,19 +245,19 @@ function openProjectModal(project) {
         </button>
       </div>
       <div class="blueprint-canvas-wrapper" style="border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4); overflow: hidden; background-color: #020617; max-height: 280px;" id="modal-mesh-canvas">
-        <!-- Dynmically generated SVG mesh canvas -->
+        <!-- Dynamically generated SVG mesh canvas -->
       </div>
     </div>
 
     <div class="modal-section">
-      <div class="modal-section-title">Technical Trade-offs Evaluated</div>
+      <div class="modal-section-title">Architecture Decision Record (ADR) — Trade-offs Evaluated</div>
       <ul class="detail-list" style="margin-top: var(--space-3); padding-left: 0;">
         ${tradeoffsHTML}
       </ul>
     </div>
 
     <div class="modal-section">
-      <div class="modal-section-title">Target SLA & Core Telemetry</div>
+      <div class="modal-section-title">Target SLA & Enterprise Telemetry Metrics</div>
       <div class="inspector-metric-box" style="margin-top: var(--space-3); border-color: var(--primary); background: var(--bg-elevated); padding: var(--space-3); border-radius: var(--radius-sm); border: 1px dashed var(--border);">
         <div style="font-family: var(--font-mono); font-size: 0.84rem; color: var(--primary);">${project.breakdown.telemetry}</div>
       </div>

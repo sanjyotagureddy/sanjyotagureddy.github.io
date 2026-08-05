@@ -56,12 +56,29 @@ export function initSimulator() {
         </div>
       </div>
     `;
+
+    // Auto-scroll on small screens so inspector content is visible
+    if (window.innerWidth <= 768) {
+      inspector.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
   }
 
   svgNodes.forEach((node) => {
-    node.addEventListener("click", (e) => {
+    node.setAttribute("tabindex", "0");
+    node.setAttribute("role", "button");
+    node.setAttribute("aria-label", `Inspect ${node.getAttribute("data-node")} node`);
+
+    const triggerInspect = (e) => {
       e.stopPropagation();
       inspectNode(node.getAttribute("data-node"));
+    };
+
+    node.addEventListener("click", triggerInspect);
+    node.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        triggerInspect(e);
+      }
     });
   });
 
