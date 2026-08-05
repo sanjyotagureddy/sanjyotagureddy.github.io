@@ -40,8 +40,8 @@ jobs:
         with:
           path: "./dist"
 
-      - name: Wait 2 minutes before deployment
-        run: sleep 120
+      - name: Wait 1 minutes before deployment
+        run: sleep 60
 
       - name: Deploy to GitHub Pages
         id: deployment
