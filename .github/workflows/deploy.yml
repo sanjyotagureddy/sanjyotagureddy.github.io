@@ -40,6 +40,9 @@ jobs:
         with:
           path: "./dist"
 
+      - name: Wait 2 minutes before deployment
+        run: sleep 120
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
