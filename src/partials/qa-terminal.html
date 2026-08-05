@@ -1,0 +1,43 @@
+<!-- Interactive Architect Interview Terminal Section -->
+<section id="architect-qa" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-kicker">Interactive Interview Simulator</span>
+      <h2>Ask Sanjyot's Architecture Assistant</h2>
+      <p>
+        Select any real-world architectural scenario below to inspect how Sanjyot reasons about trade-offs, resiliency patterns, and scale.
+      </p>
+    </div>
+
+    <div class="qa-terminal-container reveal">
+      <!-- Left side: Question Selector List -->
+      <div class="qa-question-list" id="qa-question-list">
+        <!-- Questions injected via JS -->
+      </div>
+
+      <!-- Right side: Monospace Terminal Display -->
+      <div class="qa-terminal-window">
+        <div class="terminal-bar">
+          <div class="terminal-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="terminal-title">architect-ai@sanjyot-node:~ (bash)</div>
+          <div class="terminal-badge">LIVE CONSOLE</div>
+        </div>
+        <div class="terminal-body" id="qa-terminal-body" aria-live="polite">
+          <div class="t-line prompt-line">
+            <span class="t-user">sanjyot@arch-node</span>:<span class="t-path">~</span>$ <span class="t-cmd">./init-interview-sim.sh</span>
+          </div>
+          <div class="t-line t-system">
+            [SYS_INFO] Architecture Knowledge Base Loaded. Select a topic on the left to run analysis...
+          </div>
+          <div class="t-response-box" id="qa-response-box">
+            <!-- Dynamic response typed here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

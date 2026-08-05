@@ -56,11 +56,6 @@ export function initSimulator() {
         </div>
       </div>
     `;
-
-    // Auto-scroll on small screens so inspector content is visible
-    if (window.innerWidth <= 768) {
-      inspector.scrollIntoView({ behavior: "smooth", block: "nearest" });
-    }
   }
 
   svgNodes.forEach((node) => {

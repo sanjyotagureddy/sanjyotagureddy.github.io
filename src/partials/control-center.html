@@ -1,0 +1,88 @@
+<!-- Floating Architect Control Center / Quick Action Ball -->
+<div id="control-center" class="control-center-wrapper">
+  <!-- Expanded Control Panel -->
+  <div id="control-center-panel" class="control-center-panel" aria-hidden="true">
+    <div class="control-panel-header">
+      <div class="control-panel-title">
+        <span class="control-pulse-dot"></span>
+        <span>Architect Control Center</span>
+      </div>
+      <button id="control-panel-close" class="control-panel-close" type="button" aria-label="Close Control Center">&times;</button>
+    </div>
+
+    <div class="control-panel-grid">
+      <!-- Quick Action: Executive Dossier Modal -->
+      <button class="control-action-btn highlight-purple" id="cc-btn-dossier" type="button">
+        <span class="cc-icon">⚡</span>
+        <div class="cc-text">
+          <strong>30-Sec Dossier</strong>
+          <span>Executive Summary</span>
+        </div>
+      </button>
+
+      <!-- Quick Action: System Topology Explorer -->
+      <a class="control-action-btn highlight-teal" href="#blueprint" id="cc-btn-blueprint">
+        <span class="cc-icon">🗺️</span>
+        <div class="cc-text">
+          <strong>System Topology</strong>
+          <span>Interactive Explorer</span>
+        </div>
+      </a>
+
+      <!-- Quick Action: Ask Architect AI -->
+      <a class="control-action-btn highlight-blue" href="#architect-qa" id="cc-btn-qa">
+        <span class="cc-icon">💬</span>
+        <div class="cc-text">
+          <strong>Ask Architect AI</strong>
+          <span>Interactive Q&amp;A</span>
+        </div>
+      </a>
+
+      <!-- Quick Action: ADR Decision Matrix -->
+      <a class="control-action-btn highlight-amber" href="#adr-matrix" id="cc-btn-adr">
+        <span class="cc-icon">⚖️</span>
+        <div class="cc-text">
+          <strong>ADR Matrix</strong>
+          <span>Pattern Trade-offs</span>
+        </div>
+      </a>
+
+      <!-- Quick Action: Strangler Fig Playbook -->
+      <a class="control-action-btn" href="#modernization" id="cc-btn-modernization">
+        <span class="cc-icon">🔄</span>
+        <div class="cc-text">
+          <strong>Strangler Fig</strong>
+          <span>Migration Roadmap</span>
+        </div>
+      </a>
+
+      <!-- Quick Action: Resume Download -->
+      <a class="control-action-btn" href="./docs/iSanjyotAgureddy_SolutionArchitect.pdf" download id="cc-btn-resume">
+        <span class="cc-icon">📄</span>
+        <div class="cc-text">
+          <strong>Download Resume</strong>
+          <span>PDF Executive Version</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="control-panel-footer">
+      <button class="control-footer-btn" id="cc-btn-theme" type="button">
+        <span id="cc-theme-icon">🌓</span> Toggle Theme
+      </button>
+      <a class="control-footer-btn primary" href="#contact" id="cc-btn-contact">
+        ✉️ Contact Sanjyot
+      </a>
+    </div>
+  </div>
+
+  <!-- Floating Quick Action Ball Trigger -->
+  <button id="control-center-trigger" class="control-center-orb" type="button" aria-label="Open Architect Control Center" title="Architect Control Center ⚡">
+    <svg class="orb-svg" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3" class="orb-ring"/>
+      <circle cx="20" cy="20" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="20" cy="20" r="4" fill="currentColor"/>
+    </svg>
+    <span class="orb-badge">⚡</span>
+  </button>
+</div>

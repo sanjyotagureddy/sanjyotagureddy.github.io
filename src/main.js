@@ -4,6 +4,9 @@ import { initReveal } from "./utils/reveal.js";
 import { initExperienceTimeline } from "./utils/experience-timeline.js";
 import { initSimulator } from "./utils/simulator.js";
 import { initModernizationPlaybook } from "./utils/modernization.js";
+import { initQATerminal } from "./utils/qa-terminal.js";
+import { initADRMatrix } from "./utils/adr-matrix.js";
+import { initControlCenter } from "./utils/control-center.js";
 import { projectsData } from "./data/projects-data.js";
 
 // Initialize UI controllers
@@ -12,6 +15,9 @@ initNavigation();
 initExperienceTimeline();
 initSimulator();
 initModernizationPlaybook();
+initQATerminal();
+initADRMatrix();
+initControlCenter();
 
 // Dynamically Render Projects Section
 const projectsGrid = document.querySelector("#projects-grid");
@@ -320,6 +326,49 @@ if (modal) {
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && modal && modal.classList.contains("is-open")) {
     closeProjectModal();
+  }
+});
+
+// Executive Dossier Modal
+const dossierModal = document.querySelector("#executive-dossier-modal");
+const dossierClose = document.querySelector("#dossier-modal-close");
+const dossierContactBtn = document.querySelector("#dossier-contact-btn");
+const openDossierBtn = document.querySelector("#open-dossier-btn");
+
+function openDossierModal() {
+  if (!dossierModal) return;
+  dossierModal.classList.add("is-open");
+  dossierModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closeDossierModal() {
+  if (!dossierModal) return;
+  dossierModal.classList.remove("is-open");
+  dossierModal.setAttribute("aria-hidden", "true");
+  document.body.style.removeProperty("overflow");
+}
+
+if (openDossierBtn) {
+  openDossierBtn.addEventListener("click", openDossierModal);
+}
+if (dossierClose) {
+  dossierClose.addEventListener("click", closeDossierModal);
+}
+if (dossierContactBtn) {
+  dossierContactBtn.addEventListener("click", closeDossierModal);
+}
+if (dossierModal) {
+  dossierModal.addEventListener("click", (e) => {
+    const container = e.target.closest(".dossier-modal-container");
+    if (!container) {
+      closeDossierModal();
+    }
+  });
+}
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && dossierModal && dossierModal.classList.contains("is-open")) {
+    closeDossierModal();
   }
 });
 
