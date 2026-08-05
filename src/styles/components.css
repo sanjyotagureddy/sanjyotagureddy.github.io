@@ -1616,14 +1616,15 @@
    Footer
    ========================================================================== */
 .site-footer {
-  padding: var(--space-6) 0;
+  padding: var(--space-3) 0;
   border-top: 1px solid var(--border);
   background: var(--bg-elevated);
   text-align: center;
 }
 
 .site-footer p {
-  font-size: 0.88rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.2px;
 }
 
 /* ==========================================================================
